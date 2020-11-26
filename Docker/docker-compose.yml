@@ -1,0 +1,165 @@
+version: '3.8'
+
+services:
+  portainer:
+   image: portainer/portainer:latest
+   container_name: portainer
+   restart: always
+   ports:
+    - 9000:9000
+    - 8000:8000
+   command: -H unix:///var/run/docker.sock
+   networks:
+    JMM-Docker:
+      ipv4_address: 10.50.25.2
+   volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - portainer_data:/data
+
+  radarr:
+   container_name: Radarr
+   restart: unless-stopped
+   ports:
+    - 7878:7878
+   volumes:
+    - /home/jmaze/Data:/media
+   image: linuxserver/radarr:latest
+   networks:
+    JMM-Docker:
+      ipv4_address: 10.50.25.3
+  
+  TransmissionVPN:
+   privileged: true
+   container_name: TransmissionVPN
+   image: haugene/transmission-openvpn
+   restart: always
+   ports:
+    - 9091:9091
+    - 8888:8888
+   volumes:
+    - /home/jmaze/Data:/media
+    - /home/jmaze/cyberghost/default.ovpn:/etc/openvpn/custom/default.ovpn
+    - /home/jmaze/cyberghost/:/etc/openvpn/custom/
+   environment:
+    - OPENVPN_PROVIDER=CUSTOM
+    - OPENVPN_USERNAME=YEW
+    - OPENVPN_PASSWORD=YEW
+    - TRANSMISSION_DOWNLOAD_DIR=/media/downloads
+    - TRANSMISSION_INCOMPLETE_DIR=/media/incomplete
+    - TRANSMISSION_SEED_QUEUE_ENABLED=true
+    - TRANSMISSION_SPEED_LIMIT_UP=500
+    - TRANSMISSION_SPEED_LIMIT_UP_ENABLED=true
+    - TRANSMISSION_UPLOAD_SLOTS_PER_TORRENT=10
+    - TRANSMISSION_WEB_UI=combustion
+    - LOCAL_NETWORK=10.50.0.0/16
+    - TRANSMISSION_DOWNLOAD_QUEUE_SIZE=10
+    - TRANSMISSION_RATIO_LIMIT_ENABLED=true
+    - TRANSMISSION_RATIO_LIMIT=2
+   networks:
+    JMM-Docker:
+      ipv4_address: 10.50.25.4
+  
+  jackett:
+   container_name: jackett
+   restart: unless-stopped
+   ports:
+    - 9117:9117
+   image: linuxserver/jackett
+   networks:
+    JMM-Docker:
+      ipv4_address: 10.50.25.5
+  
+  sonarr:
+    container_name: Sonarr
+    restart: unless-stopped
+    ports:
+     - 8989:8989
+    volumes:
+     - /home/jmaze/Data:/media
+    image: linuxserver/sonarr
+    networks:
+     JMM-Docker:
+      ipv4_address: 10.50.25.6
+
+  ghost:
+    container_name: GhostBlog
+    restart: unless-stopped
+    image: ghost:latest
+    ports:
+     - 2368:2368
+    environment:
+      url: http://dana.pup:2368
+    networks:
+      JMM-Docker:
+        ipv4_address: 10.50.25.7
+
+  organizr:
+    image: linuxserver/organizr
+    container_name: Organizr
+    ports:
+      - 80:80
+    restart: unless-stopped
+    networks: 
+      JMM-Docker:
+        ipv4_address: 10.50.25.8
+
+  tautulli:
+    image: linuxserver/tautulli
+    container_name: Tautulli
+    ports:
+      - 8181:8181
+    restart: unless-stopped
+    volumes:
+      - /home/DockerConfigs/tautulli:/config
+    networks: 
+      JMM-Docker:
+        ipv4_address: 10.50.25.9
+
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "80:80/tcp"
+      - "443:443/tcp"
+    environment:
+      TZ: 'America/Los_Angeles'
+      WEBPASSWORD: '14Sam97sung!?'
+    volumes:
+      - /home/DockerConfigs/pihole/etc-pihole/:/etc/pihole/
+      - /home/DockerConfigs/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/
+      - /home/DockerConfigs/pihole/var-log/pihole.log:/var/log/pihole.log
+    dns:
+      - 127.0.0.1
+      - 8.8.8.8
+    restart: unless-stopped
+    networks: 
+      JMM-Docker:
+        ipv4_address: 10.50.25.10
+
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    ports: 
+      - "80:80"
+      - "443:443"
+    volumes: 
+      - /home/DockerConfigs/caddy/:/config
+      - /home/DockerConfigs/caddy/data/:/data
+    networks: 
+      JMM-Docker:
+        ipv4_address: 10.50.25.11
+
+volumes:
+ portainer_data:
+
+networks:
+  JMM-Docker:
+    driver: macvlan
+    driver_opts:
+      parent: ens18
+    ipam:
+      config:
+        - subnet: 10.50.25.2/25

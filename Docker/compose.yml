@@ -1,0 +1,58 @@
+version: '3'
+services:
+ radarr:
+  container_name: radarr
+  restart: unless-stopped
+  ports:
+   - 7878:7878
+  volumes:
+   - /home/dockeras/radarr:/config
+   - /mnt/downloads:/downloads
+   - /mnt/synomovies:/movies
+  environment:
+   - PUID=1000
+   - PGID=150
+   - TZ=Europe/Athens
+  image: linuxserver/radarr
+ 
+ sonarr:
+  container_name: sonarr
+  restart: unless-stopped
+  ports:
+   - 8989:8989
+  volumes:
+   - /home/dockeras/sonarr:/config
+   - /mnt/downloads:/downloads
+   - /mnt/downloads:/tv
+  environment:
+   - PUID=1000
+   - PGID=150
+   - TZ=Europe/Athens
+  image: linuxserver/sonarr
+ 
+ jackett:
+  container_name: jackett
+  restart: unless-stopped
+  ports:
+   - 9117:9117
+  volumes:
+   - /home/dockeras/jackett:/config
+  environment:
+   - PUID=1000
+   - PGID=150
+   - TZ=Europe/Athens
+  image: linuxserver/jackett
+ 
+ portainer:
+  container_name: portainer
+  restart: unless-stopped
+  ports:
+   - 9000:9000
+  volumes:
+   - /var/run/docker.sock:/var/run/docker.sock
+   - /home/dockeras/portainer:/data
+  environment:
+   - PUID=1000
+   - PGID=150
+   - TZ=Europe/Athens
+  image: portainer/portainer
