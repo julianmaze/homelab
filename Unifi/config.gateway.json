@@ -1,0 +1,16 @@
+{
+    "system": {
+         "static-host-mapping": {
+             "host-name": {
+                  "dana.pup": {
+                         "alias": [
+                                "dana"
+                         ],
+                         "inet": [
+                           "10.50.25.7"
+                       ]
+                   }
+              }
+         }
+    }
+}

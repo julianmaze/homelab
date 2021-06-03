@@ -1,0 +1,1 @@
+tuya-cli link --api-key xmfsdr8ga5yjbw10ghee --api-secret a38ade1b82c84e888a396e3f25ada13d --schema homeassistantjulianmazecom --ssid JMS --password the42Boys31 --region us

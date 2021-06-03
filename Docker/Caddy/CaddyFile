@@ -1,0 +1,141 @@
+# The Caddyfile is an easy way to configure your Caddy web server.
+#
+# Unless the file starts with a global options block, the first
+# uncommented line is always the address of your site.
+#
+# To use your own domain name (with automatic HTTPS), first make
+# sure your domain's A/AAAA DNS records are properly pointed to
+# this machine's public IP, then replace the line below with your
+# domain name.
+
+foilfund.julianmaze.com {
+	tls {
+		dns cloudflare {env.CLOUDFLARE_API_KEY}
+	}
+	
+	root * /var/www/html
+	file_server browse
+	php_fastcgi 10.50.25.12:9000
+}
+
+portainer.local.julianmaze.com {
+	tls {
+		dns cloudflare {env.CLOUDFLARE_API_KEY}
+	}
+
+	reverse_proxy 10.50.25.2:9000
+}
+
+pihole.local.julianmaze.com {
+	tls {
+		dns cloudflare {env.CLOUDFLARE_API_KEY}
+	}
+
+	reverse_proxy 10.50.25.10
+}
+
+dana.pup:80 {
+	
+	reverse_proxy 10.50.25.7:2368
+}
+
+home.julianmaze.com {
+	tls {
+		dns cloudflare {env.CLOUDFLARE_API_KEY}
+	}
+
+	reverse_proxy 10.50.25.55:8123
+}
+
+storage.local.julianmaze.com {
+	tls {
+		dns cloudflare {env.CLOUDFLARE_API_KEY}
+	}
+
+	reverse_proxy 10.50.70.24:5000
+}
+
+jackett.local.julianmaze.com {
+	tls {
+		dns cloudflare {env.CLOUDFLARE_API_KEY}
+	}
+
+	reverse_proxy 10.50.25.5:9117
+}
+
+organize.local.julianmaze.com {
+	tls {
+		dns cloudflare {env.CLOUDFLARE_API_KEY}
+	}
+	
+	reverse_proxy 10.50.25.8
+}
+
+tautulli.local.julianmaze.com {
+	tls {
+		dns cloudflare {env.CLOUDFLARE_API_KEY}
+	}
+	
+	reverse_proxy 10.50.25.9:8181
+}
+
+radarr.local.julianmaze.com {
+	tls {
+			dns cloudflare {env.CLOUDFLARE_API_KEY}
+	}
+
+	reverse_proxy 10.50.25.3:7878
+}
+
+sonarr.local.julianmaze.com {
+	tls {
+			dns cloudflare {env.CLOUDFLARE_API_KEY}
+	}
+
+	reverse_proxy 10.50.25.6:8989
+}
+
+download.local.julianmaze.com {
+	tls {
+			dns cloudflare {env.CLOUDFLARE_API_KEY}
+	}
+
+	reverse_proxy 10.50.25.4:9091
+}
+
+nextcloud.julianmaze.com {
+	reverse_proxy 10.50.25.15:443 {
+		transport http {
+			tls_insecure_skip_verify
+		}
+	}
+}
+
+proxmox.local.julianmaze.com {
+	tls {
+		dns cloudflare {env.CLOUDFLARE_API_KEY}
+	}
+	
+	reverse_proxy 10.50.70.15:8006 {
+		transport http {
+        	tls_insecure_skip_verify
+    	}
+	}
+}
+
+# Set this path to your site's directory.
+#root * /var/www/html
+
+# Enable the static file server.
+#file_server {
+#	index index.html
+#}
+
+# Another common task is to set up a reverse proxy:
+# reverse_proxy localhost:8080
+
+# Or serve a PHP site through php-fpm:
+# php_fastcgi localhost:9000
+
+# Refer to the Caddy docs for more information:
+# https://caddyserver.com/docs/caddyfile

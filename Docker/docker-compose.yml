@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   portainer:
-   image: portainer/portainer:latest
+   image: portainer/portainer-ce:latest
    container_name: portainer
    restart: always
    ports:
@@ -23,15 +23,15 @@ services:
     - 7878:7878
    volumes:
     - /home/jmaze/Data:/media
-   image: linuxserver/radarr:latest
+   image: linuxserver/radarr:nightly-version-3.0.2.4473
    networks:
     JMM-Docker:
       ipv4_address: 10.50.25.3
-  
+
   TransmissionVPN:
    privileged: true
    container_name: TransmissionVPN
-   image: haugene/transmission-openvpn
+   image: haugene/transmission-openvpn:latest
    restart: always
    ports:
     - 9091:9091
@@ -46,8 +46,8 @@ services:
     - OPENVPN_PASSWORD=YEW
     - TRANSMISSION_DOWNLOAD_DIR=/media/downloads
     - TRANSMISSION_INCOMPLETE_DIR=/media/incomplete
-    - TRANSMISSION_SEED_QUEUE_ENABLED=true
-    - TRANSMISSION_SPEED_LIMIT_UP=500
+    - TRANSMISSION_SEED_QUEUE_ENABLED=false
+    - TRANSMISSION_SPEED_LIMIT_UP=2000
     - TRANSMISSION_SPEED_LIMIT_UP_ENABLED=true
     - TRANSMISSION_UPLOAD_SLOTS_PER_TORRENT=10
     - TRANSMISSION_WEB_UI=combustion
@@ -58,17 +58,17 @@ services:
    networks:
     JMM-Docker:
       ipv4_address: 10.50.25.4
-  
+
   jackett:
    container_name: jackett
    restart: unless-stopped
    ports:
     - 9117:9117
-   image: linuxserver/jackett
+   image: linuxserver/jackett:latest
    networks:
     JMM-Docker:
       ipv4_address: 10.50.25.5
-  
+
   sonarr:
     container_name: Sonarr
     restart: unless-stopped
@@ -76,7 +76,7 @@ services:
      - 8989:8989
     volumes:
      - /home/jmaze/Data:/media
-    image: linuxserver/sonarr
+    image: linuxserver/sonarr:latest
     networks:
      JMM-Docker:
       ipv4_address: 10.50.25.6
@@ -88,30 +88,34 @@ services:
     ports:
      - 2368:2368
     environment:
-      url: http://dana.pup:2368
+      url: http://dana.pup
     networks:
       JMM-Docker:
         ipv4_address: 10.50.25.7
 
   organizr:
-    image: linuxserver/organizr
+    image: organizr/organizr:latest
     container_name: Organizr
     ports:
       - 80:80
     restart: unless-stopped
-    networks: 
+    dns:
+     - 10.50.25.10
+    volumes:
+     - /home/DockerConfigs/organizr/config:/config
+    networks:
       JMM-Docker:
         ipv4_address: 10.50.25.8
 
   tautulli:
-    image: linuxserver/tautulli
+    image: linuxserver/tautulli:latest
     container_name: Tautulli
     ports:
       - 8181:8181
     restart: unless-stopped
     volumes:
       - /home/DockerConfigs/tautulli:/config
-    networks: 
+    networks:
       JMM-Docker:
         ipv4_address: 10.50.25.9
 
@@ -133,24 +137,88 @@ services:
       - /home/DockerConfigs/pihole/var-log/pihole.log:/var/log/pihole.log
     dns:
       - 127.0.0.1
-      - 8.8.8.8
-    restart: unless-stopped
-    networks: 
+      - 1.1.1.1
+    restart: always
+    networks:
       JMM-Docker:
         ipv4_address: 10.50.25.10
 
   caddy:
-    image: caddy:latest
+    build:
+      dockerfile: /home/DockerConfigs/caddy/DockerFile
+      context: /home/DockerConfigs/caddy/
     container_name: caddy
-    ports: 
+    environment:
+      - ACME_AGREE=true
+      - CLOUDFLARE_EMAIL=jmmaze@outlook.com
+      - CLOUDFLARE_API_KEY=QLnt--OMzXcJG7eGm8DzL55kX9Fb3-oTmGPm79v_
+    ports:
       - "80:80"
       - "443:443"
-    volumes: 
+    volumes:
       - /home/DockerConfigs/caddy/:/config
       - /home/DockerConfigs/caddy/data/:/data
-    networks: 
+      - /home/DockerConfigs/caddy/CaddyFile:/etc/caddy/Caddyfile
+      - /home/DockerConfigs/caddy/www/:/var/www/html
+    restart: unless-stopped
+    networks:
       JMM-Docker:
         ipv4_address: 10.50.25.11
+
+  phpfpm:
+    container_name: phpfpm
+    image: bitnami/php-fpm:latest
+    ports:
+      - "9000:9000"
+    volumes:
+      - /home/DockerConfigs/phpfpm/:/app
+      - /home/DockerConfigs/caddy/www/:/var/www/html
+    restart: unless-stopped
+    networks:
+      JMM-Docker:
+        ipv4_address: 10.50.25.12
+
+  homeassistant:
+    container_name: home-assistant
+    image: homeassistant/home-assistant:latest
+    ports:
+      - "8123:8123"
+    volumes:
+      - /home/DockerConfigs/homeAssistant:/config
+    environment:
+      - TZ=America/Los_Angeles
+    restart: always
+    networks:
+      JMM-Docker:
+        ipv4_address: 10.50.25.13
+
+  assistant-relay:
+    container_name: assistant-relay
+    image: apipa169/assistant-relay:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - /home/DockerConfigs/assistant-relay/config.json:/assistant_relay/bin/config.json
+      - /home/DockerConfigs/assistant-relay/audio-responses/:/assistant_relay/bin/audio-responses
+    restart: unless-stopped
+    networks:
+     JMM-Docker:
+       ipv4_address: 10.50.25.14
+
+  nextcloud:
+    container_name: nextcloud
+    image: linuxserver/nextcloud:latest
+    environment:
+      - TZ=America/Los_Angeles
+    ports: 
+      - "443:443"
+    restart: unless-stopped
+    volumes: 
+      - /home/DockerConfigs/nextcloud/appdata/:/config
+      - /home/DockerConfigs/nextcloud/data/:/data
+    networks: 
+     JMM-Docker:
+       ipv4_address: 10.50.25.15
 
 volumes:
  portainer_data:
