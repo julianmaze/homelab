@@ -164,22 +164,25 @@ dnsConfig: {}
 dnsPolicy: ClusterFirst
 
 # -- Arbitrary extra volume definitions for the pod
-extraVolumes:
-  - name: custom-provider-config
-    persistentVolumeClaim:
-      claimName: jmaze-k8s-media
-  - name: config
-    persistentVolumeClaim:
-      claimName: jmaze-k8s-media
+# extraVolumes:
+#   - name: custom-provider-config
+#     persistentVolumeClaim:
+#       claimName: jmaze-k8s-media
+#   - name: config
+#     persistentVolumeClaim:
+#       claimName: jmaze-k8s-media
 
 # -- Arbitrary extra volume mounts for the pod
 extraVolumeMounts:
   - mountPath: /etc/openvpn/custom/
-    name: custom-provider-config
+    name: data
     subPath: "transmission/cyberghost"
   - mountPath: /config
-    name: config
+    name: data
     subPath: "transmission/config"
+  - mountPath: /etc/openvpn/custom/default.ovpn
+    name: data
+    subPath: "transmission/cyberghost/default.ovpn"
 
 # -- Pod liveness probe
 livenessProbe: {}

@@ -15,8 +15,8 @@ spec:
               service:
                 name: "transmission-transmission-openvpn"
                 port:
-                  number: 443
-            path: "/download"
+                  number: 80
+            path: "/transmission"
             pathType: Prefix
           - backend:
               service:
