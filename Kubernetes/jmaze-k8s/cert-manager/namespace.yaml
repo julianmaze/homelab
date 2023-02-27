@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    cattle.io/status: '{"Conditions":[{"Type":"ResourceQuotaInit","Status":"True","Message":"","LastUpdateTime":"2023-02-13T06:50:57Z"},{"Type":"InitialRolesPopulated","Status":"True","Message":"","LastUpdateTime":"2023-02-13T06:51:02Z"}]}'
+    field.cattle.io/projectId: local:p-gptzw
+    lifecycle.cattle.io/create.namespace-auth: "true"
+    management.cattle.io/no-default-sa-token: "true"
+  creationTimestamp: "2023-02-13T06:36:14Z"
+  finalizers:
+    - controller.cattle.io/namespace-auth
+  labels:
+    field.cattle.io/projectId: p-gptzw
+    kubernetes.io/metadata.name: cert-manager
+    name: cert-manager
+  name: cert-manager
+  resourceVersion: "87607"
+  uid: 7e78c569-905b-4548-a9f6-becd010e2c39
+spec:
+  finalizers:
+    - kubernetes
+status:
+  phase: Active

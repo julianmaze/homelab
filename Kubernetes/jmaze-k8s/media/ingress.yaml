@@ -1,0 +1,45 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: "media"
+  name: "media-ingress"
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare-jmaze # cloudflare https issuer
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "media.local.julianmaze.com"
+      http:
+        paths:
+          - backend:
+              service:
+                name: "transmission-transmission-openvpn"
+                port:
+                  number: 443
+            path: "/download"
+            pathType: Prefix
+          - backend:
+              service:
+                name: "sonarr"
+                port:
+                  number: 8989
+            path: "/sonarr"
+            pathType: Prefix
+          - backend:
+              service:
+                name: "jackett"
+                port:
+                  number: 9117
+            path: "/jackett"
+            pathType: Prefix
+          - backend:
+              service:
+                name: "radarr"
+                port:
+                  number: 7878
+            path: "/radarr"
+            pathType: Prefix
+  tls:
+    - hosts:
+        - media.local.julianmaze.com
+      secretName: tls-media-ingress

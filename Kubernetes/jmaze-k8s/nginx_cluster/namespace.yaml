@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    cattle.io/status: '{"Conditions":[{"Type":"ResourceQuotaInit","Status":"True","Message":"","LastUpdateTime":"2023-02-13T06:50:57Z"},{"Type":"InitialRolesPopulated","Status":"True","Message":"","LastUpdateTime":"2023-02-13T06:51:02Z"}]}'
+    field.cattle.io/projectId: local:p-gptzw
+    lifecycle.cattle.io/create.namespace-auth: "true"
+    management.cattle.io/no-default-sa-token: "true"
+  creationTimestamp: "2023-02-13T06:28:47Z"
+  finalizers:
+    - controller.cattle.io/namespace-auth
+  labels:
+    field.cattle.io/projectId: p-gptzw
+    kubernetes.io/metadata.name: ingress-nginx
+    name: ingress-nginx
+  name: ingress-nginx
+  resourceVersion: "87610"
+  uid: ef146011-118d-488d-ac2e-b07340eb970f
+spec:
+  finalizers:
+    - kubernetes
+status:
+  phase: Active

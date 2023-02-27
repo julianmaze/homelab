@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    cattle.io/status: '{"Conditions":[{"Type":"ResourceQuotaInit","Status":"True","Message":"","LastUpdateTime":"2023-02-13T06:50:58Z"},{"Type":"InitialRolesPopulated","Status":"True","Message":"","LastUpdateTime":"2023-02-13T06:51:04Z"}]}'
+    field.cattle.io/projectId: local:p-gptzw
+    lifecycle.cattle.io/create.namespace-auth: "true"
+    management.cattle.io/no-default-sa-token: "true"
+  creationTimestamp: "2023-02-13T06:20:21Z"
+  finalizers:
+    - controller.cattle.io/namespace-auth
+  labels:
+    field.cattle.io/projectId: p-gptzw
+    kubernetes.io/metadata.name: cattle-system
+  name: cattle-system
+  resourceVersion: "87784"
+  uid: 5b2d4546-75ad-4164-8cf8-6f492b19ff9e
+spec:
+  finalizers:
+    - kubernetes
+status:
+  phase: Active
