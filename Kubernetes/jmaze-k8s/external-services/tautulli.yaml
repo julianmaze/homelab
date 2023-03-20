@@ -1,0 +1,22 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: tautulli
+  namespace: external-services
+spec:
+  ports:
+    - protocol: TCP
+      port: 8181
+      targetPort: 8181
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: tautulli
+  namespace: external-services
+subsets:
+  - addresses:
+      - ip: 10.50.25.9
+    ports:
+      - port: 8181

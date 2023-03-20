@@ -10,6 +10,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-connect-timeout: "30"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "1800"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "1800"
+    nginx.org/mergeable-ingress-type: minion
   creationTimestamp: "2023-02-13T06:40:30Z"
   generation: 1
   labels:

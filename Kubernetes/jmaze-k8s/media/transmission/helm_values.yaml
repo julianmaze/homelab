@@ -14,10 +14,17 @@ hostPort:
 commonLabels: {}
 
 # -- Additional port definitions for the pod
-additionalPorts: []
+additionalPorts:
+  - name: proxy
+    protocol: TCP
+    containerPort: 8118
 
 # -- Additional port definitions for the service
-additionalServicePorts: []
+additionalServicePorts:
+  - port: 8118
+    targetPort: 8118
+    protocol: TCP
+    name: http-proxy
 
 image:
   # -- Image repository
@@ -66,7 +73,7 @@ service:
   # -- Service annotations
   annotations: {}
   # -- clusterIP for the service
-  clusterIP: ""
+  clusterIP: "10.43.184.230"
   # -- loadBalancerIP for the service
   loadBalancerIP: ""
   # -- externalName for the service
@@ -142,11 +149,13 @@ env:
   TRANSMISSION_SPEED_LIMIT_UP_ENABLED: "true"
   TRANSMISSION_UPLOAD_SLOTS_PER_TORRENT: "10"
   TRANSMISSION_WEB_UI: combustion
-  LOCAL_NETWORK: 10.50.0.0/16
+  LOCAL_NETWORK: 0.0.0.0/0
   TRANSMISSION_DOWNLOAD_QUEUE_SIZE: "10"
   TRANSMISSION_RATIO_LIMIT_ENABLED: "true"
   TRANSMISSION_RATIO_LIMIT: "2"
   CREATE_TUN_DEVICE: "true"
+  WEBPROXY_ENABLED: "true"
+  WEBPROXY_PORT: "8118"
 
 # -- Sensitive environment variables to be set in the pods. See the [application docs](https://haugene.github.io/docker-transmission-openvpn/config-options/)
 secretEnv:
@@ -183,6 +192,9 @@ extraVolumeMounts:
   - mountPath: /etc/openvpn/custom/default.ovpn
     name: data
     subPath: "transmission/cyberghost/default.ovpn"
+  - mountPath: /data
+    name: data
+    subPath: "transmission/data"
 
 # -- Pod liveness probe
 livenessProbe: {}

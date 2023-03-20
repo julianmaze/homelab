@@ -1,0 +1,66 @@
+# Endpoint Slices - not working because it crashes nginx ingress
+# ----------------------
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: home-assistant
+#   namespace: ingress-nginx
+# spec:
+#   ports:
+#     - protocol: TCP
+#       port: 80
+#       targetPort: 8123
+
+# ---
+# apiVersion: discovery.k8s.io/v1
+# kind: EndpointSlice
+# metadata:
+#   name: home-assistant-endpoint # by convention, use the name of the Service as a prefix for the name of the EndpointSlice
+#   namespace: ingress-nginx
+#   labels:
+#     kubernetes.io/service-name: home-assistant
+# addressType: IPv4
+# ports:
+#   - name: ""
+#     appProtocol: http
+#     protocol: TCP
+#     port: 8123
+# endpoints:
+#   - addresses:
+#       - "10.50.25.55"
+
+# ExternalName redirect - this is working, but i prefer not creating additional dns names
+# ----------------------
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: home-assistant
+#   namespace: external-services
+# spec:
+#   type: ExternalName
+#   externalName: kubernetes.home.julianmaze.com
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: home-assistant
+  namespace: external-services
+spec:
+  ports:
+    - protocol: TCP
+      port: 8123
+      targetPort: 8123
+      name: ha
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: home-assistant
+  namespace: external-services
+subsets:
+  - addresses:
+      - ip: 10.50.25.55
+    ports:
+      - port: 8123
+        name: ha
