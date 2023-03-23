@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: "synology-media"
+  labels:
+    type: "local"
+spec:
+  storageClassName: "manual"
+  capacity:
+    storage: "8000Gi"
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/data"
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: "truenas"
+  labels:
+    type: "local"
+spec:
+  storageClassName: "manual"
+  capacity:
+    storage: "9000Gi"
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/truenas"

@@ -37,6 +37,14 @@ persistence:
     existingClaim: jmaze-k8s-media
     mountPath: "/config"
     subPath: "sonarr/config"
+  media:
+    enabled: true
+    existingClaim: synology-media
+    mountPath: "/media"
+  truenas:
+    enabled: true
+    existingClaim: truenas
+    mountPath: "/truenas"
 
 portal:
   enabled: true

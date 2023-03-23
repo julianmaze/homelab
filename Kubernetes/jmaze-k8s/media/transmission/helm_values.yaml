@@ -119,7 +119,7 @@ persistence:
   existingClaim: jmaze-k8s-media
   # -- Storage class for the data volume
   storageClass: ""
-  # -- Volume name override for the pvc
+  # -- Volume name override for the pvc - default is "data"
   volumeName: ""
   # -- Annotations for the claim
   annotations:
@@ -173,13 +173,13 @@ dnsConfig: {}
 dnsPolicy: ClusterFirst
 
 # -- Arbitrary extra volume definitions for the pod
-# extraVolumes:
-#   - name: custom-provider-config
-#     persistentVolumeClaim:
-#       claimName: jmaze-k8s-media
-#   - name: config
-#     persistentVolumeClaim:
-#       claimName: jmaze-k8s-media
+extraVolumes:
+  - name: synology-media
+    persistentVolumeClaim:
+      claimName: synology-media
+  - name: truenas
+    persistentVolumeClaim:
+      claimName: truenas
 
 # -- Arbitrary extra volume mounts for the pod
 extraVolumeMounts:
@@ -195,6 +195,10 @@ extraVolumeMounts:
   - mountPath: /data
     name: data
     subPath: "transmission/data"
+  - mountPath: /media
+    name: synology-media
+  - mountPath: /truenas
+    name: truenas
 
 # -- Pod liveness probe
 livenessProbe: {}
