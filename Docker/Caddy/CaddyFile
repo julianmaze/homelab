@@ -8,119 +8,245 @@
 # this machine's public IP, then replace the line below with your
 # domain name.
 
-foilfund.julianmaze.com {
-	tls {
-		dns cloudflare {env.CLOUDFLARE_API_KEY}
-	}
-	
-	root * /var/www/html
-	file_server browse
-	php_fastcgi 10.50.25.12:9000
-}
+# foilfund.julianmaze.com {
+#       tls {
+#               dns cloudflare {env.CLOUDFLARE_API_KEY}
+#       }
+        
+#       root * /var/www/html
+#       file_server browse
+#       php_fastcgi 10.50.25.12:9000
+# }
 
 portainer.local.julianmaze.com {
-	tls {
-		dns cloudflare {env.CLOUDFLARE_API_KEY}
-	}
+        tls {
+                dns cloudflare {env.CLOUDFLARE_API_KEY}
+        }
 
-	reverse_proxy 10.50.25.2:9000
+        reverse_proxy 10.50.25.2:9000
 }
 
 pihole.local.julianmaze.com {
-	tls {
-		dns cloudflare {env.CLOUDFLARE_API_KEY}
-	}
+        tls {
+                dns cloudflare {env.CLOUDFLARE_API_KEY}
+        }
 
-	reverse_proxy 10.50.25.10
+        reverse_proxy 10.50.25.10
 }
 
 dana.pup:80 {
-	
-	reverse_proxy 10.50.25.7:2368
+        
+        reverse_proxy 10.50.25.7:2368
 }
 
 home.julianmaze.com {
-	tls {
-		dns cloudflare {env.CLOUDFLARE_API_KEY}
-	}
+        tls {
+                dns cloudflare {env.CLOUDFLARE_API_KEY}
+        }
 
-	reverse_proxy 10.50.25.55:8123
+        reverse_proxy 10.50.25.55:8123
 }
 
 storage.local.julianmaze.com {
-	tls {
-		dns cloudflare {env.CLOUDFLARE_API_KEY}
-	}
+        tls {
+                dns cloudflare {env.CLOUDFLARE_API_KEY}
+        }
 
-	reverse_proxy 10.50.70.24:5000
+        reverse_proxy 10.50.70.24:5000
 }
 
 jackett.local.julianmaze.com {
-	tls {
-		dns cloudflare {env.CLOUDFLARE_API_KEY}
-	}
+        tls {
+                dns cloudflare {env.CLOUDFLARE_API_KEY}
+        }
 
-	reverse_proxy 10.50.25.5:9117
+        reverse_proxy 10.50.25.5:9117
 }
 
 organize.local.julianmaze.com {
-	tls {
-		dns cloudflare {env.CLOUDFLARE_API_KEY}
-	}
-	
-	reverse_proxy 10.50.25.8
+        tls {
+                dns cloudflare {env.CLOUDFLARE_API_KEY}
+        }
+        
+        reverse_proxy 10.50.25.8
 }
 
-tautulli.local.julianmaze.com {
-	tls {
-		dns cloudflare {env.CLOUDFLARE_API_KEY}
-	}
-	
-	reverse_proxy 10.50.25.9:8181
+tautulli.julianmaze.com {
+        tls {
+                dns cloudflare {env.CLOUDFLARE_API_KEY}
+        }
+        
+        reverse_proxy 10.50.25.9:8181
 }
 
 radarr.local.julianmaze.com {
-	tls {
-			dns cloudflare {env.CLOUDFLARE_API_KEY}
-	}
+        tls {
+                        dns cloudflare {env.CLOUDFLARE_API_KEY}
+        }
 
-	reverse_proxy 10.50.25.3:7878
+        reverse_proxy 10.50.25.3:7878
 }
 
 sonarr.local.julianmaze.com {
-	tls {
-			dns cloudflare {env.CLOUDFLARE_API_KEY}
-	}
+        tls {
+                        dns cloudflare {env.CLOUDFLARE_API_KEY}
+        }
 
-	reverse_proxy 10.50.25.6:8989
+        reverse_proxy 10.50.25.6:8989
 }
 
 download.local.julianmaze.com {
-	tls {
-			dns cloudflare {env.CLOUDFLARE_API_KEY}
-	}
+        tls {
+                        dns cloudflare {env.CLOUDFLARE_API_KEY}
+        }
 
-	reverse_proxy 10.50.25.4:9091
+        reverse_proxy 10.50.25.4:9091
 }
 
-nextcloud.julianmaze.com {
-	reverse_proxy 10.50.25.15:443 {
-		transport http {
-			tls_insecure_skip_verify
-		}
-	}
+# nextcloud.julianmaze.com {
+#       reverse_proxy 10.50.25.15:443 {
+#               transport http {
+#                       tls_insecure_skip_verify
+#               }
+#       }
+# }
+
+# proxmox.local.julianmaze.com {
+#       tls {
+#               dns cloudflare {env.CLOUDFLARE_API_KEY}
+#       }
+        
+#       reverse_proxy 10.50.70.15:8006 {
+#               transport http {
+#                       tls_insecure_skip_verify
+#               }
+#       }
+# }
+
+# path.danaemilysimmons.com {
+#       tls {
+#                       dns cloudflare {env.CLOUDFLARE_API_KEY}
+#       }
+
+#       reverse_proxy 10.50.25.14
+# }
+
+#jmaze-r520.local.julianmaze.com {
+#       reverse_proxy 10.50.70.5
+#}
+
+#idrac.local.julianmaze.com {
+#       reverse_proxy 10.50.50.7:443 {
+#               transport http {
+#                       tls_insecure_skip_verify
+#               }
+#       }
+#}
+
+truenas.local.julianmaze.com {
+        tls {
+                        dns cloudflare {env.CLOUDFLARE_API_KEY}
+        }
+        
+        reverse_proxy 10.50.70.28
 }
 
-proxmox.local.julianmaze.com {
-	tls {
-		dns cloudflare {env.CLOUDFLARE_API_KEY}
-	}
-	
-	reverse_proxy 10.50.70.15:8006 {
-		transport http {
-        	tls_insecure_skip_verify
-    	}
-	}
+# -----------------------------------------------------------------
+# Ayerton's Stuff
+plex.ayertonz.com {
+    tls {
+            dns cloudflare {env.AYERTON_CLOUDFLARE_API_KEY}
+    }
+
+    reverse_proxy 10.0.10.7:32400
+}
+
+request.ayertonz.com {
+    tls {
+            dns cloudflare {env.AYERTON_CLOUDFLARE_API_KEY}
+    }
+
+    reverse_proxy 10.0.10.70:3579
+}
+
+missing.local.ayertonz.com {
+    tls {
+            dns cloudflare {env.AYERTON_CLOUDFLARE_API_KEY}
+    }
+
+    reverse_proxy 10.0.10.77:8484
+}
+
+backup.local.ayertonz.com {
+    tls {
+            dns cloudflare {env.AYERTON_CLOUDFLARE_API_KEY}
+    }
+
+    reverse_proxy 10.0.10.79:8200
+}
+
+stats.local.ayertonz.com {
+    tls {
+            dns cloudflare {env.AYERTON_CLOUDFLARE_API_KEY}
+    }
+        
+    reverse_proxy 10.0.10.78:8181
+}
+
+storage.local.ayertonz.com {
+    tls {
+            dns cloudflare {env.AYERTON_CLOUDFLARE_API_KEY}
+    }
+
+    reverse_proxy 10.0.10.10:5000
+}
+
+portainer.local.ayertonz.com {
+    tls {
+            dns cloudflare {env.AYERTON_CLOUDFLARE_API_KEY}
+    }
+
+    reverse_proxy 10.0.10.11:9000
+}
+
+pihole.local.ayertonz.com {
+    tls {
+            dns cloudflare {env.AYERTON_CLOUDFLARE_API_KEY}
+    }
+
+    reverse_proxy 10.0.10.8:80
+}
+
+tv.local.ayertonz.com {
+    tls {
+            dns cloudflare {env.AYERTON_CLOUDFLARE_API_KEY}
+    }
+        
+    reverse_proxy 10.0.10.76:8989
+}
+
+movies.local.ayertonz.com {
+    tls {
+            dns cloudflare {env.AYERTON_CLOUDFLARE_API_KEY}
+    }
+
+    reverse_proxy 10.0.10.75:7878
+}
+
+jacket.local.ayertonz.com {
+    tls {
+            dns cloudflare {env.AYERTON_CLOUDFLARE_API_KEY}
+    }
+        
+    reverse_proxy 10.0.10.72:9117
+}
+
+transmission.local.ayertonz.com {
+    tls {
+            dns cloudflare {env.AYERTON_CLOUDFLARE_API_KEY}
+    }
+
+    reverse_proxy 10.0.10.71:9091
 }
 
 # Set this path to your site's directory.
@@ -128,7 +254,7 @@ proxmox.local.julianmaze.com {
 
 # Enable the static file server.
 #file_server {
-#	index index.html
+#       index index.html
 #}
 
 # Another common task is to set up a reverse proxy:
