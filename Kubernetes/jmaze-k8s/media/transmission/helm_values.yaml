@@ -30,7 +30,7 @@ image:
   # -- Image repository
   repository: haugene/transmission-openvpn
   # -- Image pull policy
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # -- Image tag (if not specified, defaults to the chart's appVersion)
   tag: latest
 
@@ -140,8 +140,8 @@ persistence:
 # -- Non-sensitive environment variables to be set in the pods. See the [application docs](https://haugene.github.io/docker-transmission-openvpn/config-options/)
 env:
   OPENVPN_PROVIDER: CUSTOM
-  OPENVPN_USERNAME: YEW
-  OPENVPN_PASSWORD: YEW
+  OPENVPN_USERNAME: STy4SB9bvd
+  OPENVPN_PASSWORD: dQiMEE4UKL
   TRANSMISSION_DOWNLOAD_DIR: /truenas/downloads
   TRANSMISSION_INCOMPLETE_DIR: /truenas/incomplete
   TRANSMISSION_SEED_QUEUE_ENABLED: "false"
@@ -189,9 +189,6 @@ extraVolumeMounts:
   - mountPath: /config
     name: data
     subPath: "transmission/config"
-  - mountPath: /etc/openvpn/custom/default.ovpn
-    name: data
-    subPath: "transmission/cyberghost/default.ovpn"
   - mountPath: /data
     name: data
     subPath: "transmission/data"

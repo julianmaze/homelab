@@ -1,6 +1,6 @@
 image:
   repository: tccr.io/truecharts/sonarr
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: latest
 
 service:

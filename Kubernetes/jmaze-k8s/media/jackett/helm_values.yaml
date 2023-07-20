@@ -1,10 +1,18 @@
 image:
-  repository: tccr.io/truecharts/jackett
-  pullPolicy: IfNotPresent
+  repository: lscr.io/linuxserver/jackett
+  pullPolicy: Always
   tag: latest
 
 securityContext:
-  readOnlyRootFilesystem: false
+  # readOnlyRootFilesystem: false
+  runAsNonRoot: false
+  allowPrivilegeEscalation: true
+  runAsUser: 0
+  runAsGroup: 0
+
+env:
+  PUID: 0
+  PGID: 0
 
 service:
   main:

@@ -6,3 +6,13 @@ metadata:
 type: Opaque
 stringData:
   api-token: e43yk2UBAryMgCzPas4u9kit-F2XrpsSDdMKOoKx
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cloudflare-api-token-secret-anz
+  namespace: cert-manager
+type: Opaque
+stringData:
+  api-token: PPGLBiIZL0rSqaPuNFEl3ZQ14l3HSEz76FeFx-tt
