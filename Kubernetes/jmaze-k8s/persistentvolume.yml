@@ -29,3 +29,35 @@ spec:
     - ReadWriteMany
   hostPath:
     path: "/truenas"
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: "jmaze-k8s-media"
+  labels:
+    type: "local"
+spec:
+  storageClassName: "manual"
+  capacity:
+    storage: "200Gi"
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/jmaze-k8s/media"
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: "ds1522-media"
+  labels:
+    type: "local"
+spec:
+  storageClassName: "manual"
+  capacity:
+    storage: "52000Gi"
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/media"

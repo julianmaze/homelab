@@ -40,7 +40,20 @@ spec:
                   number: 7878
             path: "/radarr"
             pathType: Prefix
+    - host: "media.jmaz.tv"
+      http:
+        paths:
+          - backend:
+              service:
+                name: "radarr-ds1522"
+                port:
+                  number: 7878
+            path: "/radarr"
+            pathType: Prefix
   tls:
     - hosts:
         - media.local.julianmaze.com
       secretName: tls-media-ingress
+    - hosts:
+        - media.jmaz.tv
+      secretName: tls-jmaz-media-ingress

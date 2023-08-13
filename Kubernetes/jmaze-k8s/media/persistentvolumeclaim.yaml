@@ -36,3 +36,18 @@ spec:
   resources:
     requests:
       storage: "9000Gi"
+
+# ^^ Delete once we merge plex libs
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: "media"
+  name: "ds1522-media"
+spec:
+  storageClassName: "manual"
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: "52000Gi"
