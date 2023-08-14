@@ -21,13 +21,6 @@ spec:
             pathType: Prefix
           - backend:
               service:
-                name: "jackett"
-                port:
-                  number: 9117
-            path: "/jackett"
-            pathType: Prefix
-          - backend:
-              service:
                 name: "radarr"
                 port:
                   number: 7878
@@ -56,6 +49,13 @@ spec:
                 port:
                   number: 80
             path: "/transmission"
+            pathType: Prefix
+          - backend:
+              service:
+                name: "jackett"
+                port:
+                  number: 9117
+            path: "/jackett"
             pathType: Prefix
   tls:
     - hosts:
