@@ -116,7 +116,7 @@ persistence:
   # -- Persistence type is pvc. When `false`, data volume definition is read from `persistence.dataVolume`
   isPvc: true
   # -- Name of the existing claim to be used
-  existingClaim: jmaze-k8s-media
+  existingClaim: transmission
   # -- Storage class for the data volume
   storageClass: ""
   # -- Volume name override for the pvc - default is "data"
@@ -142,10 +142,11 @@ env:
   OPENVPN_PROVIDER: CUSTOM
   OPENVPN_USERNAME: STy4SB9bvd
   OPENVPN_PASSWORD: dQiMEE4UKL
-  TRANSMISSION_DOWNLOAD_DIR: /truenas/downloads
-  TRANSMISSION_INCOMPLETE_DIR: /truenas/incomplete
+  TRANSMISSION_DOWNLOAD_DIR: /media/Downloads/complete
+  TRANSMISSION_INCOMPLETE_DIR: /media/Downloads/incomplete
+  TRANSMISSION_WATCH_DIR: /media/Downloads/watch
   TRANSMISSION_SEED_QUEUE_ENABLED: "false"
-  TRANSMISSION_SPEED_LIMIT_UP: "2000"
+  TRANSMISSION_SPEED_LIMIT_UP: "5000"
   TRANSMISSION_SPEED_LIMIT_UP_ENABLED: "true"
   TRANSMISSION_UPLOAD_SLOTS_PER_TORRENT: "10"
   TRANSMISSION_WEB_UI: combustion
@@ -174,28 +175,19 @@ dnsPolicy: ClusterFirst
 
 # -- Arbitrary extra volume definitions for the pod
 extraVolumes:
-  - name: synology-media
+  - name: ds1522-media
     persistentVolumeClaim:
-      claimName: synology-media
-  - name: truenas
-    persistentVolumeClaim:
-      claimName: truenas
+      claimName: ds1522-media
 
 # -- Arbitrary extra volume mounts for the pod
 extraVolumeMounts:
   - mountPath: /etc/openvpn/custom/
     name: data
-    subPath: "transmission/cyberghost"
+    subPath: "cyberghost"
   - mountPath: /config
     name: data
-    subPath: "transmission/config"
-  - mountPath: /data
-    name: data
-    subPath: "transmission/data"
   - mountPath: /media
-    name: synology-media
-  - mountPath: /truenas
-    name: truenas
+    name: ds1522-media
 
 # -- Pod liveness probe
 livenessProbe: {}

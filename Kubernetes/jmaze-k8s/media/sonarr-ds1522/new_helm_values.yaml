@@ -1,0 +1,133 @@
+image:
+  repository: tccr.io/truecharts/sonarr
+  pullPolicy: Always
+  tag: latest
+exportarrImage:
+  repository: tccr.io/truecharts/exportarr
+  pullPolicy: Always
+  tag: latest
+
+service:
+  main:
+    ports:
+      main:
+        port: 8989
+  metrics:
+    enabled: false
+    type: ClusterIP
+    targetSelector: exportarr
+    ports:
+      metrics:
+        enabled: false
+        port: 8990
+        targetSelector: exportarr
+
+workload:
+  main:
+    podSpec:
+      containers:
+        main:
+          probes:
+            liveness:
+              enabled: false
+              type: http
+              path: /ping
+            readiness:
+              enabled: false
+              type: http
+              path: /ping
+            startup:
+              enabled: false
+              type: http
+              path: /ping
+          env:
+            SONARR__PORT: "{{ .Values.service.main.ports.main.port }}"
+            SONARR__AUTHENTICATION_METHOD: ""
+            # Enable postgres if v4 of sonarr supports it.
+            # SONARR__POSTGRES_PORT: 5432
+            # SONARR__POSTGRES_USER: "{{ .Values.cnpg.main.user }}"
+            # SONARR__POSTGRES_MAIN_DB: "{{ .Values.cnpg.main.database }}"
+            # SONARR__POSTGRES_HOST:
+            #   secretKeyRef:
+            #     name: cnpg-main-urls
+            #     key: host
+            # SONARR__POSTGRES_PASSWORD:
+            #   secretKeyRef:
+            #     name: cnpg-main-urls
+            #     key: password
+  exportarr:
+    enabled: true
+    type: Deployment
+    strategy: RollingUpdate
+    replicas: 1
+    podSpec:
+      containers:
+        exportarr:
+          primary: true
+          enabled: true
+          imageSelector: exportarrImage
+          args:
+            - sonarr
+          probes:
+            liveness:
+              enabled: false
+              type: http
+              path: /healthz
+              port: "{{ .Values.service.metrics.ports.metrics.port }}"
+            readiness:
+              enabled: false
+              type: http
+              path: /healthz
+              port: "{{ .Values.service.metrics.ports.metrics.port }}"
+            startup:
+              enabled: false
+              type: http
+              path: /healthz
+              port: "{{ .Values.service.metrics.ports.metrics.port }}"
+          env:
+            INTERFACE: 0.0.0.0
+            PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
+            URL: '{{ printf "http://%v:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Values.service.main.ports.main.port }}'
+            # additional metrics (slow)
+            # ENABLE_ADDITIONAL_METRICS: false
+            # enable gathering unknown queue items
+            # ENABLE_UNKNOWN_QUEUE_ITEMS: false
+            CONFIG: "/config/config.xml"
+
+persistence:
+  config:
+    enabled: true
+    existingClaim: sonarr
+    targetSelector:
+      main:
+        main:
+          mountPath: /config
+      exportarr:
+        exportarr:
+          mountPath: /config
+          readOnly: true
+  media:
+    enabled: true
+    existingClaim: ds1522-media
+    mountPath: "/media"
+
+# might be supported on sonarr v4 upon released
+cnpg:
+  main:
+    enabled: false
+    database: sonarr
+    user: sonarr
+
+metrics:
+  main:
+    enabled: false
+    type: "servicemonitor"
+    endpoints:
+      - port: metrics
+        path: /metrics
+    prometheusRule:
+      enabled: false
+
+portal:
+  open:
+    enabled: true

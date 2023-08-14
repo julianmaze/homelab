@@ -14,13 +14,6 @@ spec:
         paths:
           - backend:
               service:
-                name: "transmission-transmission-openvpn"
-                port:
-                  number: 80
-            path: "/transmission"
-            pathType: Prefix
-          - backend:
-              service:
                 name: "sonarr"
                 port:
                   number: 8989
@@ -49,6 +42,20 @@ spec:
                 port:
                   number: 7878
             path: "/radarr"
+            pathType: Prefix
+          - backend:
+              service:
+                name: "sonarr-ds1522"
+                port:
+                  number: 8989
+            path: "/sonarr"
+            pathType: Prefix
+          - backend:
+              service:
+                name: "transmission-transmission-openvpn"
+                port:
+                  number: 80
+            path: "/transmission"
             pathType: Prefix
   tls:
     - hosts:
