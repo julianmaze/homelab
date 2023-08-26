@@ -17,7 +17,17 @@ spec:
                 port:
                   number: 3579
             pathType: ImplementationSpecific
+    - host: photos.ayertonz.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: anz-photos
+                port:
+                  number: 5443
+            pathType: ImplementationSpecific
   tls:
     - hosts:
         - request.ayertonz.com
+        - photos.ayertonz.com
       secretName: tls-external-services-ingress-anz
