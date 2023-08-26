@@ -20,3 +20,25 @@ subsets:
       - ip: 10.0.10.70
     ports:
       - port: 3579
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: anz-photos
+  namespace: external-services
+spec:
+  ports:
+    - protocol: TCP
+      port: 5443
+      targetPort: 5443
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: anz-photos
+  namespace: external-services
+subsets:
+  - addresses:
+      - ip: 10.0.10.250
+    ports:
+      - port: 5443
