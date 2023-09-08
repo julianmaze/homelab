@@ -1,0 +1,22 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: jmaztv-storage
+  namespace: external-services
+spec:
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: jmaztv-storage
+  namespace: external-services
+subsets:
+  - addresses:
+      - ip: 10.0.10.250
+    ports:
+      - port: 5000

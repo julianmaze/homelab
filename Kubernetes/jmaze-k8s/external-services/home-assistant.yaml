@@ -64,3 +64,27 @@ subsets:
     ports:
       - port: 8123
         name: ha
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: home-assistant-scrypted
+  namespace: external-services
+spec:
+  ports:
+    - protocol: TCP
+      port: 10443
+      targetPort: 10443
+      name: has
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: home-assistant-scrypted
+  namespace: external-services
+subsets:
+  - addresses:
+      - ip: 10.50.25.55
+    ports:
+      - port: 10443
+        name: has

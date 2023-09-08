@@ -178,6 +178,9 @@ extraVolumes:
   - name: ds1522-media
     persistentVolumeClaim:
       claimName: ds1522-media
+  - name: ds1522-media-uhd
+    persistentVolumeClaim:
+      claimName: ds1522-media-uhd
 
 # -- Arbitrary extra volume mounts for the pod
 extraVolumeMounts:
@@ -188,6 +191,8 @@ extraVolumeMounts:
     name: data
   - mountPath: /media
     name: ds1522-media
+  - mountPath: /media-uhd
+    name: ds1522-media-uhd
 
 # -- Pod liveness probe
 livenessProbe: {}

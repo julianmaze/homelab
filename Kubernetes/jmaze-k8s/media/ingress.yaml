@@ -9,23 +9,6 @@ metadata:
     nginx.org/mergeable-ingress-type: master
 spec:
   rules:
-    - host: "media.local.julianmaze.com"
-      http:
-        paths:
-          - backend:
-              service:
-                name: "sonarr"
-                port:
-                  number: 8989
-            path: "/sonarr"
-            pathType: Prefix
-          - backend:
-              service:
-                name: "radarr"
-                port:
-                  number: 7878
-            path: "/radarr"
-            pathType: Prefix
     - host: "media.jmaz.tv"
       http:
         paths:
@@ -57,10 +40,21 @@ spec:
                   number: 9117
             path: "/jackett"
             pathType: Prefix
+          - backend:
+              service:
+                name: "radarr-ds1522-uhd"
+                port:
+                  number: 7878
+            path: "/radarr-uhd"
+            pathType: Prefix
+          - backend:
+              service:
+                name: "sonarr-ds1522-uhd"
+                port:
+                  number: 8989
+            path: "/sonarr-uhd"
+            pathType: Prefix
   tls:
-    - hosts:
-        - media.local.julianmaze.com
-      secretName: tls-media-ingress
     - hosts:
         - media.jmaz.tv
       secretName: tls-jmaz-media-ingress

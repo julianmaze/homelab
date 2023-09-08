@@ -4,20 +4,21 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: cloudflare-anz
-  name: external-services-ingress-anz
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+  name: external-services-ingress-anz-https
   namespace: external-services
 spec:
   rules:
-    - host: request.ayertonz.com
+    - host: photos.ayertonz.com
       http:
         paths:
           - backend:
               service:
-                name: anz-request
+                name: anz-photos
                 port:
-                  number: 3579
+                  number: 5443
             pathType: ImplementationSpecific
   tls:
     - hosts:
-        - request.ayertonz.com
-      secretName: tls-external-services-ingress-anz
+        - photos.ayertonz.com
+      secretName: tls-external-services-ingress-anz-https
