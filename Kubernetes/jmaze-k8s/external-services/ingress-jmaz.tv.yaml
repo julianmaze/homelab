@@ -4,6 +4,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: cloudflare-jmaze
+    nginx.ingress.kubernetes.io/proxy-body-size: 5000M
   name: external-services-ingress-jmaztv
   namespace: external-services
 spec:
