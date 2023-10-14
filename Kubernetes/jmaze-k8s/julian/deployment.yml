@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: utility-pod
+  labels:
+    app: utility-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: utility-pod
+  template:
+    metadata:
+      labels:
+        app: utility-pod
+    spec:
+      containers:
+        - name: ubuntu
+          image: ubuntu:latest
+          command: ["tail"]
+          args: ["-f", "/dev/null"]
