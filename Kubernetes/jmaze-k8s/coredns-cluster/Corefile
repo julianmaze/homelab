@@ -2,11 +2,13 @@
     errors
     health
     ready
+    rewrite name regex ^(.*).k8s.julianmaze.com {1}.external.jmaze-k8s.local
     rewrite name regex (.*)(jmaz.tv|julianmaze.com|ayertonz.com) ingress-nginx-controller.ingress-nginx.svc.cluster.local
     kubernetes cluster.local in-addr.arpa ip6.arpa {
       pods insecure
       fallthrough in-addr.arpa ip6.arpa
     }
+    k8s_external external.jmaze-k8s.local
     hosts /etc/coredns/NodeHosts {
       ttl 60
       reload 15s

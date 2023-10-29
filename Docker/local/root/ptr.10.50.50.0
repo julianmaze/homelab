@@ -1,4 +1,4 @@
-$ORIGIN cluster.local.
+$ORIGIN 50.50.10.in-addr.arpa.
 @               86400 IN SOA   @  root (
                             1999010100 ; serial
                                 10800 ; refresh (3 hours)
@@ -6,4 +6,4 @@ $ORIGIN cluster.local.
                                 604800 ; expire (1 week)
                                 86400 ; minimum (1 day)
                                 )
-local.test            3600  IN A     10.50.50.50
+50 IN PTR       google.com.

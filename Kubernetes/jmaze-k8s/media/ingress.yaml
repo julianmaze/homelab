@@ -54,7 +54,17 @@ spec:
                   number: 8989
             path: "/sonarr-uhd"
             pathType: Prefix
+    - host: "tautulli.julianmaze.com"
+      http:
+        paths:
+          - backend:
+              service:
+                name: "tautulli"
+                port:
+                  number: 8181
+            pathType: ImplementationSpecific
   tls:
     - hosts:
         - media.jmaz.tv
+        - tautulli.julianmaze.com
       secretName: tls-jmaz-media-ingress

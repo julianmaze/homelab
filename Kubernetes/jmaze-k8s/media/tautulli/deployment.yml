@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tautulli
+  labels:
+    app: tautulli
+    app.kubernetes.io/instance: tautulli
+    app.kubernetes.io/name: tautulli
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: tautulli
+      app.kubernetes.io/name: tautulli
+      app.kubernetes.io/instance: tautulli
+      pod.name: main
+  template:
+    metadata:
+      labels:
+        app: tautulli
+        app.kubernetes.io/name: tautulli
+        app.kubernetes.io/instance: tautulli
+        pod.name: main
+    spec:
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
+      containers:
+        - name: tautulli
+          image: linuxserver/tautulli:latest
+          imagePullPolicy: Always
+          ports:
+            - name: main
+              containerPort: 8181
+              protocol: TCP
+              hostPort: null
+          volumeMounts:
+            - name: config
+              mountPath: /config
+              readOnly: false
+          # securityContext:
+          #   runAsNonRoot: true
+          #   runAsUser: 1000
+          #   runAsGroup: 1000
+          #   readOnlyRootFilesystem: true
+          #   allowPrivilegeEscalation: false
+          #   privileged: false
+          #   seccompProfile:
+          #     type: RuntimeDefault
+          #   capabilities:
+          #     add: []
+          #     drop:
+          #       - ALL
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: tautulli

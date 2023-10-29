@@ -17,17 +17,7 @@ spec:
                 port:
                   number: 8123
             pathType: ImplementationSpecific
-    - host: tautulli.julianmaze.com
-      http:
-        paths:
-          - backend:
-              service:
-                name: tautulli
-                port:
-                  number: 8181
-            pathType: ImplementationSpecific
   tls:
     - hosts:
         - home.julianmaze.com
-        - tautulli.julianmaze.com
       secretName: tls-external-services-ingress

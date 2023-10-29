@@ -8,6 +8,8 @@ services:
     ports:
       - "53:53/udp"
       - "53:53/tcp"
+      - "443:443/tcp"
     volumes:
-      - C:\Users\jmmaz\OneDrive\Homelab\Projects\Docker\local\root:/root
+      #- C:\Users\jmmaz\OneDrive\Homelab\Projects\Docker\local\root:/root
+      - /mnt/c/Users/jmmaz/OneDrive/Homelab/Projects/Docker/local/root:/root
     command: "-conf /root/Corefile"

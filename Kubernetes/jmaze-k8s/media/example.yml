@@ -1,0 +1,181 @@
+# Source: sonarr/templates/common.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: sonarr-ds1522-uhd
+  namespace: media
+  labels:
+    app: "sonarr-16.0.2"
+    app.kubernetes.io/instance: "sonarr-ds1522-uhd"
+    app.kubernetes.io/managed-by: "Helm"
+    app.kubernetes.io/name: "sonarr"
+    app.kubernetes.io/version: "3.0.10.156"
+    helm-revision: "3"
+    helm.sh/chart: "sonarr-16.0.2"
+    release: "sonarr-ds1522-uhd"
+    service.name: "main"
+spec:
+  type: ClusterIP
+  publishNotReadyAddresses: false
+  ports:
+    - name: main
+      port: 8989
+      protocol: TCP
+      targetPort: 8989
+  selector:
+    pod.name: main
+    app.kubernetes.io/name: sonarr
+    app.kubernetes.io/instance: sonarr-ds1522-uhd
+---
+# Source: sonarr/templates/common.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sonarr-ds1522-uhd
+  namespace: media
+  labels:
+    app: "sonarr-16.0.2"
+    app.kubernetes.io/instance: "sonarr-ds1522-uhd"
+    app.kubernetes.io/managed-by: "Helm"
+    app.kubernetes.io/name: "sonarr"
+    app.kubernetes.io/version: "3.0.10.156"
+    helm-revision: "3"
+    helm.sh/chart: "sonarr-16.0.2"
+    release: "sonarr-ds1522-uhd"
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      pod.name: main
+      app.kubernetes.io/name: sonarr
+      app.kubernetes.io/instance: sonarr-ds1522-uhd
+  template:
+    metadata:
+      labels:
+        app: "sonarr-16.0.2"
+        app.kubernetes.io/instance: "sonarr-ds1522-uhd"
+        app.kubernetes.io/managed-by: "Helm"
+        app.kubernetes.io/name: "sonarr"
+        app.kubernetes.io/version: "3.0.10.156"
+        helm-revision: "3"
+        helm.sh/chart: "sonarr-16.0.2"
+        pod.name: "main"
+        release: "sonarr-ds1522-uhd"
+      annotations:
+        rollme: "nRrd8"
+    spec:
+      serviceAccountName: default
+      automountServiceAccountToken: false
+      runtimeClassName:
+      hostNetwork: false
+      hostPID: false
+      shareProcessNamespace: false
+      enableServiceLinks: false
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
+      dnsConfig:
+        options:
+          - name: ndots
+            value: "1"
+      terminationGracePeriodSeconds: 60
+      securityContext:
+        fsGroup: 568
+        fsGroupChangePolicy: OnRootMismatch
+        supplementalGroups:
+          - 568
+        sysctls: []
+      containers:
+        - name: sonarr-ds1522-uhd
+          image: tccr.io/truecharts/sonarr:latest
+          imagePullPolicy: Always
+          tty: false
+          stdin: false
+          ports:
+            - name: main
+              containerPort: 8989
+              protocol: TCP
+              hostPort: null
+          volumeMounts:
+            - name: config
+              mountPath: /config
+              readOnly: false
+            - name: devshm
+              mountPath: /dev/shm
+              readOnly: false
+            - name: media
+              mountPath: /media
+              readOnly: false
+            - name: media-uhd
+              mountPath: /media-uhd
+              readOnly: false
+            - name: shared
+              mountPath: /shared
+              readOnly: false
+            - name: tmp
+              mountPath: /tmp
+              readOnly: false
+            - name: varlogs
+              mountPath: /var/logs
+              readOnly: false
+            - name: varrun
+              mountPath: /var/run
+              readOnly: false
+
+          resources:
+            requests:
+              cpu: 10m
+              memory: 50Mi
+            limits:
+              cpu: 4000m
+              memory: 8Gi
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 568
+            runAsGroup: 568
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            privileged: false
+            seccompProfile:
+              type: RuntimeDefault
+            capabilities:
+              add: []
+              drop:
+                - ALL
+          env:
+            - name: "TZ"
+              value: "UTC"
+            - name: "UMASK"
+              value: "0022"
+            - name: "UMASK_SET"
+              value: "0022"
+            - name: "S6_READ_ONLY_ROOT"
+              value: "1"
+            - name: "SONARR__AUTHENTICATION_METHOD"
+              value: ""
+            - name: "SONARR__PORT"
+              value: "8989"
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: sonarr-uhd
+        - name: devshm
+          emptyDir:
+            medium: Memory
+        - name: media
+          persistentVolumeClaim:
+            claimName: ds1522-media
+        - name: media-uhd
+          persistentVolumeClaim:
+            claimName: ds1522-media-uhd
+        - name: shared
+          emptyDir: {}
+        - name: tmp
+          emptyDir: {}
+        - name: varlogs
+          emptyDir: {}
+        - name: varrun
+          emptyDir:
+            medium: Memory
