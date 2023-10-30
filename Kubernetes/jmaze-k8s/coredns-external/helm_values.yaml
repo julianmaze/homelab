@@ -15,7 +15,7 @@ image:
   # pullSecrets:
   #   - name: myRegistryKeySecretName
 
-replicaCount: 2
+replicaCount: 3
 
 resources:
   limits:
@@ -105,12 +105,12 @@ servers:
     # hostPort: 53
     plugins:
       - name: errors
-      # Serves a /health endpoint on :8080, required for livenessProbe
-      - name: health
-        configBlock: |-
-          lameduck 5s
-      # Serves a /ready endpoint on :8181, required for readinessProbe
-      - name: ready
+      # # Serves a /health endpoint on :8080, required for livenessProbe
+      # - name: health
+      #   configBlock: |-
+      #     lameduck 5s
+      # # Serves a /ready endpoint on :8181, required for readinessProbe
+      # - name: ready
       - name: file
         parameters: /etc/coredns/ayertonz.com.db ayertonz.com
       - name: file
@@ -127,6 +127,7 @@ servers:
         parameters: . tls://45.90.28.221 tls://45.90.30.221
         configBlock: |-
           tls_servername 7d2918.dns.nextdns.io
+      - name: cache
   - zones:
       - zone: https://.
         use_tcp: true
@@ -138,12 +139,12 @@ servers:
       - name: tls
         parameters: /etc/coredns/tls/server.crt /etc/coredns/tls/server.key
       - name: errors
-      # Serves a /health endpoint on :8080, required for livenessProbe
-      - name: health
-        configBlock: |-
-          lameduck 5s
-      # Serves a /ready endpoint on :8181, required for readinessProbe
-      - name: ready
+      # # Serves a /health endpoint on :8080, required for livenessProbe
+      # - name: health
+      #   configBlock: |-
+      #     lameduck 5s
+      # # Serves a /ready endpoint on :8181, required for readinessProbe
+      # - name: ready
       - name: file
         parameters: /etc/coredns/ayertonz.com.db ayertonz.com
       - name: file
@@ -160,7 +161,7 @@ servers:
         parameters: . tls://45.90.28.221 tls://45.90.30.221
         configBlock: |-
           tls_servername 7d2918.dns.nextdns.io
-
+      - name: cache
 # Complete example with all the options:
 # - zones:                 # the `zones` block can be left out entirely, defaults to "."
 #   - zone: hello.world.   # optional, defaults to "."
@@ -186,7 +187,7 @@ extraConfig: {}
 
 # To use the livenessProbe, the health plugin needs to be enabled in CoreDNS' server config
 livenessProbe:
-  enabled: true
+  enabled: false
   initialDelaySeconds: 60
   periodSeconds: 10
   timeoutSeconds: 5
@@ -194,7 +195,7 @@ livenessProbe:
   successThreshold: 1
 # To use the readinessProbe, the ready plugin needs to be enabled in CoreDNS' server config
 readinessProbe:
-  enabled: true
+  enabled: false
   initialDelaySeconds: 30
   periodSeconds: 10
   timeoutSeconds: 5
@@ -309,6 +310,7 @@ zoneFiles:
       jmaze-docker-02 3600  IN A 10.50.25.50
       jmaze-k3s-node1 3600  IN A 10.50.25.60
       jmaze-k3s-node2 3600  IN A 10.50.25.61
+      jmaze-rpi 3600  IN A 10.50.25.65
 
 # optional array of sidecar containers
 extraContainers: []
