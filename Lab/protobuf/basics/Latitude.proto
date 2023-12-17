@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Latitude_Longitude {
+    double Latitude = 1; //use double here not float, more precise
+    double Longitude = 2; //use double here not float, more precise
+}
