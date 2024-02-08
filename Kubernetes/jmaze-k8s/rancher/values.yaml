@@ -1,13 +1,18 @@
 bootstrapPassword: Jkn3Bo7pXbJGTscq
 hostname: rancher.local.julianmaze.com
-replicas: 2
+replicas: 1
 privateCA: false
 ingress.enabled: true
 ingress.tls.source: secret # I want this to point to the ingress
 ingress.extraAnnotations:
-  cert-manager.io/cluster-issuer: cloudflare-jmaze # This takes care of the TLS cert 
+  cert-manager.io/cluster-issuer: cloudflare-jmaze # This takes care of the TLS cert
   kubernetes.io/ingress.class: nginx # This takes care of the ip assignment
-
+livenessProbe:
+  initialDelaySeconds: 180
+  periodSeconds: 90
+readinessProbe:
+  initialDelaySeconds: 15
+  periodSeconds: 90
 # As of 12/27/23 v2.7.9 is the latest stable release
 # helm repo update
 # helm upgrade rancher rancher-stable/rancher --namespace cattle-system -f values.yaml --version 2.7.9
