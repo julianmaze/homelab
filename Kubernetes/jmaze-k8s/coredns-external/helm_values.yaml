@@ -297,7 +297,7 @@ zoneFiles:
             )
       jmaze-desktop 3600  IN A 10.50.70.22
       jmaze-plex-02 3600  IN A 10.50.70.29
-      jmaze-storage 3600  IN A 10.50.70.24
+      jmaze-u22-jump 3600  IN A 10.50.70.17
   - filename: docker.jmm.db
     domain: docker.jmm
     contents: |
@@ -308,7 +308,6 @@ zoneFiles:
             604800 ; expire (1 week)
             86400 ; minimum (1 day)
             )
-      jmaze-docker-02 3600  IN A 10.50.25.50
       jmaze-k3s-node1 3600  IN A 10.50.25.60
       jmaze-k3s-node2 3600  IN A 10.50.25.61
       jmaze-rpi 3600  IN A 10.50.25.65
@@ -400,8 +399,8 @@ autoscaler:
 
   image:
     repository: registry.k8s.io/cpa/cluster-proportional-autoscaler
-    tag: "1.8.5"
-    pullPolicy: IfNotPresent
+    tag: "v1.8.9"
+    pullPolicy: Always
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
