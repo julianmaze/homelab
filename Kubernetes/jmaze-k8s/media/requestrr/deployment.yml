@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: requestrr
+  labels:
+    app: requestrr
+    app.kubernetes.io/instance: requestrr
+    app.kubernetes.io/name: requestrr
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: requestrr
+      app.kubernetes.io/name: requestrr
+      app.kubernetes.io/instance: requestrr
+      pod.name: main
+  template:
+    metadata:
+      labels:
+        app: requestrr
+        app.kubernetes.io/name: requestrr
+        app.kubernetes.io/instance: requestrr
+        pod.name: main
+    spec:
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
+      containers:
+        - name: requestrr
+          image: thomst08/requestrr:latest
+          imagePullPolicy: Always
+          ports:
+            - name: main
+              containerPort: 4545
+              protocol: TCP
+              hostPort: null
+          volumeMounts:
+            - name: config
+              mountPath: /root/config
+              readOnly: false
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: requestrr

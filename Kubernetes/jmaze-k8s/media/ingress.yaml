@@ -54,6 +54,13 @@ spec:
                   number: 8989
             path: "/sonarr-uhd"
             pathType: Prefix
+          - backend:
+              service:
+                name: "requestrr"
+                port:
+                  number: 4545
+            path: "/requestrr"
+            pathType: Prefix
     - host: "tautulli.julianmaze.com"
       http:
         paths:
