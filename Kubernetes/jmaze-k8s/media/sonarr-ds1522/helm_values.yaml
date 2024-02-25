@@ -1,11 +1,11 @@
 image:
-  repository: tccr.io/truecharts/sonarr
-  pullPolicy: Always
-  tag: latest
+  repository: ghcr.io/onedr0p/sonarr
+  pullPolicy: IfNotPresent
+  tag: 4.0.1.929@sha256:4d107b1f0bfa652195d1f4054bdceac271553cfcc397a7b8ceedbfa625cba0b8
 exportarrImage:
-  repository: tccr.io/truecharts/exportarr
-  pullPolicy: Always
-  tag: latest
+  repository: ghcr.io/onedr0p/exportarr
+  pullPolicy: IfNotPresent
+  tag: v1.6.1@sha256:60cf3d44aa0b7dea2a65160b2e2e373c1ae38cd6b12a45fe81b8afa45ac31c22
 
 service:
   main:
@@ -29,32 +29,20 @@ workload:
         main:
           probes:
             liveness:
-              enabled: false
+              enabled: true
               type: http
               path: /ping
             readiness:
-              enabled: false
+              enabled: true
               type: http
               path: /ping
             startup:
-              enabled: false
+              enabled: true
               type: http
               path: /ping
           env:
             SONARR__PORT: "{{ .Values.service.main.ports.main.port }}"
             SONARR__AUTHENTICATION_METHOD: ""
-            # Enable postgres if v4 of sonarr supports it.
-            # SONARR__POSTGRES_PORT: 5432
-            # SONARR__POSTGRES_USER: "{{ .Values.cnpg.main.user }}"
-            # SONARR__POSTGRES_MAIN_DB: "{{ .Values.cnpg.main.database }}"
-            # SONARR__POSTGRES_HOST:
-            #   secretKeyRef:
-            #     name: cnpg-main-urls
-            #     key: host
-            # SONARR__POSTGRES_PASSWORD:
-            #   secretKeyRef:
-            #     name: cnpg-main-urls
-            #     key: password
   exportarr:
     enabled: true
     type: Deployment
@@ -70,17 +58,17 @@ workload:
             - sonarr
           probes:
             liveness:
-              enabled: false
+              enabled: true
               type: http
               path: /healthz
               port: "{{ .Values.service.metrics.ports.metrics.port }}"
             readiness:
-              enabled: false
+              enabled: true
               type: http
               path: /healthz
               port: "{{ .Values.service.metrics.ports.metrics.port }}"
             startup:
-              enabled: false
+              enabled: true
               type: http
               path: /healthz
               port: "{{ .Values.service.metrics.ports.metrics.port }}"
@@ -111,13 +99,6 @@ persistence:
     existingClaim: ds1522-media
     mountPath: "/media"
 
-# might be supported on sonarr v4 upon released
-cnpg:
-  main:
-    enabled: false
-    database: sonarr
-    user: sonarr
-
 metrics:
   main:
     enabled: false
@@ -131,3 +112,4 @@ metrics:
 portal:
   open:
     enabled: true
+updated: true
