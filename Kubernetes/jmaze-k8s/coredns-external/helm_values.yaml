@@ -273,6 +273,7 @@ zoneFiles:
       media 3600  IN CNAME ingress-nginx-controller.ingress-nginx.external.jmaze-k8s.local.
       photos 3600  IN CNAME ingress-nginx-controller.ingress-nginx.external.jmaze-k8s.local.
       storage 3600  IN CNAME ingress-nginx-controller.ingress-nginx.external.jmaze-k8s.local.
+      overseerr 3600  IN CNAME ingress-nginx-controller.ingress-nginx.external.jmaze-k8s.local.
   - filename: ayertonz.com.db
     domain: ayertonz.com
     contents: |
