@@ -61,6 +61,15 @@ spec:
                   number: 4545
             path: "/requestrr"
             pathType: Prefix
+    - host: "overseerr.jmaz.tv"
+      http:
+        paths:
+          - backend:
+              service:
+                name: "overseerr"
+                port:
+                  number: 5055
+            pathType: ImplementationSpecific
     - host: "tautulli.julianmaze.com"
       http:
         paths:
@@ -74,4 +83,5 @@ spec:
     - hosts:
         - media.jmaz.tv
         - tautulli.julianmaze.com
+        - overseerr.jmaz.tv
       secretName: tls-jmaz-media-ingress
