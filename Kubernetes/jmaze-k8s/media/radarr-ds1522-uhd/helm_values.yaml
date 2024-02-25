@@ -1,11 +1,11 @@
 image:
-  repository: tccr.io/truecharts/radarr
-  pullPolicy: Always
-  tag: latest
+  repository: ghcr.io/onedr0p/radarr
+  pullPolicy: IfNotPresent
+  tag: 5.2.6.8376@sha256:2de39930de91ae698f9461bb959d93b9d59610f88e0c026e96bc5d9c99aeea89
 exportarrImage:
-  repository: tccr.io/truecharts/exportarr
-  pullPolicy: Always
-  tag: latest
+  repository: ghcr.io/onedr0p/exportarr
+  pullPolicy: IfNotPresent
+  tag: v1.6.1@sha256:60cf3d44aa0b7dea2a65160b2e2e373c1ae38cd6b12a45fe81b8afa45ac31c22
 
 securityContext:
   container:
@@ -33,15 +33,15 @@ workload:
         main:
           probes:
             readiness:
-              enabled: false
+              enabled: true
               type: http
               path: /ping
             liveness:
-              enabled: false
+              enabled: true
               type: http
               path: /ping
             startup:
-              enabled: false
+              enabled: true
               type: http
               path: /ping
           env:
@@ -61,17 +61,17 @@ workload:
             - radarr
           probes:
             liveness:
-              enabled: false
+              enabled: true
               type: http
               path: /healthz
               port: "{{ .Values.service.metrics.ports.metrics.port }}"
             readiness:
-              enabled: false
+              enabled: true
               type: http
               path: /healthz
               port: "{{ .Values.service.metrics.ports.metrics.port }}"
             startup:
-              enabled: false
+              enabled: true
               type: http
               path: /healthz
               port: "{{ .Values.service.metrics.ports.metrics.port }}"
@@ -120,3 +120,4 @@ metrics:
 portal:
   open:
     enabled: true
+updated: true
