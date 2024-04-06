@@ -1,0 +1,16 @@
+## nodeSelector Node labels for pod assignment
+## Ref: https://kubernetes.io/docs/user-guide/node-selection/
+##
+nodeSelector:
+  kubernetes.io/hostname: jmaze-k3s-node1
+
+## Connector Arguments
+##
+connector:
+  #   logLevel: "error"
+  network: "julianmaze"
+  # accessToken: "Get this from the Twingate UI"
+  # refreshToken: "Get this from the Twingate UI"
+#   existingSecret: "secret name"
+#   dnsServer: "some.dnsserver.com"
+

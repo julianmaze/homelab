@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jackett
+  labels:
+    app: jackett
+    app.kubernetes.io/instance: jackett
+    app.kubernetes.io/name: jackett
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: jackett
+      app.kubernetes.io/name: jackett
+      app.kubernetes.io/instance: jackett
+      pod.name: main
+  template:
+    metadata:
+      labels:
+        app: jackett
+        app.kubernetes.io/name: jackett
+        app.kubernetes.io/instance: jackett
+        pod.name: main
+    spec:
+      restartPolicy: Always
+      dnsPolicy: None
+      # We want jackett to use a public DNS server. Cluster DNS points to NextDNS.
+      dnsConfig:
+        nameservers:
+          - 8.8.8.8
+      containers:
+        - name: jackett
+          image: linuxserver/jackett:latest
+          imagePullPolicy: Always
+          ports:
+            - name: main
+              containerPort: 8181
+              protocol: TCP
+              hostPort: null
+          volumeMounts:
+            - name: config
+              mountPath: /config
+              readOnly: false
+          # securityContext:
+          #   runAsNonRoot: true
+          #   runAsUser: 1000
+          #   runAsGroup: 1000
+          #   readOnlyRootFilesystem: true
+          #   allowPrivilegeEscalation: false
+          #   privileged: false
+          #   seccompProfile:
+          #     type: RuntimeDefault
+          #   capabilities:
+          #     add: []
+          #     drop:
+          #       - ALL
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: jackett
