@@ -260,6 +260,7 @@ zoneFiles:
       scrypted-home 3600  IN CNAME ingress-nginx-controller.ingress-nginx.external.jmaze-k8s.local.
       surfcam 3600  IN CNAME ingress-nginx-controller.ingress-nginx.external.jmaze-k8s.local.
       tautulli 3600  IN CNAME ingress-nginx-controller.ingress-nginx.external.jmaze-k8s.local.
+      code 3600  IN CNAME ingress-nginx-controller.ingress-nginx.external.jmaze-k8s.local.
   - filename: jmaz.tv.db
     domain: jmaz.tv
     contents: |
