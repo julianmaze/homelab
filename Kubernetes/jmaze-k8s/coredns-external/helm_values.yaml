@@ -106,11 +106,11 @@ servers:
     plugins:
       - name: errors
       # # Serves a /health endpoint on :8080, required for livenessProbe
-      # - name: health
-      #   configBlock: |-
-      #     lameduck 5s
-      # # Serves a /ready endpoint on :8181, required for readinessProbe
-      # - name: ready
+      - name: health
+        configBlock: |-
+          lameduck 5s
+      # Serves a /ready endpoint on :8181, required for readinessProbe
+      - name: ready
       - name: file
         parameters: /etc/coredns/ayertonz.com.db ayertonz.com
       - name: file
@@ -187,7 +187,7 @@ extraConfig: {}
 
 # To use the livenessProbe, the health plugin needs to be enabled in CoreDNS' server config
 livenessProbe:
-  enabled: false
+  enabled: true
   initialDelaySeconds: 60
   periodSeconds: 10
   timeoutSeconds: 5
@@ -195,7 +195,7 @@ livenessProbe:
   successThreshold: 1
 # To use the readinessProbe, the ready plugin needs to be enabled in CoreDNS' server config
 readinessProbe:
-  enabled: false
+  enabled: true
   initialDelaySeconds: 30
   periodSeconds: 10
   timeoutSeconds: 5
@@ -401,7 +401,7 @@ autoscaler:
   image:
     repository: registry.k8s.io/cpa/cluster-proportional-autoscaler
     tag: "v1.8.9"
-    pullPolicy: Always
+    pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
@@ -440,7 +440,7 @@ autoscaler:
 
   # Enables the livenessProbe for cluster-proportional-autoscaler - this requires version 1.8.0+ of the autoscaler
   livenessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 10
     periodSeconds: 5
     timeoutSeconds: 5
