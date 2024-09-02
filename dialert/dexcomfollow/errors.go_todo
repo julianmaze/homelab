@@ -1,0 +1,90 @@
+package dexcomfollow
+
+// DexcomErrorEnum is the base interface for all Dexcom error enums.
+type DexcomErrorEnum interface {
+    Error() string
+}
+
+// AccountErrorEnum defines error strings for account-related issues.
+type AccountErrorEnum string
+
+const (
+    AccountErrorFailedAuthentication AccountErrorEnum = "Failed to authenticate"
+    AccountErrorMaxAttempts          AccountErrorEnum = "Maximum authentication attempts exceeded"
+)
+
+func (e AccountErrorEnum) Error() string {
+    return string(e)
+}
+
+// SessionErrorEnum defines error strings for session-related issues.
+type SessionErrorEnum string
+
+const (
+    SessionErrorNotFound SessionErrorEnum = "Session ID not found"
+    SessionErrorInvalid  SessionErrorEnum = "Session not active or timed out"
+)
+
+func (e SessionErrorEnum) Error() string {
+    return string(e)
+}
+
+// ArgumentErrorEnum defines error strings for argument-related issues.
+type ArgumentErrorEnum string
+
+const (
+    ArgumentErrorMinutesInvalid       ArgumentErrorEnum = "Minutes must be an integer between 1 and 1440"
+    ArgumentErrorMaxCountInvalid      ArgumentErrorEnum = "Max count must be an integer between 1 and 288"
+    ArgumentErrorUsernameInvalid      ArgumentErrorEnum = "Username must be a non-empty string"
+    ArgumentErrorTooManyUserIDProvided ArgumentErrorEnum = "Only one of account_id, username should be provided"
+    ArgumentErrorNoneUserIDProvided   ArgumentErrorEnum = "At least one of account_id, username should be provided"
+    ArgumentErrorPasswordInvalid      ArgumentErrorEnum = "Password must be a non-empty string"
+    ArgumentErrorAccountIDInvalid     ArgumentErrorEnum = "Account ID must be UUID"
+    ArgumentErrorAccountIDDefault     ArgumentErrorEnum = "Account ID default"
+    ArgumentErrorSessionIDInvalid     ArgumentErrorEnum = "Session ID must be UUID"
+    ArgumentErrorSessionIDDefault     ArgumentErrorEnum = "Session ID default"
+    ArgumentErrorGlucoseReadingInvalid ArgumentErrorEnum = "JSON glucose reading incorrectly formatted"
+)
+
+func (e ArgumentErrorEnum) Error() string {
+    return string(e)
+}
+
+// DexcomError is the base type for all Dexcom errors.
+type DexcomError struct {
+    Enum DexcomErrorEnum
+}
+
+func (e DexcomError) Error() string {
+    return e.Enum.Error()
+}
+
+// AccountError represents errors involving Dexcom Share API credentials.
+type AccountError struct {
+    DexcomError
+}
+
+// NewAccountError creates a new AccountError.
+func NewAccountError(enum AccountErrorEnum) error {
+    return AccountError{DexcomError{Enum: enum}}
+}
+
+// SessionError represents errors involving Dexcom Share API session.
+type SessionError struct {
+    DexcomError
+}
+
+// NewSessionError creates a new SessionError.
+func NewSessionError(enum SessionErrorEnum) error {
+    return SessionError{DexcomError{Enum: enum}}
+}
+
+// ArgumentError represents errors involving Dexcom API arguments.
+type ArgumentError struct {
+    DexcomError
+}
+
+// NewArgumentError creates a new ArgumentError.
+func NewArgumentError(enum ArgumentErrorEnum) error {
+    return ArgumentError{DexcomError{Enum: enum}}
+}
