@@ -35,7 +35,7 @@ workload:
             SONARR__PORT: "{{ .Values.service.main.ports.main.port }}"
             SONARR__AUTHENTICATION_METHOD: ""
   exportarr:
-    enabled: true
+    enabled: false
     type: Deployment
     strategy: RollingUpdate
     replicas: 1
