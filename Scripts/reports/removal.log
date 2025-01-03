@@ -1,0 +1,656 @@
+❯ $nonCompliantToDelete | Remove-Item -Force -Confirm:$false -Verbose                  
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\127 Hours (2010)\127 Hours (2010) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\13 Hours The Secret Soldiers of Benghazi (2016)\13.Hours.The.Secret.Soldiers.of.Benghazi.2016.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\1917 (2019)\1917 (2019) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\2 Fast 2 Furious (2003)\2 Fast 2 Furious (2003) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\22 Jump Street (2014)\22.Jump.Street.2014.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\50 First Dates (2004)\50 First Dates.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\A Bad Moms Christmas (2017)\A Bad Moms Christmas-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\A Beautiful Day in the Neighborhood (2019)\A.Beautiful.Day.in.the.Neighborhood.2019.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\A Bug's Life (1998)\A Bug's Life (1998) Bluray-1080p Proper.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\A Charlie Brown Christmas (1965)\A Charlie Brown Christmas (1965) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\A Hologram for the King (2016)\A Hologram for the King 720p-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\A Hologram for the King (2016)\a.hologram.for.the.king.2016.720p.bluray.x264-drones.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\A Quiet Place (2018)\A.Quiet.Place.2018.1080p.BluRay.x264-[YTS.AM].mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\A Quiet Place (2018)\sample.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\A Quiet Place Part II (2021)\A Quiet Place Part II (2021) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\A Star Is Born (2018)\A.Star.Is.Born.2018.WEBDL-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\A Time to Kill (1996)\A Time to Kill (1996) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ad Astra (2019)\Ad.Astra.2019.Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\After Earth (2013)\The.68th.Annual.Tony.Awards.2014.HDTV.x264-2HD.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Aladdin (2019)\Aladdin.2019.WEBDL-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Alice in Wonderland (2010)\Alice.in.Wonderland.2010.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Alice Through the Looking Glass (2016)\Alice.Through.the.Looking.Glass.2016.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Alien Covenant (2017)\Alien Covenant-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\American Beauty (1999)\American.Beauty.1999.BluRay.720p.DTS.x264-CHD.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\American Made (2017)\American Made (2017) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\American Made (2017)\American Made-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\American Sniper (2014)\American.Sniper.2014.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\American Underdog (2021)\American Underdog (2021) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Anchorman 2 The Legend Continues (2013)\Anchorman 2 The Legend Continues (2013) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Anchorman The Legend of Ron Burgundy (2004)\Anchorman The Legend of Ron Burgundy (2004) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Annihilation (2018)\annihilation.2018.1080p.bluray.x264-drones.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ant-Man (2015)\Ant-Man (2015) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ant-Man (2015)\Ant-Man-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ant-Man and the Wasp (2018)\Ant-Man and the Wasp (2018) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ant-Man and the Wasp Quantumania (2023)\Ant-Man.and.the.Wasp.Quantumania.2023.1080p.BluRay.AV1.Opus.Multi4-dAV1nci.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Apollo 13 (1995)\Apollo 13 (1995) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Apollo 13 (1995)\RARBG.COM.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Argo (2012)\Argo (2012) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Argo (2012)\Argo-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Atomic Blonde (2017)\Atomic Blonde-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Austin Powers in Goldmember (2002)\Austin Powers in Goldmember.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Austin Powers International Man of Mystery (1997)\Austin Powers International Man of Mystery.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Austin Powers The Spy Who Shagged Me (1999)\Austin Powers The Spy Who Shagged Me.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Austin Powers The Spy Who Shagged Me (1999)\RARBG.COM.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Avatar The Way of Water (2022)\Avatar The Way of Water (2022) WEBRip-1080p Proper.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Avengers Age of Ultron (2015)\Avengers Age of Ultron-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Avengers Age of Ultron (2015)\Avengers.Age.of.Ultron.2015.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Avengers Endgame (2019)\Avengers.Endgame.2019.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Avengers Infinity War (2018)\Avengers.Infinity.War.2018.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Baby Driver (2017)\Baby Driver-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Baby Driver (2017)\Baby.Driver.2017.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Back to the Future (1985)\Back to the Future (1985) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Back to the Future Part II (1989)\Back to the Future Part II (1989) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Back to the Future Part III (1990)\Back to the Future Part III (1990) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Bad Boys for Life (2020)\Bad.Boys.for.Life.2020.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Bad Moms (2016)\Bad Moms-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Batman Begins (2005)\Batman.Begins.2005.1080p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Baywatch (2017)\Baywatch (2017) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Baywatch (2017)\Baywatch-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Beauty and the Beast (2017)\Beauty and the Beast-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Before Midnight (2013)\Before Midnight-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Behind Enemy Lines (2001)\Behind Enemy Lines.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Big (1988)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Black Adam (2022)\Black Adam (2022) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Black Panther (2018)\Black Panther.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Black Panther (2018)\Sample.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Black Panther Wakanda Forever (2022)\Black Panther Wakanda Forever (2022) WEBDL-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Black Widow (2021)\Black.Widow.2021.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Blade Runner (1982)\Blade Runner 2049-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Bloodshot (2020)\Bloodshot.2020.WEBDL-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Bohemian Rhapsody (2018)\Bohemian.Rhapsody.2018.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Born in China (2016)\Born in China-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Brad's Status (2017)\Brad's Status-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Brave (2012)\Brave (2012) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Breakfast at Tiffany's (1961)\Breakfast at Tiffany's (1961) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Breakfast at Tiffany's (1961)\RARBG.COM.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Brother Bear (2003)\Brother Bear (2003) Bluray-720p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Bullet Train (2022)\Bullet Train (2022) HDTV-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Captain America The First Avenger (2011)\Captain America The First Avenger-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Captain America The First Avenger (2011)\Captain.America.The.First.Avenger.2011.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Captain America The Winter Soldier (2014)\Captain America The Winter Soldier-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Captain America The Winter Soldier (2014)\Captain.America.The.Winter.Soldier.2014.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Captain Fantastic (2016)\Captain Fantastic-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Captain Fantastic (2016)\sample.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Captain Marvel (2019)\Captain Marvel 2019 BluRay 1080p.H264 Ita Eng AC3 5.1 Sub Ita Eng realDMDJ.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Captain Phillips (2013)\Captain.Phillips.2013.1080p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Cars 2 (2011)\Cars.2.2011.720p.BrRip.264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Cars 3 (2017)\Cars 3-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Cars 3 (2017)\Cars.3.2017.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Casablanca (1942)\Casablanca.1942.1080p.BluRay.x264-[YTS.AM].mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Catch Me If You Can (2002)\Catch Me If You Can (2002) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Catch Me If You Can (2002)\Catch.Me.If.You.Can.2002.1080p.BluRay.x264.AC3-ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Catch Me If You Can (2002)\hd4u-catchmeifyoucan-720.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Central Intelligence (2016)\Central.Intelligence.2016.Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Cheaper by the Dozen (2003)\Cheaper by the Dozen (2003) WEBDL-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Chicago (2002)\Chicago.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Christmas with the Kranks (2004)\Christmas with the Kranks (2004) WEBDL-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Christopher Robin (2018)\Christopher Robin (2018) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Cinderella (1997)\Cinderella-trailer.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Citizen Kane (1941)\Citizen.Kane.1941.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Clear and Present Danger (1994)\Clear and Present Danger (1994) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Clifford the Big Red Dog (2021)\Clifford the Big Red Dog (2021) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Coco (2017)\sample.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Cold Pursuit (2019)\Cold Pursuit (2019) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Concussion (2015)\Concussion.2015.DVDScr.XVID.AC3.HQ.Hive-CM8.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Contraband (2012)\Contraband.2012.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Contraband (2012)\Contraband.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Cool Runnings (1993)\RARBG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Crazy Rich Asians (2018)\Crazy.Rich.Asians.2018.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Cry Macho (2021)\Cry.Macho.2021.1080p.WEBRip.x264-RARBG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Daddy's Home (2015)\Daddy's Home-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Dallas Buyers Club (2013)\Dallas.Buyers.Club.2013.720p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Dances with Wolves (1990)\Dances with Wolves (1990) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Date Night (2010)\Date Night-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Dead Poets Society (1989)\Dead Poets Society (1989) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Deadpool (2016)\deadpool.1.movie.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Deadpool 2 (2018)\deadpool.2.movie.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Despicable Me (2010)\Despicable Me (2010) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Despicable Me 3 (2017)\Despicable Me 3-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Devotion (2022)\Devotion (2022) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Diamonds Are Forever (1971)\Diamonds.Are.Forever.1971.1080p.BluRay.H264.AAC-RARBG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Die Hard (1988)\Die Hard (1988) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Die Hard With a Vengeance (1995)\Die.Hard.With.A.Vengeance.1995.1080p.BluRay.H264.AAC-RARBG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\District 9 (2009)\District.9.2009.720p.BrRip.YIFY.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Django Unchained (2012)\Django Unchained-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Django Unchained (2012)\Django.Unchained.2012.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Doctor Strange (2016)\Doctor Strange (2016) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\DodgeBall A True Underdog Story (2004)\DodgeBall.A.True.Underdog.Story.2004.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Dog (2022)\Dog (2022) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Dolittle (2020)\Dolittle.2020.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Don Jon (2013)\Don.Jon.2013.720p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Don't Look Up (2021)\Don't Look Up (2021) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Dr. No (1962)\Dr. No (1962) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Dumb and Dumber (1994)\Dumb.And.Dumber.1994.1080p.BluRay.H264.AC3.5.1.BADASSMEDIA -Sample.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Dune (2021)\Dune.2021.1080p.HDRip.X264-EVO[TGx].mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Dunkirk (2017)\Dunkirk-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\E.T. the Extra-Terrestrial (1982)\E.T. the Extra-Terrestrial (1982) Bluray-720p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Early Man (2018)\sample.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Easy A (2010)\Easy A-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Eddie the Eagle (2016)\Eddie the Eagle-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Eight Crazy Nights (2002)\Eight.Crazy.Nights.2002.1080p.WEB-DL.DD5.1.H264-ETRG.Sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Eight Crazy Nights (2002)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Elvis (2022)\Elvis (2022) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\End of Watch (2012)\End.of.Watch.2012.720p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ender's Game (2013)\Ender's Game (2013) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ender's Game (2013)\Enders Game [2013] 1080p sample.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Everest (2015)\Everest-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Everything Everywhere All at Once (2022)\Everything Everywhere All at Once (2022) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Exit Through the Gift Shop (2010)\Exit.Through.The.Gift.Shop.2010.1080p.BluRay.x264.anoXmous_.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Extraction (2020)\Extraction.2020.WEBDL-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\F9 (2021)\F9.2021.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG[TGx].mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Fantastic Beasts and Where to Find Them (2016)\Fantastic Beasts and Where to Find Them-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Fantastic Mr. Fox (2009)\Fantastic.Mr.Fox.2009.Criterion.Collection.1080p.BluRay.x264.DTS-WiKi.Sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Fast & Furious (2009)\Fast.&.Furious.2009.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Fast & Furious 6 (2013)\Fast & Furious 6 (2013) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Fast & Furious Presents Hobbs & Shaw (2019)\Fast.&.Furious.Presents.Hobbs.&.Shaw.2019.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Fast Five (2011)\Fast.Five.2011.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Fast X (2023)\Fast X (2023) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Father Figures (2017)\Father Figures.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Father Stu (2022)\Father Stu (2022) WEBRip-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ferris Bueller's Day Off (1986)\Ferris Bueller's Day Off (1986) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Fifty Shades Darker (2017)\Fifty Shades Darker-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Fifty Shades Darker (2017)\RARBG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Fifty Shades of Grey (2015)\Fifty Shades of Grey-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Finding Dory (2016)\Finding Dory-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ford v Ferrari (2019)\Ford v Ferrari (2019) WEBDL-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Forrest Gump (1994)\Forrest Gump (1994) REMASTERED 1080p BDRip x264 Dual Audio Hindi English AC3 5.1 - MeGUiL.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Four Weddings and a Funeral (1994)\Four Weddings and a Funeral 1994 720p BRrip_sujaidr_sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Free Guy (2021)\Free.Guy.2021.1080p.HDRip.X264-EVO[TGx].mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Free Solo (2018)\Free.Solo.2018.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Freezer (2013)\SAMPLE.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Friends The Reunion (2021)\Friends The Reunion (2021) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Frozen II (2019)\Frozen II (2019) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Furious 7 (2015)\Furious.7.2015.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Get a Job (2016)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Get a Job (2016)\Get a Job BR-Rip-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Get a Job (2016)\Get a Job-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Get a Job (2016)\get.a.job.2016.720p.bluray.x264-rovers.sample[VR56].mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Get a Job (2016)\sample.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Get Hard (2015)\Get Hard-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Get Out (2017)\Get Out-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ghostbusters (1984)\Ghostbusters-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ghostbusters (1984)\Ghostbusters.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ghostbusters (2016)\Ghostbusters-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ghostbusters (2016)\Ghostbusters.2016.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Gone (2012)\ExtraTorrentRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Gone (2012)\SaMple.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Good Morning, Vietnam (1987)\Good Morning, Vietnam (1987) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Gravity (2013)\Gravity.2013.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Grease (1978)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Grease (1978)\Grease.1978.1080p.BluRay.x264.AC3-ETRG.Sample.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Grease (1978)\Grease.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Groundhog Day (1993)\Groundhog Day (1993) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Guardians of the Galaxy (2014)\Guardians of the Galaxy (2014) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Guardians of the Galaxy Vol. 2 (2017)\Guardians of the Galaxy Vol. 2 (2017) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Guardians of the Galaxy Vol. 2 (2017)\Guardians of the Galaxy Vol. 2-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Guardians of the Galaxy Vol. 3 (2023)\Guardians of the Galaxy Vol 3 2023 1080p IMAX WEBRip Hindi (Clean) + English x264 AAC CineVood.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Hackers (1995)\Hackers (1995) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Hacksaw Ridge (2016)\Hacksaw Ridge (2016) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Hacksaw Ridge (2016)\Hacksaw Ridge-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Halloweentown (1998)\Halloweentown.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Halloweentown High (2004)\Halloweentown High (2004) WEBDL-720p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Happy Gilmore (1996)\Happy Gilmore (1996) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Harry Potter and the Chamber of Secrets (2002)\Harry.Potter.and.the.Chamber.of.Secrets.2002.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Harry Potter and the Deathly Hallows Part 1 (2010)\Harry.Potter.and.the.Deathly.Hallows.Part.1.2010.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Harry Potter and the Deathly Hallows Part 2 (2011)\Harry.Potter.and.the.Deathly.Hallows.Part.2.2011.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Harry Potter and the Goblet of Fire (2005)\Harry.Potter.and.the.Goblet.of.Fire.2005.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Harry Potter and the Half-Blood Prince (2009)\Harry.Potter.and.the.Half-Blood.Prince.2009.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Harry Potter and the Order of the Phoenix (2007)\Harry.Potter.and.the.Order.of.the.Phoenix.2007.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Harry Potter and the Philosopher's Stone (2001)\Harry.Potter.and.the.Philosopher's.Stone.2001.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Harry Potter and the Prisoner of Azkaban (2004)\Harry.Potter.and.the.Prisoner.of.Azkaban.2004.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Herbie Fully Loaded (2005)\Herbie Fully Loaded (2005) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\High Strung (2016)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\High Strung (2016)\High Strung BR-Rip-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\High Strung (2016)\sample.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Hocus Pocus (1993)\Hocus.Pocus.1993.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Hocus Pocus 2 (2022)\Hocus Pocus 2 (2022) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Holes (2003)\Holes.2003.1080p.BluRay.x264-[YTS.AM].mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Home Again (2017)\Home Again-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Home Alone (1990)\Home.Alone.1990.1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Home Alone 2 Lost in New York (1992)\Home.Alone.2.Lost.in.New.York.1992.720p..mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Hot Rod (2007)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Hot Rod (2007)\Hot Rod-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Hot Rod (2007)\Hot.Rod.2007.1080p.BluRay.DTS.x264-ETRG.Sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Hotel Transylvania 3 Summer Vacation (2018)\Hotel Transylvania 3 Summer Vacation (2018) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\How the Grinch Stole Christmas! (1966)\How the Grinch Stole Christmas! (1966) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\How to Lose a Guy in 10 Days (2003)\How to Lose a Guy in 10 Days.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\I Love You, Man (2009)\I Love You, Man-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ice Age (2002)\Ice Age (2002) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\In the Fade (2017)\in.the.fade.2017.1080p.bluray.x264-sadpanda_sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Incredibles 2 (2018)\Incredibles 2 (2018) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Indiana Jones and the Kingdom of the Crystal Skull (2008)\Indiana Jones and the Kingdom of the Crystal Skull (2008) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Infinite (2021)\Infinite (2021) WEBDL-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Inside Out (2015)\Inside Out.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Interstellar (2014)\Interstellar.2014.2014.1080p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Iron Man (2008)\Iron Man (2008) Bluray-1080p Proper.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Iron Man (2008)\Iron Man-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Iron Man 2 (2010)\Iron Man 2 (2010) Bluray-1080p Proper.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Iron Man 2 (2010)\Iron Man 2-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Iron Man 3 (2013)\Iron Man 3-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\It (2017)\It (2017) Bluray-1080p Proper.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\It (2017)\it.2017.1080p.bluray.x264-sparks.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\It Chapter Two (2019)\It Chapter Two (2019) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\It's the Great Pumpkin, Charlie Brown (1966)\It's the Great Pumpkin, Charlie Brown (1966) DVD.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jack Reacher (2012)\Jack Reacher (2012) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jack Reacher Never Go Back (2016)\Jack Reacher Never Go Back (2016) WEBDL-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jackass Presents Bad Grandpa (2013)\Jackass.Presents.Bad.Grandpa.2013.720p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jason Bourne (2016)\Jason Bourne-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jason Bourne (2016)\Jason Bourne.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jason Bourne (2016)\sample.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jaws (1975)\Jaws.1975.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jaws 2 (1978)\Jaws 2 (1978) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jobs (2013)\jOBS.2013.720p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\John Wick (2014)\John Wick (2014) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\John Wick Chapter 2 (2017)\John Wick Chapter 2 (2017) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\John Wick Chapter 3 - Parabellum (2019)\John Wick Chapter 3 - Parabellum (2019) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Joker (2019)\Joker (2019) WEBDL-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jumanji The Next Level (2019)\Jumanji.The.Next.Level.2019.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jumanji Welcome to the Jungle (2017)\Jumanji Welcome to the Jungle 2017 1080p BluRay x264 DTS - 5 1  KINGDOM-RG.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jumanji Welcome to the Jungle (2017)\Jumanji Welcome to the Jungle-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jungle Cruise (2021)\Jungle.Cruise.2021.REPACK.1080p.DSNP.WEBRip.DD5.1.X.264-EVO.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jurassic Park (1993)\Jurassic Park (1993) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jurassic Park (1993)\jurassic.park.1993.rerip.1080p.bluray.x264-amiable.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jurassic Park III (2001)\Jurassic Park III (2001) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jurassic World (2015)\Jurassic World.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jurassic World Dominion (2022)\Jurassic World Dominion (2022) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Jurassic World Fallen Kingdom (2018)\Jurassic World Fallen Kingdom (2018) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Justice League (2017)\Justice League (2017) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Justice League (2017)\Justice League-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Kill Bill Vol. 1 (2003)\Kill Bill Vol. 1 (2003) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Kim Possible So the Drama (2005)\Kim Possible So The Drama.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Kim Possible So the Drama (2005)\Kim Possible The Villain Files.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Kim Possible So the Drama (2005)\Kim Possible_A Stitch In Time.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Kim Possible So the Drama (2005)\The Secret Files - Attack Of The Killer Bebes, Downhill, & Partners.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Kingsman The Golden Circle (2017)\Kingsman The Golden Circle (2017) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Kingsman The Golden Circle (2017)\Kingsman The Golden Circle-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Kingsman The Secret Service (2014)\Kingsman The Secret Service 2014 KORSUB 1080p HDRip x264 AC3-JYK.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Knives Out (2019)\Knives Out (2019) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\La La Land (2016)\La La Land-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Last Days in the Desert (2016)\Last Days in the Desert DVD-Rip-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Last Days in the Desert (2016)\sample.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Lawless (2012)\sparks-lawless-xvid.cd1.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Lawless (2012)\sparks-lawless-xvid.cd2.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Legally Blonde (2001)\Legally Blonde (2001) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Lego Batman The Movie - DC Super Heroes Unite (2013)\sample.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Limitless (2011)\Limitless.2011.1080p.BrRip.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Little Fockers (2010)\Little.Fockers.2010.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Logan (2017)\Logan-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Logan (2017)\Logan.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Logan (2017)\RARBG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Lone Survivor (2013)\Lone.Survivor.2013.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Lost in Translation (2003)\RARBG.COM.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Love Actually (2003)\Love.Actually.2003.1080p.BluRay.x264.anoXmous_.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Loving Vincent (2017)\Loving Vincent-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Mad Max Fury Road (2015)\Mad Max Fury Road (2015) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Mamma Mia! (2008)\Mamma Mia! (2008) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Mamma Mia! Here We Go Again (2018)\Mamma Mia! Here We Go Again (2018) WEBDL-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Man Down (2015)\Man Down-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Man Down (2015)\RARBG.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Man of Steel (2013)\Man.of.Steel.2013.1080p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Manhattan (1979)\sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Maze Runner The Death Cure (2018)\Maze Runner The Death Cure (2018) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Me Before You (2016)\Me Before You-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Me Before You (2016)\me.before.you.2016.720p.bluray.x264-drones.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Mean Girls (2004)\Mean Girls (2004) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Mean Girls 2 (2011)\Mean Girls 2 (2011) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Meet the Fockers (2004)\Meet.the.Fockers.2004.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Meet the Parents (2000)\Meet.The.Parents.2000.BluRay.720p.x264.DTS-MySiLU.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Men in Black (1997)\Men in Black (1997) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Men in Black 3 (2012)\Men in Black 3 (2012) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Men in Black II (2002)\Men in Black II (2002) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Midway (2019)\Midway (2019) Bluray-1080p Proper.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Miles Ahead (2016)\Miles Ahead-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Mission Impossible - Fallout (2018)\Mission Impossible - Fallout (2018) WEBDL-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Mission Impossible (1996)\Mission Impossible (1996) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Moana (2016)\Moana-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Moana (2016)\Moana.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Molly's Game (2017)\Mollys.Game.2017.1080p.BluRay.H264.AAC-RARBG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Monsters, Inc. (2001)\Monsters,.Inc.2001.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Monty Python and the Holy Grail (1975)\Monty Python and the Holy Grail.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Moonlight (2016)\Moonlight-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Moonlight (2016)\sample-Moonlight.2016 1080p BluRay x264 DTSHD 5.1 -DDR.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Mummy, The (2017)\The Mummy-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Napoleon Dynamite (2004)\Napoleon.Dynamite.2004.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\National Lampoon's Christmas Vacation (1989)\National.Lampoon's.Christmas.Vacation.1989.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\National Treasure Book of Secrets (2007)\National.Treasure.Book.of.Secrets.2007.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Need for Speed (2014)\Need.for.Speed.2014.1080p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Nefarious (2023)\Nefarious (2023) WEBRip-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Neighbors (2014)\Neighbors.2014.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Neighbors 2 Sorority Rising (2016)\Neighbors 2 Sorority Rising-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Neighbors 2 Sorority Rising (2016)\Neighbors.2.Sorority.Rising.2016.1080p.BluRay.x264-[YTS.AG].mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Nerve (2016)\Nerve (2016) Bluray-1080p Proper.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Night at the Museum (2006)\Night at the Museum (2006) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Night at the Museum Battle of the Smithsonian (2009)\Night at the Museum Battle of the Smithsonian (2009) WEBDL-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Night at the Museum Secret of the Tomb (2014)\Night.at.the.Museum.Secret.of.the.Tomb.2014.DVDRip.XviD-EVO.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Night at the Museum Secret of the Tomb (2014)\sample.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Nightcrawler (2014)\Nightcrawler.2014.720p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\No (2012)\No-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\No Time to Die (2021)\No Time to Die (2021) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Nobody (2021)\Nobody (2021) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Non-Stop (2014)\Non-Stop (2014) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Non-Stop (2014)\Non-Stop-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Non-Stop (2014)\Non.Stop.2014.720p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Nope (2022)\Nope (2022) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\North Shore (1987)\North.Shore.1987.WEBDL-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\November Criminals (2017)\November Criminals-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Now You See Me (2013)\Now.You.See.Me.2013.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Now You See Me 2 (2016)\Now.You.See.Me.2.2016.Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ocean's Eight (2018)\Ocean's Eight (2018) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ocean's Eleven (2001)\h-oceans11.1080p.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ocean's Eleven (2001)\Ocean's.Eleven.2001.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ocean's Thirteen (2007)\h-oceans13.1080p.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ocean's Thirteen (2007)\Ocean's.Thirteen.2007.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ocean's Twelve (2004)\Ocean's.Twelve.2004.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ocean's Twelve (2004)\sample-oceans.12.1080p.x264-culthd.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Office Space (1999)\Office Space.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Office Space (1999)\Sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Once Upon a Time… in Hollywood (2019)\Once Upon a Time. in Hollywood (2019) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Parasite (2019)\Parasite.2019.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Passengers (2016)\Passengers-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Passengers (2016)\Passengers.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Passengers (2016)\RARBG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Patriots Day (2016)\Patriots Day (2016) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Patriots Day (2016)\Patriots Day-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Phantom Thread (2017)\Sample.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pirates of the Caribbean At World's End (2007)\Pirates.of.the.Caribbean.At.World's.End.2007.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pirates of the Caribbean Dead Man's Chest (2006)\Pirates.of.the.Caribbean.Dead.Man's.Chest.2006.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pirates of the Caribbean Dead Man's Chest (2006)\pirates.of.the.caribbean.dead.mans.chest.2006.1080p.bluray.dts.x264.sample-hv.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pirates of the Caribbean Dead Men Tell No Tales (2017)\Pirates of the Caribbean Dead Men Tell No Tales (2017) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pirates of the Caribbean Dead Men Tell No Tales (2017)\Pirates of the Caribbean Dead Men Tell No Tales-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pirates of the Caribbean On Stranger Tides (2011)\Pirates of the Caribbean On Stranger Tides (2011) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pirates of the Caribbean On Stranger Tides (2011)\twiz-pirates4-1080p.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pirates of the Caribbean The Curse of the Black Pearl (2003)\pirates.of.the.caribbean.the.curse.of.the.black.pearl.2003.1080p.bluray.x264.sample-hv.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pirates of the Caribbean The Curse of the Black Pearl (2003)\pirates.of.the.caribbean.the.curse.of.the.black.pearl.2003.1080p.bluray.x264.sample-wlm.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pirates of the Caribbean The Curse of the Black Pearl (2003)\Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pitch Perfect (2012)\Pitch Perfect (2012) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pitch Perfect 2 (2015)\Pitch.Perfect.2.2015.720p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pitch Perfect 3 (2017)\Pitch Perfect 3 (2017) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Point Break (1991)\Point Break (1991) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Point Break (2015)\Point Break (2015) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Popstar Never Stop Never Stopping (2016)\Popstar Never Stop Never Stopping-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Popstar Never Stop Never Stopping (2016)\RARBG.COM.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pride & Prejudice (2005)\Pride & Prejudice (2005) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Primer (2004)\sample.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pulp Fiction (1994)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pulp Fiction (1994)\Pulp.Fiction.1994.1080p.BluRay.x264.DTS-ETRG.Sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Pulp Fiction (1994)\Pulp.Fiction.1994.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Quantum of Solace (2008)\Quantum.of.Solace.2008.REMASTERED.1080p.BluRay.H264.AAC-RARBG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Raiders of the Lost Ark (1981)\Raiders of the Lost Ark (1981) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Rain Man (1988)\Rain Man (1988) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Remember the Titans (2000)\Remember the Titans (2000) DVD.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Rememory (2017)\rememory.2017.1080p.bluray.x264-rovers.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Respect (2021)\Respect.2021.1080p.WEBRip.x264-RARBG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ride Along 2 (2016)\Ride.Along.2.2016.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Rocketman (2019)\Rocketman.2019.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Rocky (1976)\Rocky (1976) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Rocky II (1979)\Rocky II (1979) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Rocky III (1982)\Rocky III (1982) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Rocky IV (1985)\Rocky IV (1985) WEBRip-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Rocky V (1990)\Rocky V (1990) HDTV-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Rogue One A Star Wars Story (2016)\Rogue One A Star Wars Story-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Rogue One A Star Wars Story (2016)\Rogue.One.A.Star.Wars.Story.2016.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Room (2015)\Room-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Sausage Party (2016)\Sausage Party-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Saving Private Ryan (1998)\Saving Private Ryan (1998) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Say Anything... (1989)\Say Anything (1989) 720p BRrip_sujaidr_sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Secret Life of Pets, The (2016)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Secret Life of Pets, The (2016)\The Secret Life of Pets-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Secret Life of Pets, The (2016)\The Secret Life of Pets.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Seven Pounds (2008)\Seven Pounds -Trailer.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Shang-Chi and the Legend of the Ten Rings (2021)\Shang-Chi and the Legend of the Ten Rings (2021) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\She's the Man (2006)\She's the Man (2006) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Shooter (2007)\Shooter (2007) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Shrek (2001)\Shrek (2001) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Shrek 2 (2004)\Shrek 2 (2004) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Shrek Forever After (2010)\Shrek Forever After (2010) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Sicario (2015)\Sicario (2015) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Sicario (2015)\Sicario-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Sicario Day of the Soldado (2018)\Sicario Day of the Soldado (2018) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Silicon Cowboys (2016)\Silicon Cowboys-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Silver Linings Playbook (2012)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Silver Linings Playbook (2012)\sample.psig-slp.2012.r5.xvid.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Silver Linings Playbook (2012)\Silver.Linings.Playbook.2012.1080p.BluRay.x264.AC3-ETRG.Sample.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Sisu (2023)\Sisu (2023) WEBRip-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Skyfall (2012)\Skyfall.2012.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Sleeping Beauty june 5th\SDAB_6_5.m4v".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Sleepwalk with Me (2012)\Sleepwalk.With.Me.2012.1080p.BluRay.x264-[YTS.LT].mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Snowden (2016)\Snowden-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Snowden (2016)\Snowden.2016.Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Snowpiercer (2013)\Snowpiercer-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Solo A Star Wars Story (2018)\Solo.A.Star.Wars.Story.2018.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Soul (2020)\Soul (2020) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Soul Surfer (2011)\Soul Surfer (2011) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Spectacular Now, The (2013)\The Spectacular Now-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Spectre (2015)\Spectre-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Spectre (2015)\Spectre.2015.Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Spider-Man 2 (2004)\Spider-Man 2 (2004) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Spider-Man Far from Home (2019)\Spider-Man Far from Home (2019) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Spider-Man Homecoming (2017)\Spider-Man Homecoming (2017) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Spider-Man Homecoming (2017)\Spider-Man Homecoming-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Spider-Man Into the Spider-Verse (2018)\Spider-Man.Into.The.Spider-Verse.2018.1080p.BluRay.x264-[YTS.AM].mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Spider-Man No Way Home (2021)\Spider-Man No Way Home (2021) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Spiral From the Book of Saw (2021)\Spiral From the Book of Saw (2021) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Spotlight (2015)\Spotlight (2015) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Spotlight (2015)\Spotlight-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Star Trek Beyond (2016)\Star Trek Beyond-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Star Wars (1977)\Star.Wars.1977.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Star Wars The Last Jedi (2017)\Star.Wars.The.Last.Jedi.2017.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Star Wars The Rise of Skywalker (2019)\Star.Wars.The.Rise.of.Skywalker.2019.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Steve Jobs (2015)\Steve.Jobs.2015.1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Steve Jobs (2015)\Steve.Jobs.2015.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Stillwater (2021)\Stillwater.2021.1080p.WEBRip.x264-RARBG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Straight Outta Compton (2015)\Straight Outta Compton (2015) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Stuck in Love (2012)\Stuck in Love-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Suburbicon (2017)\Suburbicon-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Suburbicon (2017)\Suburbicon.2017.1080p.BluRay.x264-[YTS.AG].mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Suicide Squad (2016)\Suicide Squad-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Suicide Squad (2016)\Suicide Squad.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Sully (2016)\RARBG.COM.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Sully (2016)\Sully-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Sully (2016)\Sully.2016.Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Sweet Home Alabama (2002)\Sweet Home Alabama (2002) 720p BRrip_sujaidr_sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Taken (2008)\Taken-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ted (2012)\Ted.2012.BluRay.1080p.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ted 2 (2015)\Ted 2 (2015) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Terminator 2 Judgment Day (1991)\Terminator 2 Judgment Day (1991) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Thank You for Your Service (2017)\Thank You for Your Service-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The 1517 to Paris (2018)\the.15.17.to.paris.2018.1080p.bluray.x264-geckos.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Amazing Spider-Man (2012)\The Amazing Spider-Man (2012) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Amazing Spider-Man 2 (2014)\The Amazing Spider-Man 2 (2014) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Avengers (2012)\refined-avengers-1080p-sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Avengers (2012)\The Avengers-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Avengers (2012)\The.Avengers.2012.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Batman (2022)\The Batman (2022) WEBRip-720p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Big Short (2015)\sample.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Big Short (2015)\The.Big.Short.2015.DVDScr.XVID.AC3.HQ.Hive-CM8.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Blind Side (2009)\The Blind Side (2009) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Boss Baby (2017)\The Boss Baby-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Bourne Identity (2002)\The.Bourne.Identity.2002.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Bourne Legacy (2012)\The.Bourne.Legacy.2012.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Bourne Supremacy (2004)\The.Bourne.Supremacy.2004.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Bourne Ultimatum (2007)\The.Bourne.Ultimatum.2007.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Breakfast Club (1985)\The.Breakfast.Club.1985.1080p.BluRay.H264.AC3.5.1.BADASSMEDIA -Sample.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Breakfast Club (1985)\The.Breakfast.Club.1985.REMASTERED.1080p.BluRay.H264.AAC-RARBG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Butler (2013)\The.Butler.2013.720p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Chronicles of Narnia Prince Caspian (2008)\The Chronicles of Narnia Prince Caspian (2008) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Chronicles of Narnia The Lion, the Witch and the Wardrobe (2005)\The Chronicles of Narnia The Lion, the Witch and the Wardrobe (2005) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Chronicles of Narnia The Voyage of the Dawn Treader (2010)\The Chronicles of Narnia The Voyage of the Dawn Treader (2010) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Circle (2017)\The Circle-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Commuter (2018)\The Commuter (2018) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Contractor (2022)\The Contractor (2022) WEBRip-1080p Proper.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Dark Knight (2008)\The Dark Knight 2008 720p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Dark Knight Rises (2012)\The.Dark.Knight.Rises.2012.BluRay.720p.DTS.x264-CHD.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Dark Tower (2017)\The Dark Tower-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Devil Wears Prada (2006)\The Devil Wears Prada.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Dictator (2012)\The.Dictator.2012.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Emoji Movie (2017)\The Emoji Movie-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Equalizer 2 (2018)\The.Equalizer.2.2018.1080p.BluRay.H264.AAC-RARBG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Farewell (2019)\The Farewell (2019) WEBDL-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Fast and the Furious (2001)\The.Fast.and.the.Furious.2001.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Fast and the Furious Tokyo Drift (2006)\Fast and Furious III Tokyo Drift.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Fast and the Furious Tokyo Drift (2006)\The Fast and the Furious Tokyo Drift (2006) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Fate of the Furious (2017)\The Fate of the Furious-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Fate of the Furious (2017)\The.Fate.of.the.Furious.2017.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The First Purge (2018)\The First Purge (2018) Bluray-720p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Florida Project (2017)\The Florida Project-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Gambler (2014)\The.Gambler.2014.720p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Good Dinosaur (2015)\The Good Dinosaur 2015 BluRay 720p DTS x264-ETRG (Sample).mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Good Dinosaur (2015)\The Good Dinosaur-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Good, the Bad and the Ugly (1966)\sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Goonies (1985)\The Goonies (1985) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Great Gatsby (1974)\The.Great.Gatsby.1974.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Great Gatsby (2013)\The Great Gatsby (2013) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Great Gatsby (2013)\The Great Gatsby 720p BluRay [DagarX Release].mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Greatest Showman (2017)\the.greatest.showman.2017.1080p.bluray.x264-sparks.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Greatest Showman (2017)\The.Greatest.Showman.2017.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Grinch (2018)\The Grinch (2018) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Hangover Part II (2011)\The.Hangover.Part.II.2011.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Hangover Part III (2013)\The.Hangover.Part.III.2013.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Hateful Eight (2015)\The Hateful Eight-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Hateful Eight (2015)\The.Hateful.Eight.2015.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Help (2011)\The Help (2011) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Hobbit An Unexpected Journey (2012)\The.Hobbit.An.Unexpected.Journey.2012.1080p.BRrip.x264.GAZ.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Hobbit The Battle of the Five Armies (2014)\The.Hobbit.The.Battle.of.the.Five.Armies.2014.720p.BluRay.x264-SPARKS.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Holiday (2006)\The Holiday (2006) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The House (2017)\The House-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Hunger Games (2012)\The.Hunger.Games.720p.BluRay.X264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Hunger Games Mockingjay - Part 1 (2014)\The Hunger Games Mockingjay - Part 1 (2014) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Hunger Games Mockingjay - Part 2 (2015)\The Hunger Games Mockingjay - Part 2 (2015) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Hunger Games Mockingjay - Part 2 (2015)\The Hunger Games Mockingjay - Part 2-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Hunt (2020)\The.Hunt.2020.WEBDL-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Hunt for Red October (1990)\The Hunt for Red October (1990) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Hurt Locker (2008)\The Hurt Locker-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Incredible Hulk (2008)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Incredible Hulk (2008)\The Incredible Hulk.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Incredible Hulk (2008)\The.Incredible.Hulk.2008.1080p.BluRay.sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Incredibles (2004)\The Incredibles (2004) Bluray-1080p Proper.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Infiltrator (2016)\The Infiltrator-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Intern (2015)\The Intern (2015) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Internship (2013)\The Internship (2013) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Inventor Out for Blood in Silicon Valley (2019)\The.Inventor.Out.For.Blood.In.Silicon.Valley.2019.1080p.WEBRip.x264-[YTS.AM].mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Iron Giant (1999)\the.iron.giant.1999.720p.bluray.x264-amiable.sample[PRiME].mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Italian Job (2003)\The.Italian.Job.2003.1080p.x264..mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Jungle Book (2016)\The Jungle Book (2016) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Karate Kid (1984)\The Karate Kid-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Lincoln Lawyer (2011)\The Lincoln Lawyer (2011) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Lion King (2019)\The.Lion.King.2019.Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Little Things (2021)\The.Little.Things.2021.1080p.WEB-DL.X264.Atmos-EVO[TGx].mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Lost World Jurassic Park (1997)\The Lost World Jurassic Park (1997) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Magnificent Seven (2016)\RARBG.COM.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Magnificent Seven (2016)\The Magnificent Seven-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Magnificent Seven (2016)\The Magnificent Seven.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Marksman (2021)\The Marksman (2021) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Martian (2015)\The Martian-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Martian (2015)\The Martian.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Mask (1994)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Mask (1994)\The.Mask.1994.1080p.BluRay.x264.AC3-ETRG.Sample.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Matrix Resurrections (2021)\The Matrix Resurrections (2021) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Mule (2018)\The Mule (2018) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Mummy (1999)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Mummy (1999)\The Mummy-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Mummy (1999)\The Mummy.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Mummy Returns (2001)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Mummy Returns (2001)\The.Mummy.Returns.2001.1080p.BluRay.x264.AC3-ETRG.Sample.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Nice Guys (2016)\The Nice Guys-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Outsiders (1983)\The.Outsiders.1983.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Parent Trap (1998)\The.Parent.Trap.1998.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Pink Panther (2006)\The Pink Panther (2006) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Pink Panther 2 (2009)\The Pink Panther 2 (2009) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Polar Express (2004)\The.Polar.Express.2004.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Prestige (2006)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Prestige (2006)\The.Prestige.2006.1080p.BluRay.DTS.x264-ETRG.Sample.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Princess and the Frog (2009)\The Princess and the Frog (2009) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Princess Diaries (2001)\The Princess Diaries.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Princess Diaries 2 Royal Engagement (2004)\The Princess Diaries 2 Royal Engagement (2004) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Purge Election Year (2016)\The Purge Election Year-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Revenant (2015)\The Revenant-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Santa Clause 2 (2002)\The Santa Clause 2 (2002) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Secret Life of Pets 2 (2019)\The.Secret.Life.Of.Pets.2.2019.1080p.BluRay.x264-[YTS.LT].mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Secret Life of Walter Mitty (2013)\The.Secret.Life.of.Walter.Mitty.2013.720p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Social Dilemma (2020)\The Social Dilemma (2020) WEBDL-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Social Network (2010)\The Social Network (2010) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Super Mario Bros. Movie (2023)\The Super Mario Bros. Movie (2023) WEBRip-1080p Proper.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Terminator (1984)\The.Terminator.1984.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Truman Show (1998)\The Truman Show (1998) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Twilight Saga Breaking Dawn - Part 1 (2011)\The Twilight Saga Breaking Dawn - Part 1 (2011) Bluray-1080p Proper.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Twilight Saga Breaking Dawn - Part 2 (2012)\The Twilight Saga Breaking Dawn - Part 2 (2012) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Twilight Saga Eclipse (2010)\The Twilight Saga Eclipse (2010) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Twilight Saga New Moon (2009)\The Twilight Saga New Moon (2009) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Unbearable Weight of Massive Talent (2022)\The Unbearable Weight of Massive Talent (2022) WEBRip-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Unbearable Weight of Massive Talent (2022)\The Unbearable Weight of Massive Talent (2022) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Whale (2022)\The Whale (2022) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Wolf of Wall Street (2013)\The.Wolf.of.Wall.Street.2013.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\The Wolverine (2013)\The.Wolverine.2013.EXTENDED.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\They Shall Not Grow Old (2018)\They.Shall.Not.Grow.Old.2018.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\This Is the End (2013)\This.Is.the.End.2013.720p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Thor (2011)\Thor (2011) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Thor (2011)\Thor-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Thor Love and Thunder (2022)\Thor Love and Thunder (2022) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Thor Ragnarok (2017)\Thor Ragnarok 2017 1080p BluRay x264 DTS - NextBit.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Thor Ragnarok (2017)\Thor Ragnarok-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Thor The Dark World (2013)\Thor The Dark World-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Thor The Dark World (2013)\Thor The Dark World.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Ticket to Paradise (2022)\Ticket to Paradise (2022) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Titanic (1997)\Titanic.1997.1080p.BluRay.x264-[YTS.AG].mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Tomorrowland (2015)\ETRG.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Tomorrowland (2015)\Tomorrowland.2015.1080p.WEBRip.sample.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Top Gun (1986)\Top.Gun.1986.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Toy Story (1995)\Toy.Story.1995.1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Toy Story 3 (2010)\Toy.Story.3.2010.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Toy Story 4 (2019)\Toy.Story.4.2019.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Transformers (2007)\Transformers (2007) WEBDL-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Transformers Age of Extinction (2014)\Transformers.Age.of.Extinction.2014.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Transformers Dark of the Moon (2011)\Transformers Dark of the Moon (2011) WEBDL-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Transformers Revenge of the Fallen (2009)\Transformers Revenge of the Fallen (2009) WEBDL-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Transformers The Last Knight (2017)\Transformers.The.Last.Knight.2017.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Trolls World Tour (2020)\Trolls.World.Tour.2020.WEBDL-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\TRON Legacy (2010)\TRON.Legacy.2010.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Turning Red (2022)\Turning Red (2022) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Twilight (2008)\Twilight (2008) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Unbroken (2014)\Unbroken (2014) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Unbroken Path to Redemption (2018)\Unbroken Path to Redemption (2018) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Uncharted (2022)\Uncharted (2022) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Uncut Gems (2019)\Uncut.Gems.2019.WEBDL-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Up (2009)\Up-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Us (2019)\Us (2019) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Venom (2018)\Venom (2018) 3D HSBS 1080p BluRay H264 DolbyD 5.1 + nickarad.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Venom Let There Be Carnage (2021)\Venom Let There Be Carnage (2021) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Vice (2018)\Vice (2018) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Violent Night (2022)\Violent Night (2022) WEBRip-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\War Dogs (2016)\War Dogs (2016) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\War Dogs (2016)\War Dogs-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Waterworld (1995)\Waterworld (1995) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Wedding Crashers (2005)\Wedding Crashers (2005) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\West Side Story (2021)\West Side Story (2021) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Whiplash (2014)\Whiplash.2014.720p.BluRay.x264.YIFY.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Whisper of the Heart (1995)\RARBG.COM.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\White Nights (1985)\White Nights.avi".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Why Him (2016)\Why Him-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Wonder Woman (2017)\Wonder Woman-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\X-Men (2000)\X-Men (2000) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\X-Men Apocalypse (2016)\X-Men Apocalypse-trailer.mov".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\X-Men Apocalypse (2016)\X-Men.Apocalypse.2016.PROPER.1080p.BluRay.H264.AAC-LAMA[TGx].mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\X-Men Days of Future Past (2014)\X-Men Days of Future Past (2014) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\X-Men Origins Wolverine (2009)\X-Men Origins Wolverine (2009) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\X-Men The Last Stand (2006)\X-Men The Last Stand (2006) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\X2 (2003)\X2 (2003) Bluray-1080p Proper.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Zack Snyder's Justice League (2021)\Zack Snyder's Justice League (2021) Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Zero Dark Thirty (2012)\Zero Dark Thirty (2012) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Zombieland (2009)\Zombieland (2009) Bluray-1080p.mkv".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Zombieland Double Tap (2019)\Zombieland.Double.Tap.2019.Bluray-1080p.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Zoolander (2001)\RARBG.COM.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Zoolander (2001)\Zoolander.mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Zoolander 2 (2016)\Zoolander.2.2016.1080p.BluRay.x264-[YTS.AG].mp4".
+VERBOSE: Performing the operation "Remove File" on target "Z:\Movies\Zoolander 2 (2016)\Zoolander.2.2016.1080p.WEB-DL.DD5.1.H264 (high).mp4".

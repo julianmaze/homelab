@@ -1,6 +1,16 @@
+# This is for NFS, use SMB instead
+#New-PSDrive -PSProvider FileSystem -Name Z -Root \\storage.local.ayertonz.com\volume1\media -Persist -Scope Global
+
+<# SMB Mounting
+Access Synology on your computer: Open your network explorer and enter the Synology NAS IP address. 
+Select shared folder: Browse to the shared folder you want to mount. 
+Mount as network drive: Right-click on the shared folder and choose the option to "Map network drive" (depending on your operating system). 
+#>
+
 $path = "Z:\Movies"
 $dirs = Get-ChildItem -Path $path | ? Name -NotMatch "Disney Collection 1937-2008"
-$noncompliant = @()
+$nonCompliantReport = @()
+$nonCompliantToDelete = @()
 $savings = 0
 
 foreach ($dir in $dirs) {
@@ -14,18 +24,36 @@ foreach ($dir in $dirs) {
         $dif = $size_sum - $size_max
         $savings += $dif
 
-        $noncompliant += [pscustomobject]@{
+        $h265 = $movies | ? { $_.Name -match "265" } 
+
+        # If there is a 265 movie, delete all non 265 movies
+        if ($h265) {
+            $toDelete = $movies | ? { $_.Name -notmatch "265" }
+        } else {
+            $toDelete = $movies | ? {[math]::round($_.length /1gb, 2) -ne $size_max}
+        }
+
+        $nonCompliantReport += [pscustomobject]@{
             "directory" = $dir.Name
             "count" = $movies.count
             "sizes_gb" = $sizes
             "movies" = $movies.Name
             "max_size" = $size_max
-            "max_size_movie" = ($movies | ? {[math]::round($_.length /1gb, 2) -eq $size_max}).Name
+            "max_size_movie" = $toDelete.Name
         }
+
+        $nonCompliantToDelete += $toDelete
     }
 }
 
-return $noncompliant, $savings
+# Report
+[pscustomobject] @{"total_storage_savings" = $savings; "noncompliant_items" = $nonCompliantReport} | ConvertTo-Json -Depth 5| Out-File .\reports\duplicateMovies.json
 
-# $n, $s = .\removeDuplicateMovies.ps1
-# [pscustomobject] @{"total_storage_savings" = $s; "noncompliant_items" = $n} | ConvertTo-Json -Depth 5| Out-File .\reports\duplicateMovies.json
+# Delete
+$nonCompliantToDelete | % { $_ | Remove-Item -Force -Confirm:$false -Verbose}
+
+# TODO: Test this
+# Start-Job -ScriptBlock {
+#   param($toDeleteArray)
+#   $toDeleteArray | % { $_ | Remove-Item -Force -Confirm:$false }
+# } -ArgumentList $nonCompliantToDelete
