@@ -61,6 +61,13 @@ spec:
                   number: 4545
             path: "/requestrr"
             pathType: Prefix
+          - backend:
+              service:
+                name: "bazarr"
+                port:
+                  number: 6767
+            path: "/bazarr"
+            pathType: Prefix
     - host: "overseerr.jmaz.tv"
       http:
         paths:

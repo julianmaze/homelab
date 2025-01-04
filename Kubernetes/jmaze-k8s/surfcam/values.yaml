@@ -1,0 +1,11 @@
+staticSitePVC: "surfcam-new"
+serverBlock: |-
+  server {
+    listen       80;
+    listen  [::]:80;
+    location / {
+      index index.html;
+    }
+  }
+service: 
+  type: ClusterIP
