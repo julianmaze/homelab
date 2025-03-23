@@ -13,6 +13,9 @@ livenessProbe:
 readinessProbe:
   initialDelaySeconds: 15
   periodSeconds: 90
-# As of 12/27/23 v2.7.9 is the latest stable release
+# As of 3/22/25 v2.10.3 is the latest stable release
+# helm repo add rancher-stable https://releases.rancher.com/server-charts/stable
 # helm repo update
-# helm upgrade rancher rancher-stable/rancher --namespace cattle-system -f values.yaml --version 2.7.9
+# helm upgrade rancher rancher-stable/rancher --namespace cattle-system -f values.yaml --version 2.10.3 
+# or 
+# helm upgrade rancher rancher-stable/rancher --namespace cattle-system --reuse-values

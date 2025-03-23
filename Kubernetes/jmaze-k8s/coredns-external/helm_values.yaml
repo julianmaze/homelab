@@ -313,6 +313,9 @@ zoneFiles:
       jmaze-k3s-node1 3600  IN A 10.50.25.60
       jmaze-k3s-node2 3600  IN A 10.50.25.61
       jmaze-rpi 3600  IN A 10.50.25.65
+      k3s-cilium-1 3600  IN A 10.50.25.50
+      k3s-cilium-2 3600  IN A 10.50.25.51
+      k3s-cilium-3 3600  IN A 10.50.25.52
 
 # optional array of sidecar containers
 extraContainers: []
