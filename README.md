@@ -1,17 +1,15 @@
-# Projects
+# homelab
 
-This is a repo containing all of my projects. I also use the issue tracker to track feature requests and changes I want to make in my infrastructure.
+This is a repo containing all of my homelab configurations.
 
-# yt-dlp
+## Docker
+Contains Docker Compose files and Dockerfiles for running containerized applications in the homelab.
 
-List Formats
+## Kubernetes
+Includes Kubernetes manifests for namespaces, deployments, services, and ingress configurations. Also contains scripts for setting up and managing the Kubernetes cluster.
 
-```console
-yt-dlp --list-formats "https://www.youtube.com/watch?v=r43asrLpdsc"
-```
+## Scripts
+Utility scripts for automating tasks such as infrastructure setup, backups, and monitoring.
 
-Best Audio and Video in mp4 w/ outfile and no larger then 1440p
-
-```console
-yt-dlp -f "bv*[height<=1440p][ext=mp4]+ba*[ext=m4a]" -o "C:\Users\jmmaz\Videos\Bali Movie" "https://www.youtube.com/watch?v=yxikzPVvA3A"
-```
+## Terraform
+Terraform configurations for provisioning and managing cloud or on-premise infrastructure for the homelab.
