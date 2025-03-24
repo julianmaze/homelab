@@ -1,6 +1,0 @@
-syntax = "proto3";
-message Person {
-    string fname = 1;
-    repeated string middle_name = 2;
-    string lname = 3;
-}
