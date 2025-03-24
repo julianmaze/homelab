@@ -1,0 +1,12 @@
+apiVersion: cilium.io/v2alpha1
+kind: CiliumLoadBalancerIPPool
+metadata:
+  name: jmaze-k8s-cilium-lb-ip-pool
+spec:
+  blocks:
+    - start: 10.50.25.2
+      stop: 10.50.25.10
+  disabled: false
+  # serviceSelector:
+  #   matchLabels:
+  #     app.kubernetes.io/name: ingress-nginx

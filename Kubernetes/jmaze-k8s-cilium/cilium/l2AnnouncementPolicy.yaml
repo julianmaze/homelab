@@ -1,0 +1,13 @@
+apiVersion: "cilium.io/v2alpha1"
+kind: CiliumL2AnnouncementPolicy
+metadata:
+  name: jmaze-k8s-cilium-l2-announcement-policy
+spec:
+  nodeSelector:
+    matchLabels:
+      # Only advertise the L2 address of nodes with the control-plane role
+        # k3s-cilium-1
+        # k3s-cilium-2
+        # k3s-cilium-3
+      node-role.kubernetes.io/control-plane: "true"
+  loadBalancerIPs: true

@@ -39,11 +39,18 @@ rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 
 # CNI - only needed on the first master node
 cilium upgrade --version 1.17.2 \
+  --set devices=ens160 \
   --set kubeProxyReplacement=true \
   --set gatewayAPI.enabled=true \
   --set ipam.operator.clusterPoolIPv4PodCIDRList="10.42.0.0/16" \
   --set k8sServiceHost=127.0.0.1 \
-  --set k8sServicePort=6443
+  --set k8sServicePort=6443 \
+  --set l2announcements.enabled=true \
+  --set k8sClientRateLimit.qps=32 \
+  --set k8sClientRateLimit.burst=60 \
+  --set l2announcements.leaseDuration=5s \
+  --set l2announcements.leaseRenewDeadline=2s \
+  --set l2announcements.leaseRetryPeriod=200ms
 
 # Check status
 cilium status --wait
