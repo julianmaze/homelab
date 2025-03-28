@@ -35,3 +35,8 @@ rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 # Check status
 cilium status --wait
 
+# Install pre-requisites for Longhorn
+apt install nfs-common
+modprobe dm_crypt
+lsmod | grep dm_crypt
+echo "dm_crypt" | sudo tee -a /etc/modules

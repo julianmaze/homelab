@@ -1,0 +1,27 @@
+---
+# This is the default gateway for the cluster. It is used to route traffic to a variety of services that can be co-located behind the same load balancer.
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: default-gateway
+  namespace: gateway # custom namespace for gateways
+spec:
+  gatewayClassName: cilium
+  listeners:
+  - protocol: HTTP
+    port: 80
+    name: http
+    hostname: "longhorn.local.julianmaze.com"
+    allowedRoutes:
+      namespaces:
+        from: Selector
+        selector:
+          matchLabels:
+            kubernetes.io/metadata.name : longhorn-system
+  # - protocol: HTTPS
+  #   port: 443
+  #   name: https
+    # tls:
+    #   certificateRefs:
+    #   - kind: Secret
+    #     name: ca

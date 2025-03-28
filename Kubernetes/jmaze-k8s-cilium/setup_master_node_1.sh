@@ -57,3 +57,9 @@ cilium status --wait
 
 # Run connectivity test
 cilium connectivity test
+
+# Install pre-requisites for Longhorn
+apt install nfs-common
+modprobe dm_crypt
+lsmod | grep dm_crypt
+echo "dm_crypt" | sudo tee -a /etc/modules
