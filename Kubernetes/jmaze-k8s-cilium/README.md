@@ -42,3 +42,9 @@ I chose Cilium primarily due to performance considerations over standard flannel
 
 ### Service Mesh via the Gateway API
 Gateway API was chosen over standard ingress primarily due to TLSRoute support. I want to try and route TLS traffic to pods in K8s via the service mesh for services like wireguard. Additionally, I want more practice utilizing a production grade service mesh, and utilizing its feature set fully.
+
+## Longhorn
+
+## csi-driver-nfs
+
+## cert-manager
