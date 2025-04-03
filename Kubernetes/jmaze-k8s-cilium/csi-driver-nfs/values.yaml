@@ -1,0 +1,6 @@
+# Recommended tips by the chart
+externalSnapshotter:
+  enabled: true
+controller:
+  runOnControlPlane: true
+  replicas: 2
