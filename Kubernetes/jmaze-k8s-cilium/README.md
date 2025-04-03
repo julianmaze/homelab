@@ -43,8 +43,22 @@ I chose Cilium primarily due to performance considerations over standard flannel
 ### Service Mesh via the Gateway API
 Gateway API was chosen over standard ingress primarily due to TLSRoute support. I want to try and route TLS traffic to pods in K8s via the service mesh for services like wireguard. Additionally, I want more practice utilizing a production grade service mesh, and utilizing its feature set fully.
 
+## Rancher
+
 ## Longhorn
 
+I chose Longhorn block storage for Kubernetes primarily due to its simplicity and maturity over other K8s block storage systems like OpenEBS. Longhorn supports highly available persistent storage across a multi-node K8s cluster. It comes with snapshots, and backups out of the box. Additionally, I have technical equity in Longhorn from my `jmaze-k8s` cluster, and all my current services are backed by Longhorn volumes. This makes transitions and switching costs extremely low.
+
+Longhorn is also part of the Linux Foundation and integrates nicely with my Rancher frontend. 
+
+#### Alternatives
+1. [OpenEBS](https://openebs.io/) - this looks very interesting, and I would like to try it out someday
+2. Ceph RBD
+3. GlusterFS
+4. Rook
+
 ## csi-driver-nfs
+
+I chose to use the NFS CSI driver for statis NFS mounts to my DS1522 storage array. In my first K8s cluster, I used node level NFS mounts (HostPath mounts). Managing that detail of application deployments external to K8s became cumbersome, and I would sometimes find mount inconsistencies between my K8s nodes. Using a CSI NFS controller (pod) to manage the NFS mounts is both more robust (highly available), and simpler to manage.
 
 ## cert-manager
