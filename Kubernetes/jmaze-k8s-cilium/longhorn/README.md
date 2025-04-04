@@ -42,3 +42,83 @@ I did not install the helm chart with a custom values file, but this may be nece
 
 ## Cilium Gateway and HTTP Route (ingress)
 Apply the cilium gateway and http route to access the longhorn frontend. The code was developed with assistance from: https://longhorn.io/docs/1.8.1/deploy/accessing-the-ui/longhorn-ingress/
+
+## Prepare the longhorn data disks
+I chose to use a seperate data disk to house my longhorn volumes. Each node has a seperate 200gb data disk attached to the VM that needs to be formatted and enabled for scheduling. Follow the below steps to prepare the data disks for longhorn:
+
+1. Identify the new disk:
+First, identify the new disk that you want to set up. You can use the `lsblk` command to list all available disks and their partitions:
+
+```bash
+lsblk
+```
+
+The output will show a list of disks and their partitions. Identify the new disk based on its size or other characteristics.
+
+2. Create a new partition on the disk:
+Use a partitioning tool like `fdisk` or `parted` to create a new partition on the new disk. Here, we'll use `fdisk` as an example:
+
+```bash
+sudo fdisk /dev/sdX
+```
+
+Replace `/dev/sdX` with the actual device name of your new disk (e.g., /dev/sdb).
+
+Inside `fdisk`, use the following steps:
+   a. Type `n` to create a new partition.
+   b. Select the default partition number (usually 1).
+   c. Choose the default start sector to use the whole disk.
+   d. Choose the default last sector to use the whole disk.
+   e. Type `w` to write the changes and exit.
+
+3. Set up LVM:
+Next, you need to set up LVM on the newly created partition. First, initialize the physical volume:
+
+```bash
+sudo pvcreate /dev/sdX1
+```
+
+Replace `/dev/sdX1` with the partition you created (e.g., /dev/sdb1).
+
+4. Create a volume group:
+Create a new volume group and give it a name (e.g., "longhorn_vg"):
+
+```bash
+sudo vgcreate longhorn_vg /dev/sdX1
+```
+
+Replace `/dev/sdX1` with the partition you created (e.g., /dev/sdb1).
+
+5. Create a logical volume:
+Create a logical volume (LV) within the volume group, specifying the size (e.g., 100% of the available space) and a name (e.g., "longhorn_lv"):
+
+```bash
+sudo lvcreate -l 100%FREE -n longhorn_lv longhorn_vg
+```
+
+6. Format the logical volume:
+Format the newly created logical volume with the desired filesystem (e.g., ext4):
+
+```bash
+sudo mkfs.ext4 /dev/longhorn_vg/longhorn_lv
+```
+
+7. Mount the logical volume:
+Create the mount point (/longhorn) and mount the logical volume:
+
+```bash
+sudo mkdir /longhorn
+sudo mount /dev/longhorn_vg/longhorn_lv /longhorn
+```
+
+8. Update /etc/fstab:
+To make the mount permanent across reboots, add an entry to `/etc/fstab`:
+
+```bash
+echo "/dev/longhorn_vg/longhorn_lv /longhorn ext4 defaults 0 0" | sudo tee -a /etc/fstab
+```
+
+Now, the new disk should be set up using LVM, and it will be mounted to `/longhorn` automatically every time the system starts.
+
+## Disk scheduling
+In the longhorn UI navigate to Nodes >> Operation >> Edit node disks. Add a new disk of type File System and point to `/longhorn`. I like to delete the default longhorn disk pointing to a path on `/dev/sda`, the OS disk. Be sure to enable scheduling.
