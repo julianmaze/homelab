@@ -19,3 +19,15 @@ spec:
           image: ubuntu:latest
           command: ["tail"]
           args: ["-f", "/dev/null"]
+          volumeMounts:
+            - name: auth
+              mountPath: "/etc/openvpn/custom/"
+            - mountPath: /config
+              name: data
+      volumes:
+        - name: auth
+          secret:
+            secretName: transmission-auth
+        - name: data
+          persistentVolumeClaim:
+            claimName: transmission
