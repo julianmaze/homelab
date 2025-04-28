@@ -19,8 +19,4 @@ spec:
         selector:
           dnsZones:
             - "julianmaze.com"
-            - "local.julianmaze.com"
             - "jmaz.tv"
-    # - http01:
-    #     ingress:
-    #       class: nginx
