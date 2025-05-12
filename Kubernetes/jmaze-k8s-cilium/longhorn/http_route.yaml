@@ -5,17 +5,17 @@ metadata:
   name: longhorn-ui
 spec:
   hostnames:
-  - longhorn.local.julianmaze.com
+    - longhorn.local.julianmaze.com
   parentRefs:
-  - name: default-gateway
-    namespace: gateway
-    sectionName: http # name of the gateway listener
+    - name: default-gateway
+      namespace: gateway
+      sectionName: longhorn # name of the gateway listener
   rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /
-    backendRefs:
-    - name: longhorn-frontend
-      port: 80
-      kind: Service
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: longhorn-frontend
+          port: 80
+          kind: Service

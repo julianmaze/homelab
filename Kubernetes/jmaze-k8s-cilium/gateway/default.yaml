@@ -5,23 +5,39 @@ kind: Gateway
 metadata:
   name: default-gateway
   namespace: gateway # custom namespace for gateways
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare
 spec:
   gatewayClassName: cilium
   listeners:
-  - protocol: HTTP
-    port: 80
-    name: http
-    hostname: "longhorn.local.julianmaze.com"
-    allowedRoutes:
-      namespaces:
-        from: Selector
-        selector:
-          matchLabels:
-            kubernetes.io/metadata.name : longhorn-system
-  # - protocol: HTTPS
-  #   port: 443
-  #   name: https
-    # tls:
-    #   certificateRefs:
-    #   - kind: Secret
-    #     name: ca
+    - protocol: HTTP
+      port: 80
+      name: https-redirect
+    - protocol: HTTPS
+      port: 443
+      name: longhorn
+      hostname: "longhorn.local.julianmaze.com"
+      tls:
+        mode: Terminate # Terminate TLS at the gateway
+        certificateRefs:
+          - name: longhorn-local-julianmaze-com-tls
+      allowedRoutes:
+        namespaces:
+          from: Selector
+          selector:
+            matchLabels:
+              kubernetes.io/metadata.name: longhorn-system
+    - protocol: HTTPS
+      port: 443
+      name: media
+      hostname: "*.media.jmaz.tv"
+      tls:
+        mode: Terminate # Terminate TLS at the gateway
+        certificateRefs:
+          - name: wildcard-media-jmaz-tv-tls
+      allowedRoutes:
+        namespaces:
+          from: Selector
+          selector:
+            matchLabels:
+              kubernetes.io/metadata.name: media
