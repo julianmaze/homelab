@@ -1,0 +1,60 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: home-assistant
+  namespace: external-services
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8123
+    - name: scrypted
+      port: 10443
+      targetPort: 10443
+
+---
+apiVersion: discovery.k8s.io/v1
+kind: EndpointSlice
+metadata:
+  name: home-assistant
+  namespace: external-services
+  labels:
+    kubernetes.io/service-name: home-assistant
+addressType: IPv4
+endpoints:
+  - addresses:
+      - 10.50.25.55
+    conditions:
+      ready: true
+ports:
+  - name: http
+    port: 8123
+  - name: scrypted
+    port: 10443
+
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: home-assistant
+spec:
+  hostnames:
+    - home.local.julianmaze.com
+    - home.julianmaze.com
+  parentRefs:
+    - name: default-gateway
+      namespace: gateway
+      sectionName: local-subdomain # name of the gateway listener
+    - name: default-gateway
+      namespace: gateway
+      sectionName: home-assistant-public # name of the gateway listener
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: home-assistant
+          port: 80
+          kind: Service

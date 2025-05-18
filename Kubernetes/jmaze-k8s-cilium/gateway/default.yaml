@@ -41,3 +41,33 @@ spec:
           selector:
             matchLabels:
               kubernetes.io/metadata.name: media
+    - protocol: HTTPS
+      port: 443
+      name: local-subdomain
+      hostname: "*.local.julianmaze.com"
+      tls:
+        mode: Terminate # Terminate TLS at the gateway
+        certificateRefs:
+          - name: wildcard-local-julianmaze-com-tls
+      allowedRoutes:
+        namespaces:
+          from: Selector
+          selector:
+            # There should be multiple here
+            matchLabels:
+              kubernetes.io/metadata.name: external-services
+    - protocol: HTTPS
+      port: 443
+      name: home-assistant-public
+      hostname: "home.julianmaze.com"
+      tls:
+        mode: Terminate # Terminate TLS at the gateway
+        certificateRefs:
+          - name: home-julianmaze-com-tls
+      allowedRoutes:
+        namespaces:
+          from: Selector
+          selector:
+            # There should be multiple here
+            matchLabels:
+              kubernetes.io/metadata.name: external-services
