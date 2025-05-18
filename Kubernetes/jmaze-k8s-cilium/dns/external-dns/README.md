@@ -6,5 +6,5 @@ External DNS syncs all gateway route hostnames to my private DNS zones in AWS. T
 
 ```bash
 helm repo add external-dns https://kubernetes-sigs.github.io/external-dns/
-helm upgrade --install external-dns external-dns/external-dns --values values.yaml
+helm upgrade --install external-dns external-dns/external-dns --values values.yaml --namespace dns
 ```

@@ -41,5 +41,5 @@ resource "aws_iam_user_policy_attachment" "externaldns" {
 }
 
 resource "aws_iam_access_key" "k8s" {
-  user    = aws_iam_user.externaldns.name
+  user = aws_iam_user.externaldns.name
 }

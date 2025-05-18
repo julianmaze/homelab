@@ -8,7 +8,7 @@ env:
 extraVolumes:
   - name: aws-credentials
     secret:
-      secretName: external-dns 
+      secretName: external-dns
 extraVolumeMounts:
   - name: aws-credentials
     mountPath: /.aws/credentials
@@ -16,4 +16,7 @@ extraVolumeMounts:
 sources:
   - gateway-httproute
   - gateway-tlsroute
-extraArgs: ["--annotation-filter=external-dns.alpha.kubernetes.io/controller in (dns-controller)"]
+extraArgs:
+  [
+    "--annotation-filter=external-dns.alpha.kubernetes.io/controller in (dns-controller)",
+  ]
