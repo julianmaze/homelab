@@ -1,6 +1,7 @@
 # Networking account
 provider "aws" {
-  region = "us-west-2"
+  region = var.region
+  profile = "admin-networking" # Configured via AWS SSO
 }
 
 terraform {
