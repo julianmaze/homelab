@@ -4,6 +4,8 @@ terraform {
       source = "registry.terraform.io/josenk/esxi"
     }
   }
+
+  // jmaze-k8s cluster
   backend "kubernetes" {
     secret_suffix = "esxi-state"
     config_path   = "~/.kube/config"

@@ -37,6 +37,5 @@ override.tf.json
 terraform.rc
 
 # Terraform lock file
-.terraform.lock.hcl
 
 .env
