@@ -10,9 +10,11 @@ metadata:
 spec:
   gatewayClassName: cilium
   listeners:
+    # HTTP redirect to HTTPS
     - protocol: HTTP
       port: 80
       name: https-redirect
+    # Longhorn
     - protocol: HTTPS
       port: 443
       name: longhorn
@@ -27,6 +29,7 @@ spec:
           selector:
             matchLabels:
               kubernetes.io/metadata.name: longhorn-system
+    # Media services
     - protocol: HTTPS
       port: 443
       name: media
@@ -41,6 +44,7 @@ spec:
           selector:
             matchLabels:
               kubernetes.io/metadata.name: media
+    # local.julianmaze.com
     - protocol: HTTPS
       port: 443
       name: local-subdomain
@@ -56,6 +60,7 @@ spec:
             # There should be multiple here
             matchLabels:
               kubernetes.io/metadata.name: external-services
+    # home assistant public
     - protocol: HTTPS
       port: 443
       name: home-assistant-public
@@ -69,5 +74,47 @@ spec:
           from: Selector
           selector:
             # There should be multiple here
+            matchLabels:
+              kubernetes.io/metadata.name: external-services
+    # scrypted home public
+    - protocol: HTTPS
+      port: 443
+      name: scrypted-home-public
+      hostname: "scrypted-home.julianmaze.com"
+      tls:
+        mode: Terminate # Terminate TLS at the gateway
+        certificateRefs:
+          - name: scrypted-home-julianmaze-com-tls
+      allowedRoutes:
+        namespaces:
+          from: Selector
+          selector:
+            # There should be multiple here
+            matchLabels:
+              kubernetes.io/metadata.name: external-services
+    # media.jmaz.tv old cluster - temp listener
+    - protocol: TLS
+      port: 443
+      name: media-legacy-passthrough
+      hostname: "media.jmaz.tv"
+      tls:
+        mode: Passthrough # TLS is handled by the ingress in jmaze-k8s
+      allowedRoutes:
+        namespaces:
+          from: Selector
+          selector:
+            matchLabels:
+              kubernetes.io/metadata.name: external-services
+    # code.julianmaze.com old cluster - temp listener
+    - protocol: TLS
+      port: 443
+      name: code-legacy-passthrough
+      hostname: "code.julianmaze.com"
+      tls:
+        mode: Passthrough # TLS is handled by the ingress in jmaze-k8s
+      allowedRoutes:
+        namespaces:
+          from: Selector
+          selector:
             matchLabels:
               kubernetes.io/metadata.name: external-services

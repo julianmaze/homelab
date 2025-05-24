@@ -1,0 +1,18 @@
+---
+apiVersion: gateway.networking.k8s.io/v1alpha2
+kind: TLSRoute
+metadata:
+  name: media-jmaz-tv
+spec:
+  hostnames:
+    - media.jmaz.tv
+  parentRefs:
+    - name: default-gateway
+      namespace: gateway
+      sectionName: media-legacy-passthrough # name of the gateway listener
+  rules:
+    - name: media-jmaz-tv
+      backendRefs:
+        - name: jmaze-k8s-default-ingress
+          port: 443
+          kind: Service
