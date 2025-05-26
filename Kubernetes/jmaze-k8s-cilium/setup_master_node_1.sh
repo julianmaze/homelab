@@ -26,6 +26,9 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.2.0/config/crd/standard/gateway.networking.k8s.io_grpcroutes.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.2.0/config/crd/standard/gateway.networking.k8s.io_tlsroutes.yaml
 
+# Install experimental Gateway API CRDS
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.2.0/config/crd/experimental/gateway.networking.k8s.io_backendtlspolicies.yaml
+
 # Install Cilium CLI and install Cilium CNI
 # CLI
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml

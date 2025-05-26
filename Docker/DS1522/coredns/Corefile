@@ -1,10 +1,7 @@
 .:53 {
     errors
-    forward julianmaze.com 10.50.25.200
-    forward jmaz.tv 10.50.25.200
-    forward ayertonz.com 10.50.25.200
-    forward docker.jmm 10.50.25.200
-    forward internal.jmm 10.50.25.200
+    forward julianmaze.com 10.50.25.10
+    forward jmaz.tv 10.50.25.10
     forward . tls://45.90.28.221 tls://45.90.30.221 {
         tls_servername DS1522-7d2918.dns.nextdns.io
     }

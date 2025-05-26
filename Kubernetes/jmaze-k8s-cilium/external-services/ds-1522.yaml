@@ -1,0 +1,33 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: ds-1522
+  namespace: external-services
+spec:
+  ports:
+    - name: console
+      port: 5000
+      targetPort: 5000
+    - name: photos
+      port: 5080
+      targetPort: 5080
+---
+apiVersion: discovery.k8s.io/v1
+kind: EndpointSlice
+metadata:
+  name: ds-1522
+  namespace: external-services
+  labels:
+    kubernetes.io/service-name: ds-1522
+addressType: IPv4
+endpoints:
+  - addresses:
+      - 10.0.10.250
+    conditions:
+      ready: true
+ports:
+  - name: console
+    port: 5000
+  - name: photos
+    port: 5080

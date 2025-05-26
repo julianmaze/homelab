@@ -10,6 +10,9 @@ spec:
       port: 80
       targetPort: 8123
     - name: scrypted
+      port: 11080
+      targetPort: 11080
+    - name: scrypted-https
       port: 10443
       targetPort: 10443
 
@@ -30,56 +33,7 @@ endpoints:
 ports:
   - name: http
     port: 8123
-  - name: scrypted
+  - name: scrypted-https
     port: 10443
-
----
-apiVersion: gateway.networking.k8s.io/v1
-kind: HTTPRoute
-metadata:
-  name: home-assistant
-spec:
-  hostnames:
-    - home.local.julianmaze.com
-    - home.julianmaze.com
-  parentRefs:
-    - name: default-gateway
-      namespace: gateway
-      sectionName: local-subdomain # name of the gateway listener
-    - name: default-gateway
-      namespace: gateway
-      sectionName: home-assistant-public # name of the gateway listener
-  rules:
-    - matches:
-        - path:
-            type: PathPrefix
-            value: /
-      backendRefs:
-        - name: home-assistant
-          port: 80
-          kind: Service
----
-apiVersion: gateway.networking.k8s.io/v1
-kind: HTTPRoute
-metadata:
-  name: scrypted-home
-spec:
-  hostnames:
-    - scrypted-home.local.julianmaze.com
-    - scrypted-home.julianmaze.com
-  parentRefs:
-    - name: default-gateway
-      namespace: gateway
-      sectionName: local-subdomain # name of the gateway listener
-    - name: default-gateway
-      namespace: gateway
-      sectionName: scrypted-home-public # name of the gateway listener
-  rules:
-    - matches:
-        - path:
-            type: PathPrefix
-            value: /
-      backendRefs:
-        - name: home-assistant
-          port: 10443
-          kind: Service
+  - name: scrypted
+    port: 11080

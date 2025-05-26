@@ -1,0 +1,14 @@
+---
+apiVersion: gateway.networking.k8s.io/v1alpha3
+kind: BackendTLSPolicy
+metadata:
+  name: scrypted-home-tls-policy
+spec:
+  targetRefs:
+    - kind: Service
+      name: home-assistant
+      group: ""
+      sectionName: scrypted # service port name https://gateway-api.sigs.k8s.io/reference/spec/#sectionname
+  validation:
+    wellKnownCACertificates: "System"
+    hostname: localhost
