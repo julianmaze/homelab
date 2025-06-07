@@ -15,5 +15,11 @@ yt-dlp -f "bv*[height<=1440p][ext=mp4]+ba*[ext=m4a]" -o "C:\Users\jmmaz\Videos\B
 Just download m4a (aac codec)
 
 ```console
+# Note this may not work with iMovie/apple products
 yt-dlp -t aac "" -o "~/Music/..."
+
+# To download an iMovie specific audio file use the following
+yt-dlp -f 140 "" -o "~/Music/..."
+
+# Additionally see the reencoding script for more information
 ```
