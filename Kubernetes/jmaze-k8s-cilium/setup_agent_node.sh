@@ -4,20 +4,23 @@
 apt update -y
 apt upgrade -y
 
-# Configure and install k3s on second master node - note the cluster-init: false and that cilium is already installed
+# Configure and install k3s on agent node - note the cluster-init: false and that cilium is already installed
 # The token can be found in /var/lib/rancher/k3s/server/token on the first master node
-# mkdir -p /etc/rancher/k3s
-# cat <<EOF > /etc/rancher/k3s/config.yaml
-# disable:
-#   - traefik
-#   - servicelb
-# flannel-backend: none
-# disable-network-policy: true
-# cluster-init: false
-# server: https://10.50.25.50:6443
-# token: $TOKEN
-# EOF
-# curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.31.6+k3s1 sh -s - server
+mkdir -p /etc/rancher/k3s
+cat <<EOF > /etc/rancher/k3s/config.yaml
+server: https://10.50.25.50:6443
+token: $TOKEN
+EOF
+
+# Configure agent node specific settings
+# VPN node
+mkdir -p /etc/rancher/k3s/config.yaml.d
+cat <<EOF >> /etc/rancher/k3s/config.yaml.d/vpn.yaml
+node-taint:
+  - "kubernetes.io/role=VPN:NoSchedule"
+EOF
+
+curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.31.6+k3s1 sh -s - agent
 
 # Install Cilium CLI
 # CLI

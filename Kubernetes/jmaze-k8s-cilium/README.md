@@ -22,6 +22,10 @@ Gateway API is a Kubernetes SIG-Network subproject to design a successor for the
 
 https://docs.cilium.io/en/latest/network/servicemesh/gateway-api/gateway-api/
 
+## VPN
+
+See the VPN directory for more information.
+
 # ADRs
 
 ## K3s
@@ -72,3 +76,12 @@ I chose to use the cert-manager project for automatic certificate management:
 - The ACME issuer supports a Cloudflare DNS01 solver. My domain's nameservers have been transfered to Cloudflare, so this makes life easy
 - Cert-manager integrates with the Gateway API, which I have chosen to use in my cluster
 - And last, but certainly not least, ughhh automatic certificate management is not only badass, but will be required before 2029 ;)
+
+## external-dns
+
+I chose to use external-dns to keep my AWS private DNS zones up to date. In my environment, these zones are served by a coredns deployment. I use this with my gateway + automatic cert renewal to ensure all my local services are served at a friendly FQDN over HTTPS. External DNS was chosen for the following reasons
+
+- External DNS has 8000+ GH stars, and is a kubernetes-sigs maintained project
+- External DNS supports AWS route 53 private hosted zones, what I wanted to serve via CoreDNS
+- External DNS supports the Gateway API, specifically HTTPRoute and TLSRoute kinds
+- External DNS makes life so easy to serve services via K8s

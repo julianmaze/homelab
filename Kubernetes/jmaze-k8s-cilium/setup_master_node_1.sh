@@ -46,7 +46,7 @@ cilium upgrade --version 1.17.2 \
   --set kubeProxyReplacement=true \
   --set gatewayAPI.enabled=true \
   --set ipam.operator.clusterPoolIPv4PodCIDRList="10.42.0.0/16" \
-  --set k8sServiceHost=127.0.0.1 \
+  --set k8sServiceHost=10.50.25.50 \
   --set k8sServicePort=6443 \
   --set l2announcements.enabled=true \
   --set k8sClientRateLimit.qps=32 \
