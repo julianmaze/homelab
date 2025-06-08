@@ -7,9 +7,10 @@ terraform {
 
   // jmaze-k8s cluster
   backend "kubernetes" {
-    secret_suffix = "esxi-state"
-    config_path   = "~/.kube/config"
-    namespace     = "development"
+    secret_suffix  = "esxi-state"
+    config_path    = "~/.kube/config"
+    namespace      = "development"
+    config_context = "jmaze-k8s"
   }
 }
 

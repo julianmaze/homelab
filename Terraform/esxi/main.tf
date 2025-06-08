@@ -43,3 +43,29 @@ resource "esxi_guest" "k3s-cilium" {
     ignore_changes = [power, virtual_disks[0].virtual_disk_id]
   }
 }
+
+resource "esxi_guest" "k3s-cilium-vpn" {
+  guest_name             = "k3s-cilium-vpn"
+  guest_shutdown_timeout = 20
+  guest_startup_timeout  = 120
+
+
+  boot_firmware  = "efi"
+  boot_disk_size = "50" # 50 GB
+  boot_disk_type = "thin"
+  disk_store     = var.disk_store
+  memsize        = "8192" # 8 GB
+  numvcpus       = "4"
+  guestos        = "ubuntu-64"
+
+  network_interfaces {
+    virtual_network = "Docker VLAN 25"
+    nic_type        = "vmxnet3"
+  }
+
+  power = "off"
+
+  lifecycle {
+    ignore_changes = [power, virtual_disks[0].virtual_disk_id]
+  }
+}
