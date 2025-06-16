@@ -23,6 +23,8 @@ spec:
         app.kubernetes.io/name: qbittorrent
         app.kubernetes.io/instance: qbittorrent
         pod.name: main
+        egress-gateway: "true"
+        egress-gateway-policy: "cyberghost-vpn"
     spec:
       restartPolicy: Always
       dnsPolicy: ClusterFirst
@@ -55,20 +57,13 @@ spec:
             - name: config
               mountPath: /config
               readOnly: false
-          # securityContext:
-          #   runAsNonRoot: true
-          #   runAsUser: 1000
-          #   runAsGroup: 1000
-          #   readOnlyRootFilesystem: true
-          #   allowPrivilegeEscalation: false
-          #   privileged: false
-          #   seccompProfile:
-          #     type: RuntimeDefault
-          #   capabilities:
-          #     add: []
-          #     drop:
-          #       - ALL
+            - name: media
+              mountPath: /media
+              readOnly: false
       volumes:
         - name: config
           persistentVolumeClaim:
             claimName: qbittorrent
+        - name: media
+          persistentVolumeClaim:
+            claimName: ds1522-media

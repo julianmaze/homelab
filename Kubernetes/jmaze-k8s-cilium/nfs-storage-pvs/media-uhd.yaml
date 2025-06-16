@@ -20,5 +20,5 @@ spec:
     # make sure this value is unique for every share in the cluster
     volumeHandle: ds1522-media-uhd
     volumeAttributes:
-      server: storage.local.ayertonz.com
+      server: "10.0.10.250"
       share: /volume1/UHDmedia
