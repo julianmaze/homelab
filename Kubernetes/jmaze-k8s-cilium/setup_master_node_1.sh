@@ -41,8 +41,8 @@ sudo tar xzvfC cilium-linux-${CLI_ARCH}.tar.gz /usr/local/bin
 rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 
 # CNI - only needed on the first master node
-cilium upgrade --version 1.17.2 \
-  --set devices=ens160 \
+cilium upgrade --version 1.17.4 \
+  --set devices='{ens160,tun0}' \
   --set kubeProxyReplacement=true \
   --set gatewayAPI.enabled=true \
   --set ipam.operator.clusterPoolIPv4PodCIDRList="10.42.0.0/16" \
@@ -53,7 +53,9 @@ cilium upgrade --version 1.17.2 \
   --set k8sClientRateLimit.burst=60 \
   --set l2announcements.leaseDuration=5s \
   --set l2announcements.leaseRenewDeadline=2s \
-  --set l2announcements.leaseRetryPeriod=200ms
+  --set l2announcements.leaseRetryPeriod=200ms \
+  --set egressGateway.enabled=true \
+  --set bpf.masquerade=true
 
 # Check status
 cilium status --wait

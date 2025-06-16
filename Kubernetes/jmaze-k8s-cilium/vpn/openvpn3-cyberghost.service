@@ -1,0 +1,13 @@
+[Unit]
+Description=Start OpenVPN 3 session for CyberGhost
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/openvpn3 session-start --config cyberghost.ovpn
+ExecStartPost=/usr/local/bin/setup-cilium-vpn-routing.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

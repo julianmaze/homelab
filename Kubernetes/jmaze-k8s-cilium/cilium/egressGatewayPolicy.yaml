@@ -1,0 +1,31 @@
+apiVersion: cilium.io/v2
+kind: CiliumEgressGatewayPolicy
+metadata:
+  name: cyberghost-vpn
+spec:
+  # Specify which pods should be subject to the current policy.
+  # Multiple pod selectors can be specified.
+  selectors:
+    - podSelector:
+        matchLabels:
+          egress-gateway: "true"
+          egress-gateway-policy: "cyberghost-vpn"
+  # Specify which destination CIDR(s) this policy applies to.
+  # Multiple CIDRs can be specified.
+  destinationCIDRs:
+    - "0.0.0.0/0"
+
+  # Configure the gateway node.
+  egressGateway:
+    # Specify which node should act as gateway for this policy.
+    nodeSelector:
+      matchLabels:
+        kubernetes.io/hostname: k3s-cilium-vpn
+
+    # Specify the IP address used to SNAT traffic matched by the policy.
+    # It must exist as an IP associated with a network interface on the instance.
+    # egressIP: 10.168.60.100
+
+    # Alternatively it's possible to specify the interface to be used for egress traffic.
+    # In this case the first IPv4 assigned to that interface will be used as egress IP.
+    interface: tun0 # This is the interface used by the VPN client on the node.
