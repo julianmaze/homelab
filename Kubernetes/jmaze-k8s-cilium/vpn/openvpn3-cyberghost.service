@@ -7,6 +7,7 @@ Wants=network-online.target
 Type=oneshot
 ExecStart=/usr/bin/openvpn3 session-start --config cyberghost.ovpn
 ExecStartPost=/usr/local/bin/setup-cilium-vpn-routing.sh
+ExecStop=/usr/bin/openvpn3 session-manage --disconnect --config cyberghost.ovpn
 RemainAfterExit=true
 
 [Install]

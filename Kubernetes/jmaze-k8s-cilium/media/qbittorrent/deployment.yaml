@@ -29,8 +29,38 @@ spec:
       restartPolicy: Always
       dnsPolicy: ClusterFirst
       containers:
+        - name: vpn-monitor
+          image: alpine:latest
+          command:
+            - /bin/sh
+            - -c
+            - |
+              while true; do
+                if command -v curl >/dev/null 2>&1 && command -v dig >/dev/null 2>&1; then
+                  echo "curl and dig are available. Proceeding with VPN check..."
+                  VPN_IP=$(curl -s ip.me)
+                  DDNS_IP=$(dig +short julianmaze.link)
+                  if [ -z "$VPN_IP" ]; then
+                    echo "VPN IP is blank. Removing status file..."
+                    rm -f /tmp/vpn-check-complete
+                  elif [ "$VPN_IP" != "$DDNS_IP" ]; then
+                    echo "VPN IP ($VPN_IP) does not match DDNS IP ($DDNS_IP). Writing status file..."
+                    touch /tmp/vpn-check-complete
+                  else
+                    echo "VPN IP ($VPN_IP) matches DDNS IP ($DDNS_IP). Removing status file..."
+                    rm -f /tmp/vpn-check-complete
+                  fi
+                else
+                  echo "curl or dig is missing. Attempting to install..."
+                  apk update && apk add --no-cache curl bind-tools || echo "Cannot connect to the internet. Retrying in 60 seconds..."
+                fi
+                sleep 60
+              done
+          volumeMounts:
+            - name: shared-data
+              mountPath: /tmp
         - name: qbittorrent
-          image: lscr.io/linuxserver/qbittorrent:latest
+          image: lscr.io/linuxserver/qbittorrent:5.1.0
           imagePullPolicy: Always
           ports:
             - name: webui
@@ -54,13 +84,46 @@ spec:
             - name: TZ
               value: "America/Los_Angeles"
           volumeMounts:
+            - name: shared-data
+              mountPath: /tmp
             - name: config
               mountPath: /config
               readOnly: false
             - name: media
               mountPath: /media
               readOnly: false
+          command:
+            - /bin/sh
+            - -c
+            - |
+              echo "Waiting for VPN check to complete..."
+              while [ ! -f /tmp/vpn-check-complete ]; do
+                echo "The VPN check is not complete yet. Retrying in 30 seconds..."
+                sleep 30
+              done
+              echo "VPN check complete. Starting qBittorrent..."
+              exec /init
+          livenessProbe:
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - |
+                  if [ -f /tmp/vpn-check-complete ]; then
+                    exit 0
+                  else
+                    exit 1
+                  fi
+            initialDelaySeconds: 90
+            periodSeconds: 60
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 10
       volumes:
+        - name: shared-data
+          emptyDir: {}
         - name: config
           persistentVolumeClaim:
             claimName: qbittorrent

@@ -95,3 +95,6 @@ autoscaler:
   includeUnschedulableNodes: false
   # If true does not allow single points of failure to form
   preventSinglePointFailure: true
+
+  livenessProbe:
+    enabled: false
