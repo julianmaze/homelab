@@ -1,0 +1,9 @@
+apiVersion: longhorn.io/v1beta2
+kind: BackupTarget
+metadata:
+  name: default
+  namespace: longhorn-system
+spec:
+  backupTargetURL: nfs://10.0.10.250:/volume1/backup/longhorn
+  credentialSecret: ""
+  pollInterval: 5m0s
