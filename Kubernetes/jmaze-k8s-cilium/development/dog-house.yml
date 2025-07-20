@@ -1,0 +1,48 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dog-house
+  namespace: development
+  labels:
+    app: dog-house
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: dog-house
+  template:
+    metadata:
+      labels:
+        app: dog-house
+    spec:
+      containers:
+        - name: ubuntu
+          image: ubuntu:latest
+          command:
+            - /bin/bash
+            - -c
+            - |
+              cat <<DOG
+                 __
+              o-''|\__________/)
+              \_/|_)          )
+                  \  _______  /
+                  (_/      (_/  
+              DOG
+              echo "Welcome to the Dog House!"
+              tail -f /dev/null
+          # volumeMounts:
+          #   - name: ds1522-media
+          #     mountPath: /mnt/ds1522-media
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+      # volumes:
+      #   - name: ds1522-media
+      #     persistentVolumeClaim:
+      #       claimName: ds1522-media
