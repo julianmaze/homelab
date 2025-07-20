@@ -1,0 +1,31 @@
+# Disable the metrics service
+service:
+  metrics:
+    enabled: false
+
+# Disable the exportarr container
+workload:
+  main:
+    podSpec:
+      containers:
+        exportarr:
+          enabled: false
+
+# Overload values for persistence here to mount our media pvc
+persistence:
+  config:
+    enabled: true
+    existingClaim: sonarr
+    targetSelector:
+      main:
+        main:
+          mountPath: /config
+  media:
+    enabled: true
+    existingClaim: ds1522-media
+    mountPath: "/media"
+
+# Disabling metrics - we do not have a Prometheus instance set up yet.
+metrics:
+  main:
+    enabled: false
