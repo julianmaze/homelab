@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: overseerr
+  labels:
+    app: overseerr
+    app.kubernetes.io/instance: overseerr
+    app.kubernetes.io/name: overseerr
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: overseerr
+      app.kubernetes.io/name: overseerr
+      app.kubernetes.io/instance: overseerr
+      pod.name: main
+  template:
+    metadata:
+      labels:
+        app: overseerr
+        app.kubernetes.io/name: overseerr
+        app.kubernetes.io/instance: overseerr
+        pod.name: main
+    spec:
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
+      containers:
+        - name: overseerr
+          image: sctx/overseerr:latest
+          imagePullPolicy: Always
+          ports:
+            - name: main
+              containerPort: 5055
+              protocol: TCP
+          volumeMounts:
+            - name: config
+              mountPath: /app/config
+              readOnly: false
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: overseerr
