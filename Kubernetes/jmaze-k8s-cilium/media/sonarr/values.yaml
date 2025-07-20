@@ -1,3 +1,10 @@
+global:
+  fallbackDefaults:
+    probeTimeouts:
+      liveness:
+        timeoutSeconds: 30
+        periodSeconds: 120
+
 # Disable the metrics service
 service:
   metrics:
