@@ -4,6 +4,9 @@ global:
       liveness:
         timeoutSeconds: 30
         periodSeconds: 120
+      readiness:
+        timeoutSeconds: 30
+        periodSeconds: 120
 
 # Disable the metrics service
 service:
