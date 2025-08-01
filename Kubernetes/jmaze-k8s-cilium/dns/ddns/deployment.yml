@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudflare-ddns
+  labels:
+    app: cloudflare-ddns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudflare-ddns
+  template:
+    metadata:
+      labels:
+        app: cloudflare-ddns
+    spec:
+      containers:
+        - name: ddns
+          image: favonia/cloudflare-ddns:latest # https://github.com/favonia/cloudflare-ddns
+          env:
+            - name: DOMAINS
+              value: surfcam.julianmaze.com,home.julianmaze.com,scrypted-home.julianmaze.com,julianmaze.link,overseerr.jmaz.tv
+            - name: PROXIED
+              value: "true"
+            - name: IP6_PROVIDER
+              value: none
+          envFrom:
+            - secretRef:
+                name: cloudflare-api-token
