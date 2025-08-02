@@ -1,0 +1,74 @@
+services:
+  wireguard:
+    container_name: wireguard
+    image: linuxserver/wireguard:latest
+    volumes:
+      - /home/pi/wireguard:/config
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    environment:
+     - TZ=America/Los_Angeles
+     - LOG_CONFS=true
+     - PUID=0
+     - PGID=0
+     - SERVERURL=julianmaze.link 
+     - SERVERPORT=51820
+     - PEERS=1
+     - SERVER_ALLOWEDIPS_PEER_1=10.0.1.0/24
+     - INTERNAL_SUBNET=10.10.9.1/31
+    ports:
+      - "51820:51820/udp"
+      - "51821:51821/tcp"
+    sysctls:
+      net.ipv4.conf.all.src_valid_mark: 1
+      net.ipv4.ip_forward: 1
+    restart: always
+    networks:
+      default:
+        ipv4_address: 172.19.0.50
+networks:
+  default:
+    name: wgnet
+    external: true # Note - this network was created manually by hand
+
+# root@jmaze-rpi:/home/pi# docker network inspect wgnet
+# [
+#     {
+#         "Name": "wgnet",
+#         "Id": "5d88248c70bc8e620569c14ea4fa487c5b3adab261e0d5afa72cba39498b5925",
+#         "Created": "2024-10-13T21:34:04.719074241-07:00",
+#         "Scope": "local",
+#         "Driver": "bridge",
+#         "EnableIPv4": true,
+#         "EnableIPv6": false,
+#         "IPAM": {
+#             "Driver": "default",
+#             "Options": {},
+#             "Config": [
+#                 {
+#                     "Subnet": "172.19.0.0/24",
+#                     "Gateway": "172.19.0.1"
+#                 }
+#             ]
+#         },
+#         "Internal": false,
+#         "Attachable": false,
+#         "Ingress": false,
+#         "ConfigFrom": {
+#             "Network": ""
+#         },
+#         "ConfigOnly": false,
+#         "Containers": {
+#             "e418ced442a71bd5a33fcd0676eb745cf3e7237d6cae9e99d51116bbc470b67a": {
+#                 "Name": "wireguard",
+#                 "EndpointID": "f23efd8dd7709ec6b79285dc6f22fcefd023b43510396b72e2b563675746ba37",
+#                 "MacAddress": "16:ba:58:e5:a2:4d",
+#                 "IPv4Address": "172.19.0.50/24",
+#                 "IPv6Address": ""
+#             }
+#         },
+#         "Options": {},
+#         "Labels": {}
+#     }
+# ]
