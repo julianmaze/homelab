@@ -8,15 +8,15 @@ services:
       - NET_ADMIN
       - SYS_MODULE
     environment:
-     - TZ=America/Los_Angeles
-     - LOG_CONFS=true
-     - PUID=0
-     - PGID=0
-     - SERVERURL=julianmaze.link 
-     - SERVERPORT=51820
-     - PEERS=1
-     - SERVER_ALLOWEDIPS_PEER_1=10.0.1.0/24
-     - INTERNAL_SUBNET=10.10.9.1/31
+      - TZ=America/Los_Angeles
+      - LOG_CONFS=true
+      - PUID=0
+      - PGID=0
+      - SERVERURL=julianmaze.link
+      - SERVERPORT=51820
+      - PEERS=1
+      - SERVER_ALLOWEDIPS_PEER_1=10.0.1.0/24
+      - INTERNAL_SUBNET=10.10.9.0/30
     ports:
       - "51820:51820/udp"
       - "51821:51821/tcp"
