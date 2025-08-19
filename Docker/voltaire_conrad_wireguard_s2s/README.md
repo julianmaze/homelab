@@ -6,7 +6,7 @@
 
 The Voltaire site is managed by Julian Maze and hosts the RadiantRealm Plex Server and all supporting infrastructure and storage. The S2S tunnel at the Voltaire site runs inside a Docker container on an rPi 4.
 
-#### Networks
+#### Voltaire Networks
 
 | Name      | Subnet          | Description                                                                                |
 | --------- | --------------- | ------------------------------------------------------------------------------------------ |
@@ -16,17 +16,25 @@ The Voltaire site is managed by Julian Maze and hosts the RadiantRealm Plex Serv
 
 #### VPN router
 
+1) Ensure that local networks properly forward traffic. Each endpoint network needs to configure next hop addresses to be the Raspberry Pi, which will then masquarade traffic through the wirguard tunnel.
+2) Configure host level routing for next hop addresses on the Raspberry Pi. See `voltaire.service` and `conrad.service`.
+3) Configure host level IP table rules. This should be able to be facilitated without a service, but configuring it as a service post boot is reliable. See `wg-iptables.service` and `wg-iptables.sh` 
+
+
 Raspberry Pi 4 with a DHCP reservation set to `10.50.25.65`
 
-### Conrad
+
+
+#### Conrad Networks
 
 The Conrad site is managed by Ayerton Zoutendijk and hosts the backup storage server. The S2S tunnel at the Conrad site runs inside a Docker container on an rPi 4.
 
-#### Networks
-
-| Name | Subnet        | Description       |
-| ---- | ------------- | ----------------- |
-| Flat | `10.0.1.0/24` | Internal Network. |
+| Name      | Subnet          | Description                                                                                |
+| --------- | --------------- | ------------------------------------------------------------------------------------------ |
+| Internal  | `10.0.1.0/24`   | Default internal network for Conrad. At time of config, this is a flat network.            |
+| Server    | `10.0.1.10/24`  | IP address of the Synology storage routing traffic through the tunnel.                     |
+| DockerHost| `10.0.1.242/24` | Docker host running the wiregiard container. Wireguard container is running in native      |
+| Docker0   | `172.17.0.1/16` | Docker network hosting the wirguard container                                              |
 
 #### VPN Router
 

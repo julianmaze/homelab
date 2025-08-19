@@ -1,0 +1,31 @@
+[Unit]
+Description=Apply custom iptables rules for WireGuard VPN
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/wg-voltaire-iptables.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+root@ubuntu:/etc/systemd/system# 
+root@ubuntu:/etc/systemd/system# 
+root@ubuntu:/etc/systemd/system# 
+root@ubuntu:/etc/systemd/system# 
+root@ubuntu:/etc/systemd/system# cat voltaire.service
+[Unit]
+Description=Add static route for Voltaire Wireguard tunnel
+After=network.target
+
+[Service]
+ExecStartPre=/bin/sleep 60
+Type=oneshot
+ExecStart=/sbin/ip route add 10.0.10.0/24 via 172.20.0.2
+ExecStart=/sbin/ip route add 10.50.70.0/27 via 172.20.0.2
+ExecStart=/sbin/ip route add 10.50.25.0/24 via 172.20.0.2
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
