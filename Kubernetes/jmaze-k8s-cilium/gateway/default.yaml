@@ -149,19 +149,6 @@ spec:
           selector:
             matchLabels:
               kubernetes.io/metadata.name: external-services
-    # code.julianmaze.com old cluster - temp listener
-    - protocol: TLS
-      port: 443
-      name: code-legacy-passthrough
-      hostname: "code.julianmaze.com"
-      tls:
-        mode: Passthrough # TLS is handled by the ingress in jmaze-k8s
-      allowedRoutes:
-        namespaces:
-          from: Selector
-          selector:
-            matchLabels:
-              kubernetes.io/metadata.name: external-services
     # tautulli.julianmaze.com old cluster - temp listener
     - protocol: TLS
       port: 443
