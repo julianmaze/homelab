@@ -1,0 +1,48 @@
+# Overload values for persistence here to mount our media pvc
+persistence:
+  config:
+    enabled: true
+    existingClaim: radarr-uhd
+    targetSelector:
+      main:
+        main:
+          mountPath: /config
+      exportarr:
+        exportarr:
+          mountPath: /config
+          readOnly: true
+  media-uhd:
+    enabled: true
+    existingClaim: ds1522-media-uhd
+    mountPath: "/media-uhd"
+  # Needed since transmission downloads to a dir in /media
+  media:
+    enabled: true
+    existingClaim: ds1522-media
+    mountPath: "/media"
+
+# Disabling metrics - we do not have a Prometheus instance set up yet.
+metrics:
+  main:
+    enabled: false
+
+workload:
+  main:
+    podSpec:
+      affinity:
+        # Needed in order to seperate what node sonarr and radarr are deployed on
+        podAffinity:
+      containers:
+        main:
+          resources:
+            requests:
+              cpu: 1000m
+              memory: 2048Mi
+            limits:
+              cpu: 4000m
+              memory: 8192Mi
+
+# Setting node affinity to handle 1 replica longhorn volume for improved IOPS on DB
+podOptions:
+  nodeSelector:
+    kubernetes.io/hostname: k3s-cilium-1
