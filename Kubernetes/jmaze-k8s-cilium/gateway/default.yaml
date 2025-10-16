@@ -29,6 +29,21 @@ spec:
           selector:
             matchLabels:
               kubernetes.io/metadata.name: media
+    # UHD Media services
+    - protocol: HTTPS
+      port: 443
+      name: media-uhd
+      hostname: "*.uhd.media.jmaz.tv"
+      tls:
+        mode: Terminate # Terminate TLS at the gateway
+        certificateRefs:
+          - name: wildcard-media-jmaz-tv-tls
+      allowedRoutes:
+        namespaces:
+          from: Selector
+          selector:
+            matchLabels:
+              kubernetes.io/metadata.name: media
     # local.julianmaze.com
     - protocol: HTTPS
       port: 443
