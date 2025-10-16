@@ -24,6 +24,9 @@ metrics:
 workload:
   main:
     podSpec:
+      affinity:
+        # Needed in order to seperate what node sonarr and radarr are deployed on
+        podAffinity:
       containers:
         main:
           resources:
@@ -33,3 +36,8 @@ workload:
             limits:
               cpu: 4000m
               memory: 8192Mi
+
+# Setting node affinity to handle 1 replica longhorn volume for improved IOPS on DB
+podOptions:
+  nodeSelector:
+    kubernetes.io/hostname: k3s-cilium-2
