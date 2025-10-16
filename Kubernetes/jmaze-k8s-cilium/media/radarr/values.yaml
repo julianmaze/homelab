@@ -20,3 +20,16 @@ persistence:
 metrics:
   main:
     enabled: false
+
+workload:
+  main:
+    podSpec:
+      containers:
+        main:
+          resources:
+            requests:
+              cpu: 1000m
+              memory: 2048Mi
+            limits:
+              cpu: 4000m
+              memory: 8192Mi
