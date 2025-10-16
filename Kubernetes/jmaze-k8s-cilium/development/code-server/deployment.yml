@@ -1,0 +1,92 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: code-server
+  labels:
+    app: code-server
+    app.kubernetes.io/instance: code-server
+    app.kubernetes.io/name: code-server
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: code-server
+      app.kubernetes.io/name: code-server
+      app.kubernetes.io/instance: code-server
+      pod.name: main
+  template:
+    metadata:
+      labels:
+        app: code-server
+        app.kubernetes.io/name: code-server
+        app.kubernetes.io/instance: code-server
+        pod.name: main
+    spec:
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
+      containers:
+        - name: code-server
+          image: linuxserver/code-server:latest
+          env:
+            - name: TZ
+              value: America/Los_Angeles
+          envFrom:
+            - secretRef:
+                name: code-server
+          imagePullPolicy: Always
+          ports:
+            - name: main
+              containerPort: 8443
+              protocol: TCP
+          volumeMounts:
+            - name: config
+              mountPath: /config
+              readOnly: false
+          resources:
+            requests:
+              cpu: 200m
+              memory: 512Mi
+            limits:
+              cpu: 2000m
+              memory: 4096Mi
+          # securityContext:
+          #   runAsNonRoot: true
+          #   runAsUser: 1000
+          #   runAsGroup: 1000
+          #   readOnlyRootFilesystem: true
+          #   allowPrivilegeEscalation: false
+          #   privileged: false
+          #   seccompProfile:
+          #     type: RuntimeDefault
+          #   capabilities:
+          #     add: []
+          #     drop:
+          #       - ALL
+      initContainers:
+        - name: put-git-ssh-key
+          image: alpine:latest
+          command:
+            [
+              "sh",
+              "-c",
+              'echo "$GIT_PRIVATE_KEY" > /config/.ssh/id_rsa && chmod 600 /config/.ssh/id_rsa',
+            ]
+          env:
+            - name: GIT_PRIVATE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: git-private-key
+                  key: ssh-privatekey
+          volumeMounts:
+            - name: config
+              mountPath: /config
+              readOnly: false
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: code-server
+        - name: git-private-key
+          secret:
+            secretName: git-private-key

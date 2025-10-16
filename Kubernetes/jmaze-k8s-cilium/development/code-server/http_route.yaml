@@ -1,0 +1,21 @@
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: code-server
+spec:
+  hostnames:
+    - code.local.julianmaze.com
+  parentRefs:
+    - name: default-gateway
+      namespace: gateway
+      sectionName: local-subdomain # name of the gateway listener
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: code-server
+          port: 8443
+          kind: Service

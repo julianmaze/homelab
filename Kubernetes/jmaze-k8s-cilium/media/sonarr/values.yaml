@@ -18,6 +18,11 @@ workload:
   main:
     podSpec:
       containers:
+        main:
+          resources:
+            limits:
+              cpu: 4000m
+              memory: 8192Mi
         exportarr:
           enabled: false
 

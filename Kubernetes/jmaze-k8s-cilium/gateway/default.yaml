@@ -57,9 +57,12 @@ spec:
         namespaces:
           from: Selector
           selector:
-            # There should be multiple here
-            matchLabels:
-              kubernetes.io/metadata.name: external-services
+            matchExpressions:
+              - key: kubernetes.io/metadata.name
+                operator: In
+                values:
+                  - longhorn-system
+                  - development
     # home assistant public
     - protocol: HTTPS
       port: 443
