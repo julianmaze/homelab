@@ -9,7 +9,7 @@ spec:
   parentRefs:
     - name: default-gateway
       namespace: gateway
-      sectionName: longhorn # name of the gateway listener
+      sectionName: local-subdomain # name of the gateway listener
   rules:
     - matches:
         - path:

@@ -14,21 +14,6 @@ spec:
     - protocol: HTTP
       port: 80
       name: https-redirect
-    # Longhorn
-    - protocol: HTTPS
-      port: 443
-      name: longhorn
-      hostname: "longhorn.local.julianmaze.com"
-      tls:
-        mode: Terminate # Terminate TLS at the gateway
-        certificateRefs:
-          - name: longhorn-local-julianmaze-com-tls
-      allowedRoutes:
-        namespaces:
-          from: Selector
-          selector:
-            matchLabels:
-              kubernetes.io/metadata.name: longhorn-system
     # Media services
     - protocol: HTTPS
       port: 443
