@@ -1,0 +1,62 @@
+global:
+  fallbackDefaults:
+    probeTimeouts:
+      liveness:
+        timeoutSeconds: 30
+        periodSeconds: 120
+      readiness:
+        timeoutSeconds: 30
+        periodSeconds: 120
+
+# Disable the metrics service
+service:
+  metrics:
+    enabled: false
+
+# Disable the exportarr container
+workload:
+  main:
+    podSpec:
+      affinity:
+        # Needed in order to seperate what node Sonarr and radarr are deployed on
+        podAffinity:
+      containers:
+        main:
+          resources:
+            requests:
+              cpu: 500m
+              memory: 1024Mi
+            limits:
+              cpu: 2000m
+              memory: 4096Mi
+        exportarr:
+          enabled: false
+
+# Overload values for persistence here to mount our media pvc
+persistence:
+  config:
+    enabled: true
+    existingClaim: sonarr-uhd
+    targetSelector:
+      main:
+        main:
+          mountPath: /config
+  # Needed since transmission places downloads here
+  media:
+    enabled: true
+    existingClaim: ds1522-media
+    mountPath: "/media"
+  media-uhd:
+    enabled: true
+    existingClaim: ds1522-media-uhd
+    mountPath: "/media-uhd"
+
+# Disabling metrics - we do not have a Prometheus instance set up yet.
+metrics:
+  main:
+    enabled: false
+
+# Setting node affinity to handle 1 replica longhorn volume for improved IOPS on DB
+podOptions:
+  nodeSelector:
+    kubernetes.io/hostname: k3s-cilium-1

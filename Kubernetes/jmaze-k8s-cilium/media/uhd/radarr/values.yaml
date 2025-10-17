@@ -36,11 +36,11 @@ workload:
         main:
           resources:
             requests:
-              cpu: 1000m
-              memory: 2048Mi
+              cpu: 500m
+              memory: 1024Mi
             limits:
-              cpu: 4000m
-              memory: 8192Mi
+              cpu: 2000m
+              memory: 4096Mi
 
 # Setting node affinity to handle 1 replica longhorn volume for improved IOPS on DB
 podOptions:
