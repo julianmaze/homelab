@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tautulli
+  labels:
+    app: tautulli
+    app.kubernetes.io/instance: tautulli
+    app.kubernetes.io/name: tautulli
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: tautulli
+      app.kubernetes.io/name: tautulli
+      app.kubernetes.io/instance: tautulli
+      pod.name: main
+  template:
+    metadata:
+      labels:
+        app: tautulli
+        app.kubernetes.io/name: tautulli
+        app.kubernetes.io/instance: tautulli
+        pod.name: main
+    spec:
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        kubernetes.io/hostname: k3s-cilium-3
+      containers:
+        - name: tautulli
+          image: linuxserver/tautulli:latest
+          imagePullPolicy: Always
+          ports:
+            - name: main
+              containerPort: 8181
+              protocol: TCP
+          volumeMounts:
+            - name: config
+              mountPath: /config
+              readOnly: false
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "1024Mi"
+            limits:
+              cpu: "1500m"
+              memory: "2048Mi"
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: tautulli

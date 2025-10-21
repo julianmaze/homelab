@@ -1,0 +1,21 @@
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: tautulli
+spec:
+  hostnames:
+    - tautulli.media.jmaz.tv
+  parentRefs:
+    - name: default-gateway
+      namespace: gateway
+      sectionName: media # name of the gateway listener
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: tautulli
+          port: 8181
+          kind: Service
