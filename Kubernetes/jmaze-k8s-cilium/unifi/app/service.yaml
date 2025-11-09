@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: unifi
+  annotations:
+    "lbipam.cilium.io/ips": "10.50.25.3"
+spec:
+  type: LoadBalancer
+  publishNotReadyAddresses: false
+  ports:
+    - name: inform
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    - name: console
+      port: 8443
+      protocol: TCP
+      targetPort: 8443
+    - name: stun
+      port: 3478
+      protocol: UDP
+      targetPort: 3478
+    - name: ap-discovery
+      port: 10001
+      protocol: UDP
+      targetPort: 10001
+    - name: l2-network-discovery
+      port: 1900
+      protocol: UDP
+      targetPort: 1900
+    - name: https-redirect
+      port: 8843
+      protocol: TCP
+      targetPort: 8843
+    - name: http-redirect
+      port: 8880
+      protocol: TCP
+      targetPort: 8880
+    - name: mobile-speed-test
+      port: 6789
+      protocol: TCP
+      targetPort: 6789
+    - name: syslog
+      port: 5514
+      protocol: UDP
+      targetPort: 5514
+  selector:
+    pod.name: main
+    app.kubernetes.io/name: unifi
+    app.kubernetes.io/instance: unifi

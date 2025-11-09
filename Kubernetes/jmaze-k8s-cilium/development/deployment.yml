@@ -15,8 +15,8 @@ spec:
     metadata:
       labels:
         app: utility-pod
-        egress-gateway: "true"
-        egress-gateway-policy: "cyberghost-vpn"
+        # egress-gateway: "true"
+        # egress-gateway-policy: "cyberghost-vpn"
     spec:
       containers:
         - name: ubuntu

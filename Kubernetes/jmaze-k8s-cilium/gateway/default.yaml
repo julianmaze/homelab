@@ -44,6 +44,25 @@ spec:
           selector:
             matchLabels:
               kubernetes.io/metadata.name: media
+    # # unifi.local.julianmaze.com
+    # - protocol: TLS
+    #   port: 443
+    #   name: unifi
+    #   hostname: "unifi.local.julianmaze.com"
+    #   tls:
+    #     mode: Passthrough # TLS is handled by the unifi application
+    #     # mode: Terminate # Terminate TLS at the gateway
+    #     # certificateRefs:
+    #     #   - name: wildcard-local-julianmaze-com-tls
+    #   allowedRoutes:
+    #     namespaces:
+    #       from: Selector
+    #       selector:
+    #         matchExpressions:
+    #           - key: kubernetes.io/metadata.name
+    #             operator: In
+    #             values:
+    #               - unifi
     # local.julianmaze.com
     - protocol: HTTPS
       port: 443
@@ -63,6 +82,7 @@ spec:
                 values:
                   - longhorn-system
                   - development
+                  - unifi
     # home assistant public
     - protocol: HTTPS
       port: 443

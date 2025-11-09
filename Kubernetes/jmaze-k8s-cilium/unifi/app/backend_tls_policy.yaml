@@ -1,0 +1,19 @@
+# Not yet implemented - https://github.com/cilium/cilium/issues/31352
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: BackendTLSPolicy
+metadata:
+  name: unifi-backend-tls
+  namespace: unifi
+spec:
+  targetRefs:
+    - kind: Service
+      name: unifi
+      group: ""
+      sectionName: console
+  validation:
+    caCertificateRefs:
+      - kind: ConfigMap
+        name: unifi-temp-self-signed-cert
+        group: ""
+    hostname: unifi

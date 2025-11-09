@@ -1,0 +1,142 @@
+## Bitnami MongoDB(&reg;) image
+## ref: https://hub.docker.com/r/bitnami/mongodb/tags/
+## @param image.registry [default: REGISTRY_NAME] MongoDB(&reg;) image registry
+## @param image.repository [default: REPOSITORY_NAME/mongodb] MongoDB(&reg;) image registry
+## @skip image.tag MongoDB(&reg;) image tag (immutable tags are recommended)
+## @param image.digest MongoDB(&reg;) image digest in the way sha256:aa.... Please note this parameter, if set, will override the tag
+## @param image.pullPolicy MongoDB(&reg;) image pull policy
+## @param image.pullSecrets Specify docker-registry secret names as an array
+## @param image.debug Set to true if you would like to see extra information on logs
+##
+image:
+  registry: docker.io
+  repository: bitnamilegacy/mongodb
+  tag: 8.0.13-debian-12-r0
+
+## @param architecture MongoDB(&reg;) architecture (`standalone` or `replicaset`)
+##
+architecture: standalone
+## @param useStatefulSet Set to true to use a StatefulSet instead of a Deployment (only when `architecture=standalone`)
+##
+useStatefulSet: true
+## MongoDB(&reg;) Authentication parameters
+##
+auth:
+  ## MongoDB(&reg;) custom users and databases
+  ## ref: https://github.com/bitnami/containers/tree/main/bitnami/mongodb#creating-a-user-and-database-on-first-run
+  ## @param auth.usernames List of custom users to be created during the initialization
+  ## @param auth.passwords List of passwords for the custom users set at `auth.usernames`
+  ## @param auth.databases List of custom databases to be created during the initialization
+  ##
+  usernames: [unifi]
+  passwords: [] # Set on helm deployment command
+  databases: [unifi]
+
+## MongoDB(&reg;) containers' resource requests and limits.
+## ref: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
+## We usually recommend not to specify default resources and to leave this as a conscious
+## choice for the user. This also increases chances charts run on environments with little
+## resources, such as Minikube. If you do want to specify resources, uncomment the following
+## lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+## @param resourcesPreset Set container resources according to one common preset (allowed values: none, nano, micro, small, medium, large, xlarge, 2xlarge). This is ignored if resources is set (resources is recommended for production).
+## More information: https://github.com/bitnami/charts/blob/main/bitnami/common/templates/_resources.tpl#L15
+##
+resourcesPreset: "medium"
+
+## MongoDB(&reg;) Pod Disruption Budget configuration
+## ref: https://kubernetes.io/docs/tasks/run-application/configure-pdb/
+##
+pdb:
+  ## @param pdb.create Enable/disable a Pod Disruption Budget creation for MongoDB(&reg;) pod(s)
+  ##
+  create: false
+
+## Network Policies
+## Ref: https://kubernetes.io/docs/concepts/services-networking/network-policies/
+##
+networkPolicy:
+  ## @param networkPolicy.enabled Specifies whether a NetworkPolicy should be created
+  ##
+  enabled: false
+
+persistence:
+  ## @param persistence.existingClaim Provide an existing `PersistentVolumeClaim` (only when `architecture=standalone`)
+  ## Requires persistence.enabled: true
+  ## If defined, PVC must be created manually before volume will be bound
+  ## Ignored when mongodb.architecture=replicaset
+  ##
+  existingClaim: "unifidb-mongo8"
+
+## MongoDB(&reg;) pods' readiness probe. Evaluated as a template.
+## ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
+## @param readinessProbe.enabled Enable readinessProbe
+## @param readinessProbe.initialDelaySeconds Initial delay seconds for readinessProbe
+## @param readinessProbe.periodSeconds Period seconds for readinessProbe
+## @param readinessProbe.timeoutSeconds Timeout seconds for readinessProbe
+## @param readinessProbe.failureThreshold Failure threshold for readinessProbe
+## @param readinessProbe.successThreshold Success threshold for readinessProbe
+##
+readinessProbe:
+  enabled: true
+  initialDelaySeconds: 5
+  periodSeconds: 30
+  timeoutSeconds: 15
+  failureThreshold: 6
+  successThreshold: 1
+
+## MongoDB(&reg;) pods' liveness probe. Evaluated as a template.
+## ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
+## @param livenessProbe.enabled Enable livenessProbe
+## @param livenessProbe.initialDelaySeconds Initial delay seconds for livenessProbe
+## @param livenessProbe.periodSeconds Period seconds for livenessProbe
+## @param livenessProbe.timeoutSeconds Timeout seconds for livenessProbe
+## @param livenessProbe.failureThreshold Failure threshold for livenessProbe
+## @param livenessProbe.successThreshold Success threshold for livenessProbe
+##
+livenessProbe:
+  enabled: true
+  initialDelaySeconds: 30
+  periodSeconds: 60
+  timeoutSeconds: 20
+  failureThreshold: 6
+  successThreshold: 1
+
+## @param extraEnvVars Extra environment variables to add to MongoDB(&reg;) pods
+## E.g:
+## extraEnvVars:
+##   - name: FOO
+##     value: BAR
+##
+extraEnvVars:
+  # Your system has glibc support for rseq built in, which is not yet supported by tcmalloc-google and has critical performance implications. Please set the environment variable...
+  - name: GLIBC_TUNABLES
+    value: glibc.pthread.rseq=0
+
+## MongoDB(&reg;) pods' Security Context.
+## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
+## @param podSecurityContext.enabled Enable MongoDB(&reg;) pod(s)' Security Context
+## @param podSecurityContext.fsGroupChangePolicy Set filesystem group change policy
+## @param podSecurityContext.supplementalGroups Set filesystem extra groups
+## @param podSecurityContext.fsGroup Group ID for the volumes of the MongoDB(&reg;) pod(s)
+## @param podSecurityContext.sysctls sysctl settings of the MongoDB(&reg;) pod(s)'
+##
+podSecurityContext:
+  ## sysctl settings
+  ## Example:
+  ## sysctls:
+  ## - name: net.core.somaxconn
+  ##   value: "10000"
+  ##
+  sysctls:
+    # - name: vm.swappiness
+    #   value: "1"
+    # - name: vm.max_map_count
+    #   value: "262144"
+    # - name: kernel.mm.transparent_hugepage.enabled
+    #   value: "never"
+
+## @param nodeSelector MongoDB(&reg;) Node labels for pod assignment
+## ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/
+##
+nodeSelector:
+  kubernetes.io/hostname: k3s-cilium-3 # Node with the Longhorn volume affinity

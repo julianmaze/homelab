@@ -1,0 +1,121 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: unifi
+  labels:
+    app: unifi
+    app.kubernetes.io/instance: unifi
+    app.kubernetes.io/name: unifi
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: unifi
+      app.kubernetes.io/name: unifi
+      app.kubernetes.io/instance: unifi
+      pod.name: main
+  template:
+    metadata:
+      labels:
+        app: unifi
+        app.kubernetes.io/name: unifi
+        app.kubernetes.io/instance: unifi
+        pod.name: main
+    spec:
+      # hostNetwork: true
+      # dnsPolicy: ClusterFirstWithHostNet
+      restartPolicy: Always
+      # Ensure the Unifi pod is scheduled on the same node as the MongoDB pod
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - topologyKey: kubernetes.io/hostname
+              labelSelector:
+                matchExpressions:
+                  - key: statefulset.kubernetes.io/pod-name
+                    operator: In
+                    values:
+                      - unifidb-mongodb-0
+      securityContext:
+        fsGroup: 1000 # Mount volumes with this group ID
+      containers:
+        - name: unifi
+          image: lscr.io/linuxserver/unifi-network-application:latest
+          imagePullPolicy: Always
+          env:
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: TZ
+              value: America/Los_Angeles
+            - name: MONGO_USER
+              value: unifi
+            - name: MONGO_HOST
+              value: unifidb-mongodb.unifi.svc.cluster.local
+            - name: MONGO_PORT
+              value: "27017"
+            - name: MONGO_DBNAME
+              value: unifi
+            - name: MONGO_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: unifidb-mongodb
+                  key: mongodb-passwords
+          ports:
+            - name: web
+              containerPort: 8443
+              protocol: TCP
+            - name: comm
+              containerPort: 8080
+              protocol: TCP
+            - name: stun
+              containerPort: 3478
+              protocol: UDP
+            - name: speedtest
+              containerPort: 6789
+              protocol: TCP
+            - name: websecure
+              containerPort: 8843
+              protocol: TCP
+            - name: portal
+              containerPort: 8880
+              protocol: TCP
+            - name: l2-nw-discov
+              containerPort: 1900
+              protocol: UDP
+            - name: dev-discov
+              containerPort: 10001
+              protocol: UDP
+            - name: syslog
+              containerPort: 5514
+              protocol: UDP
+          resources:
+            requests:
+              memory: "1024Mi"
+              cpu: "250m"
+            limits:
+              memory: "2048Mi"
+              cpu: "1500m"
+          volumeMounts:
+            - name: config
+              mountPath: /config
+              readOnly: false
+            - name: localtime
+              mountPath: /etc/localtime
+              readOnly: true
+            - name: timezone
+              mountPath: /etc/timezone
+              readOnly: true
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: unifi-app
+        - name: localtime
+          hostPath:
+            path: /etc/localtime
+        - name: timezone
+          hostPath:
+            path: /etc/timezone

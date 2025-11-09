@@ -1,0 +1,40 @@
+# ---
+# apiVersion: gateway.networking.k8s.io/v1
+# kind: HTTPRoute
+# metadata:
+#   name: unifi
+# spec:
+#   hostnames:
+#     - unifi.local.julianmaze.com
+#   parentRefs:
+#     - name: default-gateway
+#       namespace: gateway
+#       sectionName: local-subdomain # name of the gateway listener
+#   rules:
+#     - backendRefs:
+#         - kind: Service
+#           name: unifi
+#           port: 8443
+#       matches:
+#         - path:
+#             type: PathPrefix
+#             value: /
+
+---
+apiVersion: gateway.networking.k8s.io/v1alpha2
+kind: TLSRoute
+metadata:
+  name: unifi
+spec:
+  hostnames:
+    - unifi.local.julianmaze.com
+  parentRefs:
+    - name: default-gateway
+      namespace: gateway
+      sectionName: local-subdomain # name of the gateway listener
+  rules:
+    - name: unifi-local-julianmaze-com
+      backendRefs:
+        - name: unifi
+          port: 8443
+          kind: Service
