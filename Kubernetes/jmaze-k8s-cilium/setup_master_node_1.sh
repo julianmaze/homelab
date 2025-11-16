@@ -41,7 +41,7 @@ sudo tar xzvfC cilium-linux-${CLI_ARCH}.tar.gz /usr/local/bin
 rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 
 # CNI - only needed on the first master node
-cilium upgrade --version 1.18.3 \
+cilium upgrade --version 1.18.4 \
   --set devices='{ens160,tun0}' \
   --set kubeProxyReplacement=true \
   --set gatewayAPI.enabled=true \
