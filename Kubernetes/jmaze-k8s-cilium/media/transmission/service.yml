@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: transmission
+spec:
+  type: ClusterIP
+  publishNotReadyAddresses: false
+  ports:
+    - name: main
+      port: 9091
+      protocol: TCP
+      targetPort: 9091
+    - port: 8118
+      name: proxy
+      protocol: TCP
+      targetPort: 8118
+  selector:
+    app.kubernetes.io/instance: transmission
+    app.kubernetes.io/name: transmission-openvpn
