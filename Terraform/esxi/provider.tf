@@ -9,8 +9,8 @@ terraform {
   backend "kubernetes" {
     secret_suffix  = "esxi-state"
     config_path    = "~/.kube/config"
-    namespace      = "development"
-    config_context = "jmaze-k8s"
+    namespace      = "terraform-state"
+    config_context = "jmaze-k8s-cilium"
   }
 }
 

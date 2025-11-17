@@ -7,7 +7,7 @@ provider "aws" {
 terraform {
   required_providers {
     aws = {
-      version = "5.98.0"
+      version = "6.21.0"
     }
   }
 
@@ -15,7 +15,7 @@ terraform {
   backend "kubernetes" {
     secret_suffix  = "aws-dns-state"
     config_path    = "~/.kube/config"
-    namespace      = "development"
-    config_context = "jmaze-k8s"
+    namespace      = "terraform-state"
+    config_context = "jmaze-k8s-cilium"
   }
 }

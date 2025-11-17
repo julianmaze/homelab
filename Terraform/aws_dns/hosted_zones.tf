@@ -1,12 +1,3 @@
-import {
-  to = aws_route53_zone.julianmaze_com
-  id = "Z0407921W5XGEPSJT29J"
-}
-import {
-  to = aws_route53_zone.jmaz_tv
-  id = "Z02821373MJSHO8NCPJDZ"
-}
-
 # __generated__ by OpenTofu
 # Please review these resources and move them into your main configuration files.
 
