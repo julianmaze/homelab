@@ -4,7 +4,10 @@
 apt update -y
 apt upgrade -y
 
-# Configure and install k3s on agent node - note the cluster-init: false and that cilium is already installed
+# OPTIONAL - Reboot the server
+reboot -n
+
+# Configure and install k3s on agent node
 # The token can be found in /var/lib/rancher/k3s/server/token on the first master node
 mkdir -p /etc/rancher/k3s
 cat <<EOF > /etc/rancher/k3s/config.yaml
@@ -13,16 +16,23 @@ token: $TOKEN
 EOF
 
 # Configure agent node specific settings
-# VPN node
 mkdir -p /etc/rancher/k3s/config.yaml.d
+
+# VPN node
 cat <<EOF >> /etc/rancher/k3s/config.yaml.d/vpn.yaml
 node-taint:
   - "kubernetes.io/role=VPN:NoSchedule"
 EOF
 
+# Plex node
+cat <<EOF >> /etc/rancher/k3s/config.yaml.d/plex.yaml
+node-taint:
+  - "kubernetes.io/role=Plex:NoSchedule"
+EOF
+
 curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.31.6+k3s1 sh -s - agent
 
-# Install Cilium CLI
+# OPTIONAL - Install Cilium CLI
 # CLI
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 CILIUM_CLI_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/cilium-cli/main/stable.txt)
@@ -34,5 +44,6 @@ sudo tar xzvfC cilium-linux-${CLI_ARCH}.tar.gz /usr/local/bin
 rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 
 # Check status
+# This can additionally be run on your workstation with Cilium CLI installed
 cilium status --wait
 
