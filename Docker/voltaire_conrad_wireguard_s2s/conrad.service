@@ -1,11 +1,14 @@
 [Unit]
 Description=Add static route for Conrad Wireguard tunnel - add to voltaire wg host
-After=network.target
+After=docker.service
+Requires=docker.service
 
 [Service]
-Type=oneshot
+Type=simple
+ExecStartPre=/bin/bash -c 'until [ "$(docker inspect -f {{.State.Running}} wireguard 2>/dev/null)" = "true" ]; do sleep 1; done'
 ExecStart=/sbin/ip route add 10.0.1.0/24 via 172.19.0.50
 RemainAfterExit=yes
+Restart=always
 
 [Install]
 WantedBy=multi-user.target

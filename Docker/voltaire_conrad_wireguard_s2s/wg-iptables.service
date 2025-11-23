@@ -4,9 +4,11 @@ After=docker.service
 Requires=docker.service
 
 [Service]
-Type=oneshot
-ExecStart=/usr/local/bin/wg-voltaire-iptables.sh
+Type=simple
+ExecStartPre=/bin/bash -c 'until [ "$(docker inspect -f {{.State.Running}} wireguard 2>/dev/null)" = "true" ]; do sleep 1; done'
+ExecStart=/usr/local/bin/wg-iptables.sh
 RemainAfterExit=yes
+Restart=always
 
 [Install]
 WantedBy=multi-user.target

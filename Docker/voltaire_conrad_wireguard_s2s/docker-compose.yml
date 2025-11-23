@@ -27,6 +27,8 @@ services:
     networks:
       default:
         ipv4_address: 172.19.0.50
+    dns:
+      - 8.8.8.8
 networks:
   default:
     name: wgnet
