@@ -1,92 +1,92 @@
-version: '3.8'
+version: "3.8"
 
 services:
   portainer:
-   image: portainer/portainer-ce:latest
-   container_name: portainer
-   restart: always
-   ports:
-    - 9000:9000
-    - 8000:8000
-   command: -H unix:///var/run/docker.sock
-   networks:
-    JMM-Docker:
-      ipv4_address: 10.50.25.2
-   volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
-    - portainer_data:/data
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: always
+    ports:
+      - 9000:9000
+      - 8000:8000
+    command: -H unix:///var/run/docker.sock
+    networks:
+      JMM-Docker:
+        ipv4_address: 10.50.25.2
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
 
   radarr:
-   container_name: Radarr
-   restart: unless-stopped
-   ports:
-    - 7878:7878
-   volumes:
-    - /home/jmaze/Data:/media
-   image: linuxserver/radarr:nightly-version-3.0.2.4473
-   networks:
-    JMM-Docker:
-      ipv4_address: 10.50.25.3
+    container_name: Radarr
+    restart: unless-stopped
+    ports:
+      - 7878:7878
+    volumes:
+      - /home/jmaze/Data:/media
+    image: linuxserver/radarr:nightly-version-3.0.2.4473
+    networks:
+      JMM-Docker:
+        ipv4_address: 10.50.25.3
 
   TransmissionVPN:
-   privileged: true
-   container_name: TransmissionVPN
-   image: haugene/transmission-openvpn:latest
-   restart: always
-   ports:
-    - 9091:9091
-    - 8888:8888
-   volumes:
-    - /home/jmaze/Data:/media
-    - /home/jmaze/cyberghost/default.ovpn:/etc/openvpn/custom/default.ovpn
-    - /home/jmaze/cyberghost/:/etc/openvpn/custom/
-   environment:
-    - OPENVPN_PROVIDER=CUSTOM
-    - OPENVPN_USERNAME=YEW
-    - OPENVPN_PASSWORD=YEW
-    - TRANSMISSION_DOWNLOAD_DIR=/media/downloads
-    - TRANSMISSION_INCOMPLETE_DIR=/media/incomplete
-    - TRANSMISSION_SEED_QUEUE_ENABLED=false
-    - TRANSMISSION_SPEED_LIMIT_UP=2000
-    - TRANSMISSION_SPEED_LIMIT_UP_ENABLED=true
-    - TRANSMISSION_UPLOAD_SLOTS_PER_TORRENT=10
-    - TRANSMISSION_WEB_UI=combustion
-    - LOCAL_NETWORK=10.50.0.0/16
-    - TRANSMISSION_DOWNLOAD_QUEUE_SIZE=10
-    - TRANSMISSION_RATIO_LIMIT_ENABLED=true
-    - TRANSMISSION_RATIO_LIMIT=2
-   networks:
-    JMM-Docker:
-      ipv4_address: 10.50.25.4
+    privileged: true
+    container_name: TransmissionVPN
+    image: haugene/transmission-openvpn:latest
+    restart: always
+    ports:
+      - 9091:9091
+      - 8888:8888
+    volumes:
+      - /home/jmaze/Data:/media
+      - /home/jmaze/cyberghost/default.ovpn:/etc/openvpn/custom/default.ovpn
+      - /home/jmaze/cyberghost/:/etc/openvpn/custom/
+    environment:
+      - OPENVPN_PROVIDER=CUSTOM
+      - OPENVPN_USERNAME=YEW
+      - OPENVPN_PASSWORD=YEW
+      - TRANSMISSION_DOWNLOAD_DIR=/media/downloads
+      - TRANSMISSION_INCOMPLETE_DIR=/media/incomplete
+      - TRANSMISSION_SEED_QUEUE_ENABLED=false
+      - TRANSMISSION_SPEED_LIMIT_UP=2000
+      - TRANSMISSION_SPEED_LIMIT_UP_ENABLED=true
+      - TRANSMISSION_UPLOAD_SLOTS_PER_TORRENT=10
+      - TRANSMISSION_WEB_UI=combustion
+      - LOCAL_NETWORK=10.50.0.0/16
+      - TRANSMISSION_DOWNLOAD_QUEUE_SIZE=10
+      - TRANSMISSION_RATIO_LIMIT_ENABLED=true
+      - TRANSMISSION_RATIO_LIMIT=2
+    networks:
+      JMM-Docker:
+        ipv4_address: 10.50.25.4
 
   jackett:
-   container_name: jackett
-   restart: unless-stopped
-   ports:
-    - 9117:9117
-   image: linuxserver/jackett:latest
-   networks:
-    JMM-Docker:
-      ipv4_address: 10.50.25.5
+    container_name: jackett
+    restart: unless-stopped
+    ports:
+      - 9117:9117
+    image: linuxserver/jackett:latest
+    networks:
+      JMM-Docker:
+        ipv4_address: 10.50.25.5
 
   sonarr:
     container_name: Sonarr
     restart: unless-stopped
     ports:
-     - 8989:8989
+      - 8989:8989
     volumes:
-     - /home/jmaze/Data:/media
+      - /home/jmaze/Data:/media
     image: linuxserver/sonarr:latest
     networks:
-     JMM-Docker:
-      ipv4_address: 10.50.25.6
+      JMM-Docker:
+        ipv4_address: 10.50.25.6
 
   ghost:
     container_name: GhostBlog
     restart: unless-stopped
     image: ghost:latest
     ports:
-     - 2368:2368
+      - 2368:2368
     environment:
       url: http://dana.pup
     networks:
@@ -100,9 +100,9 @@ services:
       - 80:80
     restart: unless-stopped
     dns:
-     - 10.50.25.10
+      - 10.50.25.10
     volumes:
-     - /home/DockerConfigs/organizr/config:/config
+      - /home/DockerConfigs/organizr/config:/config
     networks:
       JMM-Docker:
         ipv4_address: 10.50.25.8
@@ -129,8 +129,8 @@ services:
       - "80:80/tcp"
       - "443:443/tcp"
     environment:
-      TZ: 'America/Los_Angeles'
-      WEBPASSWORD: '14Sam97sung!?'
+      TZ: "America/Los_Angeles"
+      WEBPASSWORD: "Password123!"
     volumes:
       - /home/DockerConfigs/pihole/etc-pihole/:/etc/pihole/
       - /home/DockerConfigs/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/
@@ -150,8 +150,8 @@ services:
     container_name: caddy
     environment:
       - ACME_AGREE=true
-      - CLOUDFLARE_EMAIL=jmmaze@outlook.com
-      - CLOUDFLARE_API_KEY=QLnt--OMzXcJG7eGm8DzL55kX9Fb3-oTmGPm79v_
+      - CLOUDFLARE_EMAIL=
+      - CLOUDFLARE_API_KEY=
     ports:
       - "80:80"
       - "443:443"
@@ -202,26 +202,26 @@ services:
       - /home/DockerConfigs/assistant-relay/audio-responses/:/assistant_relay/bin/audio-responses
     restart: unless-stopped
     networks:
-     JMM-Docker:
-       ipv4_address: 10.50.25.14
+      JMM-Docker:
+        ipv4_address: 10.50.25.14
 
   nextcloud:
     container_name: nextcloud
     image: linuxserver/nextcloud:latest
     environment:
       - TZ=America/Los_Angeles
-    ports: 
+    ports:
       - "443:443"
     restart: unless-stopped
-    volumes: 
+    volumes:
       - /home/DockerConfigs/nextcloud/appdata/:/config
       - /home/DockerConfigs/nextcloud/data/:/data
-    networks: 
-     JMM-Docker:
-       ipv4_address: 10.50.25.15
+    networks:
+      JMM-Docker:
+        ipv4_address: 10.50.25.15
 
 volumes:
- portainer_data:
+  portainer_data:
 
 networks:
   JMM-Docker:

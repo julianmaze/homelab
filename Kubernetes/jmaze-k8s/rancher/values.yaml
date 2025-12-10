@@ -1,4 +1,4 @@
-bootstrapPassword: Jkn3Bo7pXbJGTscq
+bootstrapPassword: <PASSWORD>
 hostname: rancher.local.julianmaze.com
 replicas: 1
 privateCA: false
@@ -16,6 +16,6 @@ readinessProbe:
 # As of 3/22/25 v2.10.3 is the latest stable release
 # helm repo add rancher-stable https://releases.rancher.com/server-charts/stable
 # helm repo update
-# helm upgrade rancher rancher-stable/rancher --namespace cattle-system -f values.yaml --version 2.10.3 
-# or 
+# helm upgrade rancher rancher-stable/rancher --namespace cattle-system -f values.yaml --version 2.10.3
+# or
 # helm upgrade rancher rancher-stable/rancher --namespace cattle-system --reuse-values
