@@ -1,0 +1,10 @@
+# Mark YAML files as the primary language for the repository
+*.yaml linguist-detectable=true
+*.yml linguist-detectable=true
+
+# Optional: Mark documentation files as documentation
+*.md linguist-documentation=true
+README.md linguist-documentation=true
+
+# Optional: Exclude vendor or generated files if needed
+# vendor/** linguist-vendored=true
