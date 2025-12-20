@@ -16,6 +16,18 @@ disable-kube-proxy: true
 cluster-init: true
 resolv-conf: /run/systemd/resolve/resolv.conf
 EOF
+
+# Configure etcd S3 snapshots
+# NOTE: Apply terraform in Terraform/k3s_etcd_snapshot_bucket/ and run
+# Kubernetes/jmaze-k8s-cilium/kube-system/generate-k3s-etcd-snapshot-s3-config.nu | kubectl apply -f -
+# to create the required S3 bucket and Kubernetes secret before enabling this
+# https://docs.k3s.io/cli/etcd-snapshot
+mkdir -p /etc/rancher/k3s/config.yaml.d
+cat <<EOF > /etc/rancher/k3s/config.yaml.d/etcd-snapshot.yaml
+etcd-s3: true
+etcd-s3-config-secret: k3s-etcd-snapshot-s3-config
+EOF
+
 curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.31.6+k3s1 sh -s - server
 
 # Install gateway API CRDS
