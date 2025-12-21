@@ -1,0 +1,10 @@
+# Overload values for persistence
+persistence:
+  config:
+    enabled: true
+    existingClaim: prowlarr
+
+# Disabling metrics - we do not have a Prometheus instance set up yet.
+metrics:
+  main:
+    enabled: false
