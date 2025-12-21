@@ -8,3 +8,18 @@ persistence:
 metrics:
   main:
     enabled: false
+
+# Overload DNS settings to use a public DNS server
+workload:
+  main:
+    podSpec:
+      dnsConfig:
+        nameservers:
+          - 8.8.8.8
+        searches:
+          - "svc.cluster.local" # Required when dnsPolicy is None
+          - "cluster.local"
+        options:
+          - name: ndots
+            value: "2"
+      dnsPolicy: None
