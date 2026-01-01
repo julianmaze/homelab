@@ -1,10 +1,10 @@
-replicaCount: 3
+replicaCount: 2
 
 serviceType: LoadBalancer
 service:
-  # clusterIP: ""
+  clusterIP: "10.43.25.5"
   # clusterIPs: []
-  loadBalancerIP: "10.50.25.10"
+  loadBalancerIP: "10.50.25.5"
   # loadBalancerClass: ""
   # externalIPs: []
   # externalTrafficPolicy: ""
@@ -12,7 +12,7 @@ service:
   # trafficDistribution: PreferClose
   # The name of the Service
   # If not set, a name is generated using the fullname template
-  name: "coredns-external"
+  name: "coredns-external-google"
   annotations: {}
   # Pod selector
   selector: {}
@@ -48,9 +48,11 @@ servers:
         configBlock: |-
           credentials default /.aws/credentials/credentials
       - name: forward
-        parameters: . tls://45.90.28.221 tls://45.90.30.221
+        parameters: cluster.local 10.43.0.10
+      - name: forward
+        parameters: . tls://8.8.8.8 tls://8.8.4.4
         configBlock: |-
-          tls_servername jmaze--k8s--cilium-7d2918.dns.nextdns.io
+          tls_servername dns.google
       - name: cache
       - name: loop
       - name: reload
@@ -88,18 +90,4 @@ env:
 # See https://github.com/kubernetes-incubator/cluster-proportional-autoscaler
 autoscaler:
   # Enabled the cluster-proportional-autoscaler
-  enabled: true
-
-  # Number of nodes in the cluster per coredns replica
-  nodesPerReplica: 1
-  # Min size of replicaCount
-  min: 1
-  # Max size of replicaCount (default of 0 is no max)
-  max: 0
-  # Whether to include unschedulable nodes in the nodes/cores calculations - this requires version 1.8.0+ of the autoscaler
-  includeUnschedulableNodes: false
-  # If true does not allow single points of failure to form
-  preventSinglePointFailure: true
-
-  livenessProbe:
-    enabled: false
+  enabled: false
