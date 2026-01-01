@@ -30,7 +30,7 @@ spec:
       # We want byparr to use a public DNS server. Cluster DNS points to NextDNS.
       dnsConfig:
         nameservers:
-          - 8.8.8.8
+          - 10.43.25.5 # CoreDNS External Google Service Cluster IP
       containers:
         - name: byparr
           image: ghcr.io/thephaseless/byparr:latest
@@ -39,18 +39,7 @@ spec:
             - name: main
               containerPort: 8191
               protocol: TCP
-          volumeMounts:
-            - name: config
-              mountPath: /config
-              readOnly: false
           resources:
             requests:
-              memory: "256Mi"
-              cpu: "150m"
-            limits:
-              memory: "1024Mi"
-              cpu: "600m"
-      volumes:
-        - name: config
-          persistentVolumeClaim:
-            claimName: byparr
+              memory: "2048Mi"
+              cpu: "1500m"

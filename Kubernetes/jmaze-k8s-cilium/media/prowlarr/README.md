@@ -6,5 +6,5 @@ Indexer manager/proxy built on the popular arr net base stack to integrate with 
 - https://github.com/trueforge-org/truecharts/tree/master/charts/stable/prowlarr
 
 ```bash
-helm install prowlarr oci://tccr.io/truecharts/prowlarr --values values.yaml
+helm install prowlarr oci://oci.trueforge.org/truecharts/prowlarr --values values.yaml
 ```
