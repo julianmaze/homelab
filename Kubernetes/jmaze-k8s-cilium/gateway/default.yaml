@@ -83,6 +83,7 @@ spec:
                   - longhorn-system
                   - development
                   - unifi
+                  - kube-system
     # home assistant public
     - protocol: HTTPS
       port: 443

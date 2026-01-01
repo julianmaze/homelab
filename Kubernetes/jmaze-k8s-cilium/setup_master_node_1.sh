@@ -53,7 +53,7 @@ sudo tar xzvfC cilium-linux-${CLI_ARCH}.tar.gz /usr/local/bin
 rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 
 # CNI - only needed on the first master node
-cilium upgrade --version 1.18.4 \
+cilium upgrade --version 1.18.5 \
   --set devices='{ens160,tun0}' \
   --set kubeProxyReplacement=true \
   --set gatewayAPI.enabled=true \
@@ -67,7 +67,9 @@ cilium upgrade --version 1.18.4 \
   --set l2announcements.leaseRenewDeadline=2s \
   --set l2announcements.leaseRetryPeriod=200ms \
   --set egressGateway.enabled=true \
-  --set bpf.masquerade=true
+  --set bpf.masquerade=true \
+  --set hubble.relay.enabled=true \
+  --set hubble.ui.enabled=true
 
 # Check status
 cilium status --wait
