@@ -24,7 +24,7 @@ spec:
     spec:
       dnsConfig:
         nameservers:
-          - 8.8.8.8
+          - 10.43.25.5 # CoreDNS External Google Service Cluster IP
       containers:
         - envFrom:
             - configMapRef:

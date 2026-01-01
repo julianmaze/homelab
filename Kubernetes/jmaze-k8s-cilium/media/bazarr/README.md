@@ -4,5 +4,5 @@
 - https://truecharts.org/charts/stable/bazarr/
 
 ```bash
-helm install/upgrade bazarr-ds1522 oci://tccr.io/truecharts/bazarr --values values.yaml
+helm install/upgrade bazarr oci://oci.trueforge.org/truecharts/bazarr --values values.yaml
 ```

@@ -30,7 +30,7 @@ spec:
       # We want jackett to use a public DNS server. Cluster DNS points to NextDNS.
       dnsConfig:
         nameservers:
-          - 8.8.8.8
+          - 10.43.25.5 # CoreDNS External Google Service Cluster IP
       containers:
         - name: jackett
           image: linuxserver/jackett:latest

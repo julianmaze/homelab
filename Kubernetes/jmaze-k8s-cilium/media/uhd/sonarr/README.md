@@ -6,5 +6,5 @@ Ultra High Def (4K)
 - https://truecharts.org/truetech/truecharts/charts/stable/sonarr/
 
 ```bash
-helm install/upgrade sonarr-ds1522-uhd oci://tccr.io/truecharts/sonarr --values values.yaml
+helm install/upgrade sonarr-ds1522-uhd oci://oci.trueforge.org/truecharts/sonarr --values values.yaml
 ```

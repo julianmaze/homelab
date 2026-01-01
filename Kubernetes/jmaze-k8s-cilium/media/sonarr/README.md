@@ -4,5 +4,5 @@
 - https://truecharts.org/truetech/truecharts/charts/stable/sonarr/
 
 ```bash
-helm install/upgrade sonarr-ds1522 oci://tccr.io/truecharts/sonarr --values values.yaml
+helm install/upgrade sonarr-ds1522 oci://oci.trueforge.org/truecharts/sonarr --values values.yaml
 ```
