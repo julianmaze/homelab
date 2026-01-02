@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: "ds1522-backup"
+spec:
+  storageClassName: "nfs-csi"
+  volumeName: "ds1522-backup"
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: "52000Gi"

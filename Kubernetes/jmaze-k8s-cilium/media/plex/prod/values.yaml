@@ -1,0 +1,37 @@
+pms:
+  configExistingClaim: "plex-prod"
+
+service:
+  type: "NodePort"
+  port: 32400 # Prod get the default :)
+  nodePort: 32400 # Prod get the default :)
+  externalTrafficPolicy: "Local" # Preserve client source IP
+
+tolerations:
+  - key: "kubernetes.io/role"
+    operator: "Equal"
+    value: "Plex"
+    effect: "NoSchedule"
+
+extraVolumes:
+  - name: media
+    persistentVolumeClaim:
+      claimName: ds1522-media
+  - name: backup
+    persistentVolumeClaim:
+      claimName: ds1522-backup
+
+extraVolumeMounts:
+  - mountPath: /media
+    name: media
+  - mountPath: /backup
+    name: backup
+
+extraEnv:
+  # This claim is optional, and is only used for the first startup of PMS
+  # The claim is obtained from https://www.plex.tv/claim/ is is only valid for a few minutes
+  #PLEX_CLAIM: "claim-dFYbTiPkgS6xUxYyaH2f"
+  HOSTNAME: "RadiantRealm"
+  TZ: "America/Los_Angeles"
+  ADVERTISE_IP: "http://10.50.25.30:32400/"
+  ALLOWED_NETWORKS: "10.50.70.20/27,192.168.15.0/24"

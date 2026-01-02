@@ -1,0 +1,27 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: plex-prod
+  namespace: media
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: plex-hostpath
+  hostPath:
+    path: /plex/prod
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: plex-prod
+  namespace: media
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: plex-hostpath
