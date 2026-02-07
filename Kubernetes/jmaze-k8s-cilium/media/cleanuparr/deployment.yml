@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cleanuparr
+  labels:
+    app: cleanuparr
+    app.kubernetes.io/instance: cleanuparr
+    app.kubernetes.io/name: cleanuparr
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: cleanuparr
+      app.kubernetes.io/name: cleanuparr
+      app.kubernetes.io/instance: cleanuparr
+      pod.name: main
+  template:
+    metadata:
+      labels:
+        app: cleanuparr
+        app.kubernetes.io/name: cleanuparr
+        app.kubernetes.io/instance: cleanuparr
+        pod.name: main
+    spec:
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
+      containers:
+        - name: cleanuparr
+          image: ghcr.io/cleanuparr/cleanuparr:latest
+          imagePullPolicy: Always
+          ports:
+            - name: main
+              containerPort: 11011
+              protocol: TCP
+          volumeMounts:
+            - name: config
+              mountPath: /config
+              readOnly: false
+            - name: media
+              mountPath: /media
+              readOnly: false
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: cleanuparr
+        - name: media
+          persistentVolumeClaim:
+            claimName: ds1522-media
