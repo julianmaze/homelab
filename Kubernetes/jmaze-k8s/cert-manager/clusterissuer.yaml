@@ -1,3 +1,5 @@
+# This issuer is simply needed to manage the certificate for rancher.local.julianmaze.com
+---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
@@ -19,4 +21,3 @@ spec:
         selector:
           dnsZones:
             - "julianmaze.com"
-            - "jmaz.tv"
