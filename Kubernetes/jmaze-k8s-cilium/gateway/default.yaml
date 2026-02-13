@@ -84,6 +84,24 @@ spec:
                   - development
                   - unifi
                   - kube-system
+    # local.julianmaze.com postgres
+    - protocol: HTTPS
+      port: 5432
+      name: local-subdomain-postgres
+      hostname: "*.local.julianmaze.com"
+      tls:
+        mode: Terminate # Terminate TLS at the gateway
+        certificateRefs:
+          - name: wildcard-local-julianmaze-com-tls
+      allowedRoutes:
+        namespaces:
+          from: Selector
+          selector:
+            matchExpressions:
+              - key: kubernetes.io/metadata.name
+                operator: In
+                values:
+                  - sbi
     # home assistant public
     - protocol: HTTPS
       port: 443
