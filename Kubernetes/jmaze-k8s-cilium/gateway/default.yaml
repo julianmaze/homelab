@@ -85,7 +85,7 @@ spec:
                   - unifi
                   - kube-system
     # local.julianmaze.com postgres
-    - protocol: HTTPS
+    - protocol: TLS
       port: 5432
       name: local-subdomain-postgres
       hostname: "*.local.julianmaze.com"
