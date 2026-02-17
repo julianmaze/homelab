@@ -5,7 +5,6 @@ namespace: sbi
 
 resources:
   - secret.yaml
-  - registry-secret.yaml
   - deployment.yaml
   - service.yaml
   - tls_route.yaml

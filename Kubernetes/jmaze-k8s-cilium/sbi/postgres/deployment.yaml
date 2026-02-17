@@ -17,6 +17,9 @@ spec:
       labels:
         app: postgres
     spec:
+      securityContext:
+        fsGroup: 65532
+        fsGroupChangePolicy: "OnRootMismatch"
       imagePullSecrets:
         - name: dhi-registry
       containers:
