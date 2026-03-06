@@ -14,6 +14,10 @@ spec:
     - protocol: HTTP
       port: 80
       name: https-redirect
+      allowedRoutes:
+        kinds:
+          - kind: HTTPRoute
+            group: gateway.networking.k8s.io
     # Media services
     - protocol: HTTPS
       port: 443
@@ -24,6 +28,9 @@ spec:
         certificateRefs:
           - name: wildcard-media-jmaz-tv-tls
       allowedRoutes:
+        kinds:
+          - kind: HTTPRoute
+            group: gateway.networking.k8s.io
         namespaces:
           from: Selector
           selector:
@@ -39,6 +46,9 @@ spec:
         certificateRefs:
           - name: wildcard-media-jmaz-tv-tls
       allowedRoutes:
+        kinds:
+          - kind: HTTPRoute
+            group: gateway.networking.k8s.io
         namespaces:
           from: Selector
           selector:
@@ -73,6 +83,9 @@ spec:
         certificateRefs:
           - name: wildcard-local-julianmaze-com-tls
       allowedRoutes:
+        kinds:
+          - kind: HTTPRoute
+            group: gateway.networking.k8s.io
         namespaces:
           from: Selector
           selector:
@@ -84,24 +97,6 @@ spec:
                   - development
                   - unifi
                   - kube-system
-    # local.julianmaze.com postgres
-    - protocol: TLS
-      port: 5432
-      name: local-subdomain-postgres
-      hostname: "*.local.julianmaze.com"
-      tls:
-        mode: Terminate # Terminate TLS at the gateway
-        certificateRefs:
-          - name: wildcard-local-julianmaze-com-tls
-      allowedRoutes:
-        namespaces:
-          from: Selector
-          selector:
-            matchExpressions:
-              - key: kubernetes.io/metadata.name
-                operator: In
-                values:
-                  - sbi
     # home assistant public
     - protocol: HTTPS
       port: 443
@@ -112,6 +107,9 @@ spec:
         certificateRefs:
           - name: home-julianmaze-com-tls
       allowedRoutes:
+        kinds:
+          - kind: HTTPRoute
+            group: gateway.networking.k8s.io
         namespaces:
           from: Selector
           selector:
@@ -128,6 +126,9 @@ spec:
         certificateRefs:
           - name: scrypted-home-julianmaze-com-tls
       allowedRoutes:
+        kinds:
+          - kind: HTTPRoute
+            group: gateway.networking.k8s.io
         namespaces:
           from: Selector
           selector:
@@ -144,6 +145,9 @@ spec:
         certificateRefs:
           - name: storage-jmaz-tv-tls
       allowedRoutes:
+        kinds:
+          - kind: HTTPRoute
+            group: gateway.networking.k8s.io
         namespaces:
           from: Selector
           selector:
@@ -160,6 +164,9 @@ spec:
         certificateRefs:
           - name: photos-jmaz-tv-tls
       allowedRoutes:
+        kinds:
+          - kind: HTTPRoute
+            group: gateway.networking.k8s.io
         namespaces:
           from: Selector
           selector:
@@ -175,6 +182,12 @@ spec:
         mode: Terminate # Terminate TLS at the gateway
         certificateRefs:
           - name: surfcam-julianmaze-com-tls
+      allowedRoutes:
+        kinds:
+          - kind: HTTPRoute
+            group: gateway.networking.k8s.io
+        namespaces:
+          from: Same
     # overseerr.jmaz.tv
     - protocol: HTTPS
       port: 443
@@ -185,6 +198,9 @@ spec:
         certificateRefs:
           - name: overseerr-jmaz-tv-tls
       allowedRoutes:
+        kinds:
+          - kind: HTTPRoute
+            group: gateway.networking.k8s.io
         namespaces:
           from: Selector
           selector:

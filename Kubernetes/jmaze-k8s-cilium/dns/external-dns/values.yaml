@@ -13,6 +13,9 @@ extraVolumeMounts:
   - name: aws-credentials
     mountPath: /.aws/credentials
     readOnly: true
+# Note all CRDs must be listed here, otherwise external-dns won't know to watch them and won't update DNS records when they change
+# See https://kubernetes-sigs.github.io/external-dns/latest/docs/sources/gateway-api/ for supported API versions
 sources:
+  - service
   - gateway-httproute
   - gateway-tlsroute

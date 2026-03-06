@@ -1,16 +1,16 @@
 ---
 apiVersion: gateway.networking.k8s.io/v1alpha2
-kind: TLSRoute
+kind: TCPRoute
 metadata:
   name: postgres
   namespace: sbi
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: "db.sbi.local.julianmaze.com"
 spec:
-  hostnames:
-    - db.sbi.local.julianmaze.com
   parentRefs:
     - name: default-gateway
       namespace: gateway
-      sectionName: local-subdomain-postgres
+      sectionName: sbi-postgres
   rules:
     - backendRefs:
         - name: postgres
