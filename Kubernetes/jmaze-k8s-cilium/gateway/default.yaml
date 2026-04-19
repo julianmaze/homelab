@@ -97,6 +97,7 @@ spec:
                   - development
                   - unifi
                   - kube-system
+                  - observability
     # home assistant public
     - protocol: HTTPS
       port: 443
