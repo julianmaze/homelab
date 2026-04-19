@@ -39,3 +39,5 @@ terraform.rc
 # Terraform lock file
 
 .env
+sbi/
+.vscode/
