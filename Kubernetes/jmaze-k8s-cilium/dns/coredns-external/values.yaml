@@ -1,3 +1,6 @@
+# Overriding for prometheus servicemonitor
+fullnameOverride: coredns-nextdns
+
 replicaCount: 3
 
 serviceType: LoadBalancer
@@ -32,6 +35,8 @@ servers:
     # nodePort: 30053
     # hostPort: 53
     plugins:
+      - name: prometheus
+        parameters: 0.0.0.0:9153
       - name: errors
       # Serves a /health endpoint on :8080, required for livenessProbe
       - name: health
@@ -103,3 +108,10 @@ autoscaler:
 
   livenessProbe:
     enabled: false
+
+prometheus:
+  service:
+    enabled: true
+  monitor:
+    enabled: true
+    namespace: observability

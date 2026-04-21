@@ -36,6 +36,9 @@ spec:
             - containerPort: 3000
               name: http
           readinessProbe:
+            initialDelaySeconds: 5
+            timeoutSeconds: 10
+            periodSeconds: 30
             httpGet:
               path: /api/health
               port: http

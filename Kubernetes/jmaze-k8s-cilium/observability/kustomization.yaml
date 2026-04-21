@@ -6,3 +6,6 @@ resources:
   #- ./01_kube_prom_setup
   - ./02_kube_prom
   - http_route.yaml
+  - grafana-dashboardDefinitions-dns.yaml
+patches:
+  - path: grafana-deployment-patch.yaml
