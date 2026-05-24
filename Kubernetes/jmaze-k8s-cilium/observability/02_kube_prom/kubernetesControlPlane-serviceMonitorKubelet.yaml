@@ -99,7 +99,7 @@ spec:
       insecureSkipVerify: true
   - bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
     honorLabels: true
-    interval: 5s
+    interval: 15s
     metricRelabelings:
     - action: drop
       regex: process_start_time_seconds

@@ -35,7 +35,10 @@ spec:
   replicas: 1
   resources:
     requests:
+      cpu: 600m
       memory: 400Mi
+    limits:
+      cpu: 1500m
   ruleNamespaceSelector: {}
   ruleSelector: {}
   scrapeConfigNamespaceSelector: {}
