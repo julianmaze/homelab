@@ -6,7 +6,7 @@ metadata:
   namespace: media
 spec:
   capacity:
-    storage: 5Gi
+    storage: 200Gi
   accessModes:
     - ReadWriteOnce
   storageClassName: plex-hostpath
@@ -23,5 +23,5 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 5Gi
+      storage: 200Gi
   storageClassName: plex-hostpath
