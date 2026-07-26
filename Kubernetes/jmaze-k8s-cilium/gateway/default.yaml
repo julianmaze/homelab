@@ -54,25 +54,37 @@ spec:
           selector:
             matchLabels:
               kubernetes.io/metadata.name: media
-    # # unifi.local.julianmaze.com
-    # - protocol: TLS
-    #   port: 443
-    #   name: unifi
-    #   hostname: "unifi.local.julianmaze.com"
-    #   tls:
-    #     mode: Passthrough # TLS is handled by the unifi application
-    #     # mode: Terminate # Terminate TLS at the gateway
-    #     # certificateRefs:
-    #     #   - name: wildcard-local-julianmaze-com-tls
-    #   allowedRoutes:
-    #     namespaces:
-    #       from: Selector
-    #       selector:
-    #         matchExpressions:
-    #           - key: kubernetes.io/metadata.name
-    #             operator: In
-    #             values:
-    #               - unifi
+    # unifi.local.julianmaze.com
+    # KNOWN BROKEN as of Cilium 1.19.4: this listener is correctly configured
+    # (verified against cilium/cilium#45693's fix) but the TLSRoute attached to
+    # it is rejected with "NotAllowedByListeners" due to a Cilium bug where
+    # allowedRoutes namespace/kind restrictions misbehave on multi-listener
+    # Gateways (this Gateway has 10+ listeners). See cilium/cilium#45559 and
+    # #42159, fixed by cilium/cilium#45693, backported + released in v1.19.6
+    # (2026-07-16). Upgrade cilium to >=1.19.6 to restore unifi access via
+    # this Gateway. Direct access still works via the LoadBalancer Service
+    # (unifi.unifi ClusterIP / 10.50.25.3:8443) in the meantime.
+    # Deliberately holding off on this upgrade for now (see unifi/README.md) -
+    # note it does NOT get us gateway-terminated SSL anyway, since that also
+    # requires BackendTLSPolicy support, which needs Cilium 1.20 (not yet GA).
+    - protocol: TLS
+      port: 443
+      name: unifi
+      hostname: "unifi.local.julianmaze.com"
+      tls:
+        mode: Passthrough # TLS is handled by the unifi application (self-signed cert)
+      allowedRoutes:
+        kinds:
+          - kind: TLSRoute
+            group: gateway.networking.k8s.io
+        namespaces:
+          from: Selector
+          selector:
+            matchExpressions:
+              - key: kubernetes.io/metadata.name
+                operator: In
+                values:
+                  - unifi
     # local.julianmaze.com
     - protocol: HTTPS
       port: 443

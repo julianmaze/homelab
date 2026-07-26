@@ -1,4 +1,12 @@
-# Not yet implemented - https://github.com/cilium/cilium/issues/31352
+# Not yet usable: Cilium's Gateway API controller does not reconcile
+# BackendTLSPolicy until v1.20 (currently rc.1, unreleased as of 2026-07).
+# Verified empirically against v1.19.4: cilium-operator's startup log
+# "Checking for required and optional GatewayAPI resources" does not list
+# backendtlspolicies in either its required or optional GVK set, and no
+# TLS transport_socket is added to the envoy cluster for this Service.
+# Revisit once Cilium 1.20 GA is installed - see cilium/cilium#31352 (closed,
+# implemented for 1.20 via PR #43045) and keep unifi on TLS Passthrough
+# (see tls_route.yaml + gateway/default.yaml "unifi" listener) until then.
 ---
 apiVersion: gateway.networking.k8s.io/v1
 kind: BackendTLSPolicy

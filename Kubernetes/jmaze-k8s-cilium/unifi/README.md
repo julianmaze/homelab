@@ -69,3 +69,33 @@ It is good practice to consider nodes with special sysctl settings as tainted wi
 ```bash
 set-inform http://10.50.25.3:8080/inform
 ```
+
+## Gateway access - currently broken, blocked on Cilium upgrades
+
+Goal: terminate SSL for `unifi.local.julianmaze.com` at the `default-gateway`
+Gateway (using the trusted `wildcard-local-julianmaze-com-tls` cert) and
+re-encrypt to the pod's self-signed cert via `BackendTLSPolicy`, instead of
+today's TLS Passthrough (which exposes the self-signed cert directly to
+browsers).
+
+This is blocked by two separate issues on the currently installed Cilium
+`1.19.4`:
+
+1. **`BackendTLSPolicy` isn't implemented until Cilium 1.20** (currently only
+   `rc.1`, not GA). Verified empirically: `cilium-operator`'s startup log
+   ("Checking for required and optional GatewayAPI resources") does not list
+   `backendtlspolicies` in its required or optional GVK set, and no TLS
+   `transport_socket` gets added to the generated Envoy cluster for the
+   `unifi` Service. See `unifi/app/backend_tls_policy.yaml` and
+   `gateway/backend-tls-policy-example.yaml` (both currently unused/inert).
+2. **Even plain TLS Passthrough is currently broken** on this Gateway due to
+   a Cilium bug affecting `allowedRoutes` namespace/kind restrictions on
+   multi-listener Gateways (cilium/cilium#45559, #42159), fixed by
+   cilium/cilium#45693 and released in **v1.19.6** (2026-07-16). Until
+   upgraded, the `unifi` TLSRoute is rejected with
+   `NotAllowedByListeners` even though the Gateway/listener config is correct.
+
+Until Cilium is upgraded to `>=1.20` GA, `unifi.local.julianmaze.com` will not
+work through the Gateway at all. In the meantime, access unifi directly via
+its LoadBalancer IP (`https://10.50.25.3:8443`, self-signed cert) or the
+`inform` endpoint above for device adoption.
