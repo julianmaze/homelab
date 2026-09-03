@@ -1,0 +1,20 @@
+# This netplan config should be applied to every node in the cluster
+# This is for the new tailscale setup between citracado and conrad
+# ens160 is the unifi iface
+# ens192 is the opnsense iface, where the tailscale connection is established
+network:
+  version: 2
+  ethernets:
+    ens160:
+      dhcp4: true
+      dhcp4-overrides:
+        route-metric: 100
+    ens192:
+      dhcp4: true
+      dhcp4-overrides:
+        route-metric: 200
+      routes:
+        - to: 100.64.0.0/10
+          via: 10.50.1.1
+        - to: 10.0.10.0/24
+          via: 10.50.1.1

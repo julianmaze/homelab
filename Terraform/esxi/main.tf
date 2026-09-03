@@ -36,6 +36,11 @@ resource "esxi_guest" "k3s-cilium" {
     nic_type        = "vmxnet3"
   }
 
+  network_interfaces {
+    virtual_network = "OPNSense"
+    nic_type        = "vmxnet3"
+  }
+
   power = "off"
 
   depends_on = [esxi_virtual_disk.longhorn]
@@ -48,7 +53,7 @@ resource "esxi_guest" "k3s-cilium" {
   }
 
   lifecycle {
-    ignore_changes = [power, virtual_disks[0].virtual_disk_id]
+    ignore_changes = [power, virtual_disks[0].virtual_disk_id, disk_store]
   }
 }
 
@@ -71,6 +76,11 @@ resource "esxi_guest" "k3s-cilium-plex" {
     nic_type        = "vmxnet3"
   }
 
+  network_interfaces {
+    virtual_network = "OPNSense"
+    nic_type        = "vmxnet3"
+  }
+
   power = "off"
 
   # Additional Disks
@@ -81,7 +91,7 @@ resource "esxi_guest" "k3s-cilium-plex" {
   }
 
   lifecycle {
-    ignore_changes = [power, virtual_disks[0].virtual_disk_id]
+    ignore_changes = [power, virtual_disks[0].virtual_disk_id, disk_store]
   }
 }
 
@@ -97,16 +107,21 @@ resource "esxi_guest" "opnsense" {
   disk_store     = var.disk_store
   memsize        = "8192" # 8 GB
   numvcpus       = "4"
-  guestos        = "freebsd-64"
+  guestos        = "freeBSD-64"
 
   network_interfaces {
     virtual_network = "Docker VLAN 25"
     nic_type        = "vmxnet3"
   }
 
+  network_interfaces {
+    virtual_network = "OPNSense"
+    nic_type        = "vmxnet3"
+  }
+
   power = "off"
 
   lifecycle {
-    ignore_changes = [power, virtual_disks[0].virtual_disk_id]
+    ignore_changes = [power, virtual_disks[0].virtual_disk_id, disk_store]
   }
 }

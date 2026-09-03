@@ -19,3 +19,6 @@ spec:
         - name: ds-1522
           port: 5000
           kind: Service
+      timeouts:
+        backendRequest: 30s
+        request: 30s

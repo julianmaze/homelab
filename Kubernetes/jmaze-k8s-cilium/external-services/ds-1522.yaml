@@ -23,7 +23,7 @@ metadata:
 addressType: IPv4
 endpoints:
   - addresses:
-      - 10.0.10.250
+      - 100.100.109.32
     conditions:
       ready: true
 ports:
@@ -31,3 +31,20 @@ ports:
     port: 5000
   - name: photos
     port: 5080
+---
+apiVersion: cilium.io/v2
+kind: CiliumEnvoyConfig
+metadata:
+  name: extend-vpn-connect-timeout
+  namespace: external-services
+spec:
+  # Instruct Cilium to modify the existing backend cluster routing
+  resources:
+    - "@type": type.googleapis.com/envoy.config.cluster.v3.Cluster
+      name: "external-services/ds-1522" # Format: <namespace>/<your-kubernetes-service-name>
+      type: EDS
+      # --- Extends the strict connection window ---
+      connectTimeout: 30s
+      dnsLookupFamily: V4_ONLY
+      outlierDetection:
+        splitExternalLocalOriginErrors: true
