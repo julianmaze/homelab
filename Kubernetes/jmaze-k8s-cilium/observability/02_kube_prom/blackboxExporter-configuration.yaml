@@ -6,6 +6,19 @@ data:
         "http":
           "preferred_ip_protocol": "ip4"
         "prober": "http"
+      "http_2xx_insecure":
+        "http":
+          "preferred_ip_protocol": "ip4"
+          "valid_status_codes": [200, 301, 302, 303, 307, 308, 401, 403]
+          "tls_config":
+            "insecure_skip_verify": true
+        "prober": "http"
+        "timeout": "10s"
+      "icmp":
+        "icmp":
+          "preferred_ip_protocol": "ip4"
+        "prober": "icmp"
+        "timeout": "5s"
       "http_post_2xx":
         "http":
           "method": "POST"

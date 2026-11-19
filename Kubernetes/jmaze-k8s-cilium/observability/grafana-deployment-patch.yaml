@@ -19,7 +19,13 @@ spec:
             - mountPath: /grafana-dashboard-definitions/0/coredns
               name: grafana-dashboard-coredns
               readOnly: false
+            - mountPath: /grafana-dashboard-definitions/0/synology
+              name: grafana-dashboard-synology
+              readOnly: false
       volumes:
         - configMap:
             name: grafana-dashboard-coredns
           name: grafana-dashboard-coredns
+        - configMap:
+            name: grafana-dashboard-synology
+          name: grafana-dashboard-synology

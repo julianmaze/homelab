@@ -111,6 +111,11 @@ spec:
             type: RuntimeDefault
       nodeSelector:
         kubernetes.io/os: linux
+      securityContext:
+        sysctls:
+        # Allow unprivileged ICMP echo (needed by the icmp module)
+        - name: net.ipv4.ping_group_range
+          value: "0 2147483647"
       serviceAccountName: blackbox-exporter
       volumes:
       - configMap:

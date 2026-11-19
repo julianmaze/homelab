@@ -1,0 +1,46 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: synology-ds1522
+  namespace: observability
+  labels:
+    app.kubernetes.io/part-of: synology-monitoring
+    prometheus: k8s
+    role: alert-rules
+spec:
+  groups:
+    - name: synology.rules
+      rules:
+        - alert: SynologyDown
+          expr: probe_success{job="synology-icmp", nas="ds1522"} == 0
+          for: 3m
+          labels:
+            severity: critical
+          annotations:
+            summary: Synology DS1522 is not responding to ping
+            description: ICMP probe to {{ $labels.instance }} has failed for 3 minutes.
+        - alert: SynologyPortDown
+          expr: probe_success{job=~"synology-tcp|synology-http", nas="ds1522"} == 0
+          for: 5m
+          labels:
+            severity: warning
+          annotations:
+            summary: Synology DS1522 {{ $labels.job }} check failed on port {{ $labels.port }}
+            description: Probe {{ $labels.job }} to {{ $labels.instance }} has failed for 5 minutes.
+        - alert: SynologyHighLatency
+          # Placeholder threshold; tune after observing the real RTT over the VPN
+          expr: probe_icmp_duration_seconds{job="synology-icmp", phase="rtt"} > 0.1
+          for: 10m
+          labels:
+            severity: warning
+          annotations:
+            summary: Synology DS1522 ping latency is high
+            description: ICMP RTT to {{ $labels.instance }} has been {{ $value | humanizeDuration }} for 10 minutes.
+        - alert: SynologyCertExpiringSoon
+          expr: (probe_ssl_earliest_cert_expiry{job="synology-http", nas="ds1522"} - time()) < 14 * 86400
+          for: 1h
+          labels:
+            severity: warning
+          annotations:
+            summary: Synology DS1522 TLS certificate expires within 14 days
+            description: Certificate on {{ $labels.instance }} expires in {{ $value | humanizeDuration }}.
