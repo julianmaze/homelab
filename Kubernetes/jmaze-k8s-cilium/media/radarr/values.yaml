@@ -41,3 +41,9 @@ workload:
 podOptions:
   nodeSelector:
     kubernetes.io/hostname: k3s-cilium-2
+
+# Setting fsGroup on the pod security policy to root to avoid a chown recursive action on the NFS media mounts
+# NOTE: the /volume1/media mount also needs 2777 permissions to avoid the kubectl exec chown recursive action on the NFS media mounts
+securityContext:
+  pod:
+    fsGroup: 0
