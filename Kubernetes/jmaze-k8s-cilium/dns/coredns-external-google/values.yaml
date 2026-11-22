@@ -1,4 +1,4 @@
-replicaCount: 2
+replicaCount: 3
 
 serviceType: LoadBalancer
 service:
@@ -55,6 +55,9 @@ servers:
         parameters: . tls://8.8.8.8 tls://8.8.4.4
         configBlock: |-
           tls_servername dns.google
+          expire 10s
+          max_fails 3
+          health_check 5s
       - name: cache
       - name: loop
       - name: reload
@@ -82,6 +85,30 @@ extraSecrets:
   - name: external-dns
     mountPath: /.aws/credentials
     defaultMode: 420
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 128Mi
+
+livenessProbe:
+  enabled: true
+  initialDelaySeconds: 60
+  periodSeconds: 10
+  timeoutSeconds: 10
+  failureThreshold: 10
+  successThreshold: 1
+
+readinessProbe:
+  enabled: true
+  initialDelaySeconds: 30
+  periodSeconds: 5
+  timeoutSeconds: 10
+  failureThreshold: 3
+  successThreshold: 1
 
 # Extra environment variables
 env:
